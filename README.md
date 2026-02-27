@@ -4,7 +4,6 @@ A **Bibliosfera** é uma plataforma digital criada para dar voz aos livros, prom
 
 A ideia central do projeto é tornar o contato com a literatura mais acessível, interessante e conectado com o público jovem.
 
----
 
 ## 🎯 Objetivo do Projeto
 
@@ -51,6 +50,7 @@ A ideia central do projeto é tornar o contato com a literatura mais acessível,
 
 ---
 
+
 ## 👥 Autores
 
 - Anna Luiza Rosa Marques de Almeida  
@@ -59,7 +59,9 @@ A ideia central do projeto é tornar o contato com a literatura mais acessível,
 - Jeizielly dos Santos Santiago  
 - Rodrigo Almeida Vilas Bôas  
 
-_Trabalho de conclusão do curso técnico de Desenvolvimento de Sistemas na ETEC JK_
+
+
+_Trabalho de conclusão do curso técnico de Desenvolvimento de Sistemas na ETEC JK - Diadema_
 
 
 
