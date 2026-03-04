@@ -33,6 +33,15 @@
       <input name="confirmarsenha" id="confirmarsenha" type="password" required maxlength="100">
 
       <button type="submit">Criar Conta</button>
+
+        <?php
+      if (isset($_SESSION['erro_login'])) {
+      echo '<p class="erro-login">' . $_SESSION['erro_login'] . '</p>';
+      unset($_SESSION['erro_login']);
+      }
+    ?>
+
+
     </form>
 
 
