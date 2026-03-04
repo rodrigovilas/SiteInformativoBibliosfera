@@ -15,3 +15,11 @@ nome_contato varchar (100) not null,
 email_contato varchar (200) not null,
 mensagem_contato varchar(200) not null
 );
+
+create table comentarioLeitor(
+id_leitor int not null auto_increment primary key,
+nome_leitor varchar (100) not null,
+email_elitor varchar (200) not null,
+comentario_leitor varchar(200) not null,
+nome_livro_leitor varchar(200) not null
+)
