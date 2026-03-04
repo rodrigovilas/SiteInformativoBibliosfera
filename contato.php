@@ -47,7 +47,7 @@
 
 
     
-<section id="contato" class="contato-section" role="region" aria-label="Contato">
+<section id="contato" class="contato-section" role="region" aria-label="Contato" style="margin-top: 4rem;">
   <div class="container">
     <div class="objetivos-grid">
       <article class="quem-card contato-card" role="article" tabindex="0">
