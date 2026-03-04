@@ -1,4 +1,8 @@
 <?php
+session_start();
+?>
+
+<?php
 include __DIR__ . "/database.php";
 
 if (!isset($_POST['email'], $_POST['usuario'], $_POST['senha'], $_POST['confirmarsenha'])) {
@@ -12,7 +16,8 @@ $senha = $_POST['senha'];
 $confirmar = $_POST['confirmarsenha'];
 
 if ($senha !== $confirmar) {
-    echo "As senhas não coincidem";
+    $_SESSION['erro_login'] = "E-mail ou senha inválidos";
+    header('Location: cadastro.php');
     exit;
 }
 
