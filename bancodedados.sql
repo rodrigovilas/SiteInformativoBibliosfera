@@ -22,4 +22,4 @@ nome_leitor varchar (100) not null,
 email_elitor varchar (200) not null,
 comentario_leitor varchar(200) not null,
 nome_livro_leitor varchar(200) not null
-)
+);
