@@ -1,22 +1,22 @@
-create database bibliosfera;
+create database if not exists bibliosfera;
 use bibliosfera;
 
-create table login
-(id_user int auto_increment primary key,
+create table if not exists login(
+id_user int auto_increment primary key,
 usuario varchar(50) not null unique,
 email varchar(255) not null unique,
 senha varchar(255) not null 
 );
 
 
-create table msgcontato(
+create table if not exists msgcontato(
 id_usuario int not null auto_increment primary key,
 nome_contato varchar (100) not null,
 email_contato varchar (200) not null,
 mensagem_contato varchar(200) not null
 );
 
-create table comentarioLeitor(
+create table if not exists comentarioLeitor(
 id_leitor int not null auto_increment primary key,
 nome_leitor varchar (100) not null,
 email_elitor varchar (200) not null,
