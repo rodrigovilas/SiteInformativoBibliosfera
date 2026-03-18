@@ -51,7 +51,8 @@
 
 
     
-<section id="contato" class="contato-section" role="region" aria-label="Contato" style="margin-top: 4rem;">
+<!-- Contato -->
+<section id="contato" class="contato-section" role="region" aria-label="Contato">
   <div class="container">
     <div class="objetivos-grid">
       <article class="quem-card contato-card" role="article" tabindex="0">
@@ -62,21 +63,17 @@
           <p><strong>Email:</strong> <a href="mailto:clubebibliosfera@gmail.com">clubebibliosfera@gmail.com</a></p>
         </div>
 
-        <form class="contato-form" action="home.html" method="post" onsubmit="alert('Mensagem enviada (simulação)'); return false;" aria-label="Formulário de contato">
-
+        <form class="contato-form" action="#" method="post" onsubmit="alert('Mensagem enviada (simulação)'); return false;" aria-label="Formulário de contato">
           <label for="nome">Nome</label>
-
           <input id="nome" name="nome" type="text" placeholder="Seu nome" required>
 
           <label for="email-contato">E-mail</label>
-
           <input id="email-contato" name="email" type="email" placeholder="seu@exemplo.com" required>
 
           <label for="mensagem">Mensagem</label>
-
           <textarea id="mensagem" name="mensagem" rows="5" placeholder="Escreva sua mensagem" required></textarea>
 
-                    <div class="contato-actions">
+          <div class="contato-actions">
             <button type="submit" class="btn" aria-label="Enviar mensagem">
               <!-- ícone pequeno para decorar o botão -->
               <svg class="btn-icon" aria-hidden="true" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -84,5 +81,26 @@
               </svg>
               Enviar mensagem
             </button>
+          </div>
+        </form>
+      </article>
+    </div>
+  </div>
+</section>
+
+<footer style="width: 100%; background-color: #0f55b2; padding: 25px 0; margin-top: auto; display: block; box-shadow: 0 -2px 10px #0f55b2;">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 0 50px; display: flex; justify-content: center; align-items: center; position: relative; box-sizing: border-box;">
+        
+        <span style="color: #ffffff; font-family: 'Sour Gummy', cursive; font-size: 18px; font-weight: 700; text-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+            © 2026 - Todos os direitos reservados
+        </span>
+
+        <a href="#topo" style="position: absolute; right: 50px; border: 2px solid #ffffff; color: #ffffff; text-decoration: none; padding: 8px 18px; border-radius: 12px; font-family: 'Sour Gummy', cursive; font-weight: 600; font-size: 16px; transition: 0.3s; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+            Voltar ao topo
+        </a>
+        
+    </div>
+</footer>
+
 </body>
 </html>
