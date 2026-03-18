@@ -57,7 +57,7 @@ A ideia central do projeto é tornar o contato com a literatura mais acessível,
 - Cayo Alves Freitas Ananias  
 - Daniel Sena Santiago  
 - Jeizielly dos Santos Santiago
-- Miguel Vulcannis Neves 
+- Miguel Vulcanis Neves 
 - Rodrigo Almeida Vilas Bôas 
 
 
