@@ -1,17 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contato</title>
     <link rel="stylesheet"  href="style.css">    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Sour+Gummy:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
 
  <header>
         <div class="dvh">
-            <a href="#topo" class="topo" title="Ir para o início" aria-label="Ir para o início da página">
+            <a href="home.html" class="topo" title="Ir para o início" aria-label="Ir para o início da página">
                 <img src="img/logo.png" alt="Logo da Bibliosfera" class="logo" />
                 <h1 class="tituloh">Bibliosfera</h1>
             </a>
@@ -55,7 +59,7 @@
         <p>Para mais informações sobre a Bibliosfera, sugestões ou dúvidas, entre em contato conosco por meio dos canais disponíveis. Sua participação é importante para fortalecer a comunidade e incentivar a leitura coletiva.</p>
 
         <div class="contato-meta" aria-hidden="false">
-          <p><strong>Email:</strong> <a href="mailto:bibliosfera@gmail.com">bibliosfera@gmail.com</a></p>
+          <p><strong>Email:</strong> <a href="mailto:clubebibliosfera@gmail.com">clubebibliosfera@gmail.com</a></p>
         </div>
 
         <form class="contato-form" action="home.html" method="post" onsubmit="alert('Mensagem enviada (simulação)'); return false;" aria-label="Formulário de contato">
