@@ -1,3 +1,4 @@
+/*o banco não está terminado ainda!! ainda falta conectar com o php*/
 drop database if exists bibliosfera;
 create database if not exists bibliosfera;
 use bibliosfera;
