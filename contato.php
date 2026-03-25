@@ -1,3 +1,34 @@
+<?php
+session_start();
+include __DIR__ . "/database.php";
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    if (!isset($_POST['nome'], $_POST['email'], $_POST['mensagem'])) {
+        $_SESSION['erro_contato'] = "Erro: campos obrigatórios não preenchidos";
+    } else {
+        $nome = htmlspecialchars($_POST['nome'], ENT_QUOTES, 'UTF-8');
+        $email = htmlspecialchars($_POST['email'], ENT_QUOTES, 'UTF-8');
+        $mensagem = htmlspecialchars($_POST['mensagem'], ENT_QUOTES, 'UTF-8');
+
+        try {
+            $stmt = $conn->prepare(
+                "INSERT INTO msgcontato (nome_contato, email_contato, mensagem_contato) VALUES (:nome, :email, :mensagem)"
+            );
+
+            $stmt->bindParam(':nome', $nome);
+            $stmt->bindParam(':email', $email);
+            $stmt->bindParam(':mensagem', $mensagem);
+
+            $stmt->execute();
+
+            $_SESSION['sucesso_contato'] = "Mensagem enviada com sucesso! Em breve entraremos em contato.";
+            
+        } catch (PDOException $e) {
+            $_SESSION['erro_contato'] = "Erro ao enviar mensagem: " . $e->getMessage();
+        }
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -63,7 +94,22 @@
           <p><strong>Email:</strong> <a href="mailto:clubebibliosfera@gmail.com">clubebibliosfera@gmail.com</a></p>
         </div>
 
-        <form class="contato-form" action="#" method="post" onsubmit="alert('Mensagem enviada (simulação)'); return false;" aria-label="Formulário de contato">
+        <!-- Exibe mensagens de sucesso ao enviar o formulário -->
+        <?php
+          if (isset($_SESSION['sucesso_contato'])) {
+            echo '<p style="color: green; font-weight: bold; margin-bottom: 15px;">' . $_SESSION['sucesso_contato'] . '</p>';
+            unset($_SESSION['sucesso_contato']);
+          }
+        ?>
+
+        <?php
+          if (isset($_SESSION['erro_contato'])) {
+            echo '<p style="color: red; font-weight: bold; margin-bottom: 15px;">' . $_SESSION['erro_contato'] . '</p>';
+            unset($_SESSION['erro_contato']);
+          }
+        ?>
+
+        <form class="contato-form" action="contato.php" method="post" aria-label="Formulário de contato">
           <label for="nome">Nome</label>
           <input id="nome" name="nome" type="text" placeholder="Seu nome" required>
 

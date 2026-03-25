@@ -1,3 +1,35 @@
+<?php
+session_start();
+include __DIR__ . "/database.php";
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    if (!isset($_POST['nome'], $_POST['email'], $_POST['mensagem'])) {
+        $_SESSION['erro_contato'] = "Erro: campos obrigatórios não preenchidos";
+    } else {
+        $nome = htmlspecialchars($_POST['nome'], ENT_QUOTES, 'UTF-8');
+        $email = htmlspecialchars($_POST['email'], ENT_QUOTES, 'UTF-8');
+        $mensagem = htmlspecialchars($_POST['mensagem'], ENT_QUOTES, 'UTF-8');
+
+        try {
+            $stmt = $conn->prepare(
+                "INSERT INTO msgcontato (nome_contato, email_contato, mensagem_contato) VALUES (:nome, :email, :mensagem)"
+            );
+
+            $stmt->bindParam(':nome', $nome);
+            $stmt->bindParam(':email', $email);
+            $stmt->bindParam(':mensagem', $mensagem);
+
+            $stmt->execute();
+
+            $_SESSION['sucesso_contato'] = "Mensagem enviada com sucesso!";
+            
+        } catch (PDOException $e) {
+            $_SESSION['erro_contato'] = "Erro ao enviar mensagem: " . $e->getMessage();
+        }
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -254,7 +286,22 @@
           <p><strong>Email:</strong> <a href="mailto:clubebibliosfera@gmail.com">clubebibliosfera@gmail.com</a></p>
         </div>
 
-        <form class="contato-form" action="#" method="post" onsubmit="alert('Mensagem enviada (simulação)'); return false;" aria-label="Formulário de contato">
+        <!-- Exibe mensagens de sucesso ao enviar o formulário -->
+        <?php
+          if (isset($_SESSION['sucesso_contato'])) {
+            echo '<p style="color: green; font-weight: bold; margin-bottom: 15px;">' . $_SESSION['sucesso_contato'] . '</p>';
+            unset($_SESSION['sucesso_contato']);
+          }
+        ?>
+
+        <?php
+          if (isset($_SESSION['erro_contato'])) {
+            echo '<p style="color: red; font-weight: bold; margin-bottom: 15px;">' . $_SESSION['erro_contato'] . '</p>';
+            unset($_SESSION['erro_contato']);
+          }
+        ?>
+
+        <form class="contato-form" action="index.php#contato" method="post" aria-label="Formulário de contato">
           <label for="nome">Nome</label>
           <input id="nome" name="nome" type="text" placeholder="Seu nome" required>
 
@@ -278,11 +325,20 @@
     </div>
   </div>
 </section>
-<footer>
-  <div class="footer-inner">
-    <span>© 2026 - Todos os direitos reservados</span>
-    <a href="#home" class="btn voltar-topo" title="Voltar ao topo" aria-label="Voltar ao topo">Voltar ao topo</a>
-  </div>
+
+<footer style="width: 100%; background-color: #0f55b2; padding: 25px 0; margin-top: auto; display: block; box-shadow: 0 -2px 10px #0f55b2;">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 0 50px; display: flex; justify-content: center; align-items: center; position: relative; box-sizing: border-box;">
+        
+        <span style="color: #ffffff; font-family: 'Sour Gummy', cursive; font-size: 18px; font-weight: 700; text-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+            © 2026 - Todos os direitos reservados
+        </span>
+
+        <a href="#topo" style="position: absolute; right: 50px; border: 2px solid #ffffff; color: #ffffff; text-decoration: none; padding: 8px 18px; border-radius: 12px; font-family: 'Sour Gummy', cursive; font-weight: 600; font-size: 16px; transition: 0.3s; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+            Voltar ao topo
+        </a>
+        
+    </div>
 </footer>
+
 </body>
 </html>
