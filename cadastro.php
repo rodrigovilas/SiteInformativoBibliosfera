@@ -2,23 +2,23 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>Login | Bibliosfera</title>
+  <title>Cadastro | Bibliosfera</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="cadastro.css">
   <link rel="shortcut icon" href="img/logo.png">
-  <!-- Fontes -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Sour+Gummy:wght@300;400;600;700&display=swap" rel="stylesheet">
-
 </head>
 <body>
-
+  <!-- Containerirmcipal da página de cadastro -->
   <main class="login-container" role="main">
     <h1>Bibliosfera</h1>
     <p>Crie sua conta e mergulhe no universo dos livros.</p>
 
+    <!-- Formulário de cadastro de novo usuário -->
+    <!-- Os dados são enviados para o arquivo cad_user.php por POST -->
     <form action="cad_user.php" method="post">
       <label for="email">E-mail</label>
       <input name="email" id="email" type="email" required maxlength="255">
@@ -34,17 +34,15 @@
 
       <button type="submit">Criar Conta</button>
 
-        <?php
+      <?php
       if (isset($_SESSION['erro_login'])) {
       echo '<p class="erro-login">' . $_SESSION['erro_login'] . '</p>';
       unset($_SESSION['erro_login']);
       }
     ?>
-
-
     </form>
 
-
+    <!-- Links de navegação -->
     <div class="login-links">
       <a href="login.php" class="voltar">← Voltar ao login</a>
     </div>

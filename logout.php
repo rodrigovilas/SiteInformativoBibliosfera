@@ -1,5 +1,8 @@
 <?php
-session_start();
-session_destroy();
-header('Location: index.html');
+// Arquivo de logout (desconexão)
+// Encerra a sessão do usuário e redireciona para a página inicial
+
+session_start();       // Inicia a sessão existente
+session_destroy();     // Destroi a sessão, removendo todos os dados do usuário
+header('Location: index.html');  // Redireciona para a página inicial do site
 ?>
