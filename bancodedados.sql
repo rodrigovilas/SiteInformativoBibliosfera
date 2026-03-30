@@ -48,7 +48,8 @@ id_resenha int auto_increment primary key,
 id_usuario int,
 id_livro int,
 nota decimal(2,1),
-resenha varchar(2000),
+resenha varchar(2000)
+data_resenha timestamp,
 check (nota>=0 and nota<=10),
 foreign key (id_usuario) references usuario(id_usuario),
 foreign key (id_livro) references livro(id_livro));
