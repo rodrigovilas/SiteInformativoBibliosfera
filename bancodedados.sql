@@ -4,7 +4,7 @@ create database if not exists bibliosfera;
 use bibliosfera;
 
 create table if not exists login(
-id_user int auto_increment primary key,
+id_usuario int auto_increment primary key,
 usuario varchar (50) unique not null,
 email varchar (255) unique not null,
 senha varchar (200) not null);
@@ -51,7 +51,7 @@ nota decimal(2,1),
 resenha varchar(2000),
 data_resenha timestamp,
 check (nota>=0 and nota<=10),
-foreign key (id_usuario) references usuario(id_usuario),
+foreign key (id_usuario) references login(id_usuario),
 foreign key (id_livro) references livro(id_livro));
 
 create table if not exists categoriapralivro(
@@ -66,5 +66,5 @@ id_usuario int,
 id_livro int,
 progresso enum('Lendo','Pausado','Terminado'),
 primary key (id_usuario, id_livro),
-foreign key (id_usuario) references usuario(id_usuario),
+foreign key (id_usuario) references login(id_usuario),
 foreign key (id_livro) references livro(id_livro));
