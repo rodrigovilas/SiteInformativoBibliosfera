@@ -39,10 +39,10 @@ primary key (id_livro, id_genero),
 foreign key (id_livro) references livro(id_livro),
 foreign key (id_genero) references genero(id_genero));
 
-create table if not exists categoria(
-id_categoria int auto_increment primary key,
-nome varchar (100) unique not null,
-descricao varchar(500));
+create table if not exists tag(
+id_tag int auto_increment primary key,
+nome_tag varchar (100) unique not null,
+descricao_tag varchar(500));
 
 create table if not exists resenha(
 id_resenha int auto_increment primary key,
@@ -50,16 +50,16 @@ id_usuario int,
 id_livro int,
 nota decimal(2,1),
 resenha varchar(2000),
-data_resenha timestamp,
+data_resenha timestamp default current_timestamp,
 check (nota>=0 and nota<=10),
 foreign key (id_usuario) references login(id_usuario),
 foreign key (id_livro) references livro(id_livro));
 
-create table if not exists categoriapralivro(
-id_categoria int,
+create table if not exists tagpralivro(
+id_tag int,
 id_livro int,
-primary key (id_categoria, id_livro),
-foreign key (id_categoria) references categoria(id_categoria),
+primary key (id_tag, id_livro),
+foreign key (id_tag) references tag(id_tag),
 foreign key (id_livro) references livro(id_livro));
 
 create table if not exists listausuario(
