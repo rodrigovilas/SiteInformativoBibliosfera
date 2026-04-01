@@ -3,10 +3,10 @@ drop database if exists bibliosfera;
 create database if not exists bibliosfera;
 use bibliosfera;
 
-create table if not exists usuario(
-id_usuario int auto_increment primary key,
-nome_usuario varchar (50) unique not null,
-email varchar (100) unique not null,
+create table if not exists login(
+id_user int auto_increment primary key,
+usuario varchar (50) unique not null,
+email varchar (255) unique not null,
 senha varchar (200) not null);
 
 create table if not exists autor(
