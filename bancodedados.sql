@@ -1,10 +1,11 @@
 /*o banco não está terminado ainda!! ainda falta conectar com o php*/
+/*vsf rodrigo*/
 drop database if exists bibliosfera;
 create database if not exists bibliosfera;
 use bibliosfera;
 
 create table if not exists login(
-id_user int auto_increment primary key,
+id_usuario int auto_increment primary key,
 usuario varchar (50) unique not null,
 email varchar (255) unique not null,
 senha varchar (200) not null);
@@ -51,7 +52,7 @@ nota decimal(2,1),
 resenha varchar(2000),
 data_resenha timestamp,
 check (nota>=0 and nota<=10),
-foreign key (id_usuario) references usuario(id_usuario),
+foreign key (id_usuario) references login(id_usuario),
 foreign key (id_livro) references livro(id_livro));
 
 create table if not exists categoriapralivro(
@@ -64,7 +65,7 @@ foreign key (id_livro) references livro(id_livro));
 create table if not exists listausuario(
 id_usuario int,
 id_livro int,
-progresso enum('Lendo','Pausado','Terminado'),
+progresso enum('Lendo','Pausado','Terminado','Largado') default null,
 primary key (id_usuario, id_livro),
-foreign key (id_usuario) references usuario(id_usuario),
+foreign key (id_usuario) references login(id_usuario),
 foreign key (id_livro) references livro(id_livro));
