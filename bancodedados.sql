@@ -1,4 +1,5 @@
 /*o banco não está terminado ainda!! ainda falta conectar com o php*/
+/*vsf rodrigo*/
 drop database if exists bibliosfera;
 create database if not exists bibliosfera;
 use bibliosfera;
@@ -64,7 +65,7 @@ foreign key (id_livro) references livro(id_livro));
 create table if not exists listausuario(
 id_usuario int,
 id_livro int,
-progresso enum('Lendo','Pausado','Terminado'),
+progresso enum('Lendo','Pausado','Terminado','Largado') default null,
 primary key (id_usuario, id_livro),
 foreign key (id_usuario) references login(id_usuario),
 foreign key (id_livro) references livro(id_livro));
