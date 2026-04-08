@@ -16,7 +16,7 @@ $senha = $_POST['senha'];
 
 // Busca o usuário no banco de dados pelo email
 $stmt = $conn->prepare(
-    "SELECT id_user, usuario, senha FROM login WHERE email = :email"
+    "SELECT usuario, senha FROM login WHERE email = :email"
 );
 $stmt->bindParam(':email', $email);
 $stmt->execute();
