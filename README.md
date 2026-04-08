@@ -1,3 +1,18 @@
+```
+    _____
+   /    /|_ ___________________________________________
+  /    // /|                                          /|
+ (====|/ //           ________________       __P_    / |
+  (=====|/           /               /|     (  ' )  / .|
+ (====|/            /  BIBLIOSFERA  //       \__/  / /||
+ /                 (===============|/             / / ||
+/________________________________________________/ /  ||
+|  _____________________________________________  ||  ||
+| ||                                            | ||
+| ||                                            | ||
+| |                                             | | 
+```
+
 # 📚 Bibliosfera
 
 A **Bibliosfera** é uma plataforma digital criada para dar voz aos livros, promovendo **resenhas**, **leituras comentadas** e **conteúdos audiovisuais** que estimulam o pensamento crítico e o hábito da leitura.
