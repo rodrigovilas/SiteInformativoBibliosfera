@@ -69,3 +69,9 @@ progresso enum('Lendo','Pausado','Terminado','Largado') default null,
 primary key (id_usuario, id_livro),
 foreign key (id_usuario) references login(id_usuario),
 foreign key (id_livro) references livro(id_livro));
+
+create table if not exists msgcontato(
+id_msgcontato int auto_increment primary key,
+nome_contato varchar(50) not null,
+email_contato varchar(155) not null,
+mensagem_contato text not null);
