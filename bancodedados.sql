@@ -1,5 +1,6 @@
 /*o banco não está terminado ainda!! ainda falta conectar com o php*/
 /*vsf rodrigo*/
+/*criação do banco*/
 drop database if exists bibliosfera;
 create database if not exists bibliosfera;
 use bibliosfera;
@@ -74,4 +75,11 @@ create table if not exists msgcontato(
 id_msgcontato int auto_increment primary key,
 nome_contato varchar(50) not null,
 email_contato varchar(155) not null,
-mensagem_contato text not null);
+mensagem_contato text not null); 
+
+/*INSERTSINSERTSINSERTS*/
+/*estou fazendo um teste de insert*/
+insert into livro(titulo,descricao,capa) values
+('A Bússola de Ouro','O livro acompanha a jovem Lyra Belacqua, que vai para o Ártico em busca de seu amigo desaparecido, Roger Parslow, e seu tio preso, Lorde Asriel, que vem conduzindo experimentos com uma substância misteriosa conhecida como "Pó". O livro envolve elementos de fantasia, como feiticeiras e ursos-polares falantes, e faz alusão a uma ampla gama de ideias de campos, como a física, filosofia e teologia.
+
+O livro é o primeiro volume da trilogia His Dark Materials. Foi adaptado para o cinema em 2007 pela New Line Cinema em um filme intitulado A Bússola de Ouro/A Bússola Dourada e como um jogo eletrônico complementar. O livro também foi adaptado como uma série de televisão intitulada His Dark Materials, que estreou em 2019.','https://rodrigovilas.github.io/SiteInformativoBibliosfera/capas/1.jpg')
