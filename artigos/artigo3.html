@@ -3,49 +3,250 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bibliosfera</title>
-    <link rel="stylesheet"  href="home.css">
-  <link rel="shortcut icon" href="img/logo.png">
-    <script src="script.js"></script>
-    <!-- Fontes(Google Fonts) -->
+    <title>Gêneros Literários: Explorando Diferentes Mundos - Bibliosfera</title>
+    <link rel="stylesheet" href="../home.css">
+    <link rel="shortcut icon" href="../img/logo.png">
+    <script src="../script.js"></script>
+    <!-- Fontes (Google Fonts) -->
     <link href="https://fonts.googleapis.com/css2?family=Sour+Gummy:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Comic+Relief:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Comic+Relief:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body id="topo">
 
-      <header>
+    <header>
         <div class="dvh">
-            <a href="#topo" class="topo" title="Ir para o início" aria-label="Ir para o início da página">
-                <img src="img/logo.png" alt="Logo da Bibliosfera" class="logo" />
+            <a href="../index.php" class="topo" title="Ir para o início" aria-label="Ir para o início da página">
+                <img src="../img/logo.png" alt="Logo da Bibliosfera" class="logo" />
                 <h1 class="tituloh">Bibliosfera</h1>
             </a>
         </div>
 
         <nav class="nav">
             <ul class="navlinks">
-                <li><a href="resenhas.html">Resenhas</a></li>
-                <li><a href="videos.html">Vídeos</a></li>
-                <li><a href="leituras.html">Leituras</a></li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="comunidade.html">Comunidade</a></li>
-                <li><a href="perfil.php">Meu Perfil</a></li>
-                <li><a href="contato.php">Contato</a></li>
+                <li><a href="../resenhas.html">Resenhas</a></li>
+                <li><a href="../videos.html">Vídeos</a></li>
+                <li><a href="../leituras.html">Leituras</a></li>
+                <li><a href="../blog.html">Blog</a></li>
+                <li><a href="../comunidade.html">Comunidade</a></li>
+                <li><a href="../perfil.php">Meu Perfil</a></li>
+                <li><a href="../contato.php">Contato</a></li>
                 <li class="nav-login">
-                    <a href="logout.php"
+                    <a href="../logout.php"
                         class="btn-entrar"
                         id="btnEntrar"
                         type="button"
-                        title="Entrar"
+                        title="Sair"
                         aria-haspopup="dialog"
                         aria-controls="loginModal"
-                        aria-label="Entrar">
-                        <img src="https://img.icons8.com/ios-filled/50/ff9800/login-rounded-right.png" alt="Entrar">
+                        aria-label="Sair">
+                        <img src="https://img.icons8.com/ios-filled/50/ff9800/login-rounded-right.png" alt="Sair">
                         <span class="btn-text">Sair</span>
                     </a>
                 </li>
             </ul>
         </nav>
-      </header>
-      <main class="home">
+    </header>
+
+    <main class="home">
+
+        <section class="hero">
+            <div class="hero-text">
+                <h2>Gêneros Literários: Explorando Diferentes Mundos</h2>
+                <p>
+                    Conheça os principais gêneros da literatura, suas características únicas e encontre qual deles mais combina com você. Cada gênero oferece experiências distintas que enriquecem sua jornada como leitor.
+                </p>
+
+                <div class="hero-actions">
+                    <a href="#conteudo" class="btn-primary" role="button" aria-label="Ler Artigo" data-scroll>Ler Artigo</a>
+                    <a href="../blog.html" class="btn-secondary" role="button" aria-label="Voltar ao Blog" data-scroll>← Blog</a>
+                </div>
+            </div>
+
+            <div class="hero-image">
+                <img src="../img/leitura.webp" alt="Ilustração de leitura">
+            </div>
+        </section>
+
+        
+        <section class="artigo-content" id="conteudo">
+            <article class="artigo-corpo">
+                <div class="artigo-meta">
+                    <span class="tag leitura" style="font-family: var(--fonte-titulo);">Leitura </span>
+                    <span class="tempo-leitura">📚 8 min de leitura</span>
+                </div>
+
+                <h3>Entendendo os Gêneros Literários</h3>
+                <p>
+                    Os gêneros literários são categorias que classificam as obras de acordo com suas características, estilo, propósito e forma. Compreender os diferentes gêneros é fundamental para descobrir seus interesses como leitor e navegar melhor pelo vasto universo da literatura. Cada gênero possui convenções específicas, temas recorrentes e estilos distintivos que o tornam único. Ao explorar diferentes gêneros, você amplia sua perspectiva e descobre novas formas de contar histórias que talvez nunca tivesse considerado antes.
+                </p>
+
+                <h3>Romance: A Jornada Emocional</h3>
+                <p>
+                    O romance é o gênero literário por excelência, focado no desenvolvimento de personagens e relacionamentos. Caracteriza-se por narrativas longas e complexas que exploram emoções, conflitos interpessoais e crescimento pessoal. Romances contemporâneos frequentemente lidam com questões sociais, identidade e busca de sentido. Subgêneros como romance de época, romance psicológico e romance social oferecem variações temáticas ricas. Se você procura se conectar profundamente com personagens e explorar a complexidade da experiência humana, o romance é o seu gênero.
+                </p>
+
+                <h3>Ficção Científica: Imaginando o Futuro</h3>
+                <p>
+                    A ficção científica especula sobre futuros alternativos, tecnologias avançadas e mundos imaginários baseados em princípios científicos plausíveis. Este gênero desafia nossa forma de pensar, questionando consequências de inovações tecnológicas e arranjos sociais. Histórias de ficção científica variam desde distópias sombrias até utopias esperançosas, viagens no tempo até exploração espacial. Grandes autores como Isaac Asimov, Philip K. Dick e N.K. Jemisin criaram universos que fizeram leitores reconsiderar realidades. Se você é curioso sobre possibilidades futuras e ama conceitos e ideias, a ficção científica oferece alimento intelectual infinito.
+                </p>
+
+                <h3>Fantasia: Criando Mundos Extraordinários</h3>
+                <p>
+                    A fantasia transcende os limites da realidade, criando mundos secundários com suas próprias regras, magia e criaturas extraordinárias. Ao contrário da ficção científica que ancora-se no possível, a fantasia abraça o impossível e o mágico. Épicas de fantasia como a série "Lord of the Rings" criaram paradigmas para o gênero, estabelecendo convenções de quests heroicamente, construção de mundos meticulosa e batalhas épicas. Fantasia urbana, fantasia romântica e dark fantasy oferecem variações modernas. Se você deseja escapar para universos completamente diferentes onde magia é real, a fantasia é seu refúgio.
+                </p>
+
+                <h3>Mistério e Suspense: O Thrill da Descoberta</h3>
+                <p>
+                    O mistério e o suspense centram-se em um enigma a ser resolvido ou perigo iminente a ser evitado. Leitores são postos na posição de detetives, tentando desvendar segredos antes das respostas serem reveladas. Romances policiais clássicos de Agatha Christie contrastam com thrillers psicológicos contemporâneos que exploram a mente de criminosos. O suspense mantém você na beira do banco, virado páginas para descobrir o próximo reviraço. Crime, conspiração e tensão crescente definem este gênero. Se você adora enredos intricados, pistas sutis e a satisfação de resolver um quebra-cabeça narrativo, mistério e suspense o prenderão.
+                </p>
+
+                <h3>Drama Histórico: O Passado Reimaginado</h3>
+                <p>
+                    O drama histórico combina fato histórico com narrativa fictícia, recriando períodos e eventos passados de formas que trazem história à vida. Personagens históricos reais interagem com protagonistas fictícios, e eventos autênticos formam a trama subjacente. Este gênero oferece tanto educação quanto entretenimento, permitindo você experimentar eras passadas de maneira imersiva. Desde Jane Austen até Hilary Mantel, autores capturaram essências históricas enquanto tecem dramas pessoais compelentes. Se você é fascinado por história e adora aproveitar a oportunidade de explorar períodos passados através de perspectivas inusitadas, o drama histórico oferece porto rico.
+                </p>
+
+                <h3>Humor e Comédia: Riso Como Medicina</h3>
+                <p>
+                    A comédia literária usa humor para entreter e frequentemente para criticar aspectos da sociedade ou natureza humana. O tom varia desde absurdismo ligeiro até sátira mordaz que expõe hipocrisia. Autores como Terry Pratchett demonstraram que humor sofisticado pode coexistir com comentário social profundo. Histórias humorísticas oferecem alívio, diversão e frequentemente revelações através da leveza. Se você precisa de risadas e valoriza livros que o fazem achar a vida — e leitura — mais alegre, histórias humorísticas são sua escolha.
+                </p>
+
+                <h3>Literatura Infantil e Young Adult: Ensinando Através de Histórias</h3>
+                <p>
+                    A literatura infantil e young adult (YA) são gêneros dedicados a públicos jovens, mas frequentemente apreciam por leitores de todas as idades. Literatura infantil usa narrativas simples e frequentemente fantásticas para ensinar lições morais. YA aborda temas de adolescência—identidade, amizade, primeiro amor, autodescoberta—com complexidade crescente. Livros como "A Culpa é das Estrelas" e "The Hunger Games" transcenderam públicos alvo, conquistando leitores adultos. Se você valoriza perspectivas frescas e narrativas que exploram jornadas de crescimento, estes gêneros oferecem joias tanto para jovens quanto para adultos.
+                </p>
+
+                <h3>Poesia: Expressão Condensada</h3>
+                <p>
+                    A poesia condensa significado, emoção e experiência em linguagem altamente selecionada. Usando técnicas como ritmo, rima, metáfora e imagética, poetas criam impacto profundo com economia de palavras. A poesia convida leitura múltipla, revelando novas camadas a cada encontro com o texto. Desde sonetos de Shakespeare até poesia experimental contemporânea, o gênero abraça múltiplas formas e estilos. Se você aprecia linguagem trabalhada no nível da palavra e ama o desafio de desvendar significado compresso, poesia oferece recompensas ricas.
+                </p>
+
+                <h3>Ensaio e Não-ficção: Explorando Ideias Reais</h3>
+                <p>
+                    Ensaios e memórias não-fictícias exploram ideias, experiências pessoais e conhecimento factual. Ensaios variam desde argumentos filosóficos até reflexões pessoais sobre vida, cultura e identidade. A não-ficção oferece aprendizado e perspectivas pessoais, expandindo compreensão de mundo real. Autores como Malcolm Gladwell e Michelle Obama transformam informação em narrativas envolventes. Se você ama aprender, explorar ideias profundas e obter perspectivas de experiências de vida real, ensaio e não-ficção satisfazem desejos intelectuais.
+                </p>
+
+                <h3>Romance Paranormal e Sobrenatural: Além do Ordinário</h3>
+                <p>
+                    Romance paranormal e sobrenatural incorporam elementos não explicáveis cientificamente—vampiros, bruxas, assombrações, poderes psíquicos—em narrativas de relacionamento e romance. Estes gêneros exploram dinamiche entre o mundano e o mágico, com romance frequentemente centrado em personagens sobrenaturais. Séries como "Crepúsculo" popularizaram romance paranormal, mas o gênero existe desde muito antes. Se você ama o romance mas deseja um toque de mistério e magia, romance paranormal oferece melhor dos dois mundos.
+                </p>
+
+                <h3>Descobrindo Seu Gênero Ideal</h3>
+                <p>
+                    Não existe um único "melhor" gênero—existe o gênero que mais ressoa com seus interesses, necessidades emociais e preferências de leitura naquele momento de sua vida. Você pode ser leitor de fantasia que ocasionalmente mergulha em mistério, ou entusiasta de poesia que frequentemente volta em romance. Exploração é a chave. Teste diferentes gêneros, leia resenhas, converse com outros leitores em comunidades de leitura. Esteja aberto ao surpreendido. Às vezes, um livro fora da "sua" categoria preferida se torna favorito inesperado. A morte alegre é continuar descobrindo, porque a literatura oferece infinitas possibilidades de aventura e conhecimento.
+                </p>
+
+                <h3>Conclusão: Seu Universo Literário Aguarda</h3>
+                <p>
+                    Gêneros literários não são restrições, mas convites. Cada um oferece experiência única, perspectiva distinta e caminho único para conexão através de narrativa. Quer você busque escapismo, aprendizado, emoção ou riso, existe um gênero esperando por você. Comece com o que llama sua atenção. Se gostou, aprofunde. Se não, pode sem medo. Sua jornada leitora é pessoal e intransferível. Explore os gêneros com curiosidade, respeito pela diversidade de formas literárias e abertura para descoberta. Cada página virada em novo gênero expande seu horizonte.
+                </p>
+            </article>
+        </section>
+
+        
+        <section class="cta">
+            <h3>Descubra Seu Gênero Favorito</h3>
+            <p>
+                Explore mais artigos, resenhas e análises que expandem sua forma de enxergar a leitura.
+            </p>
+            <a href="../blog.html" class="btn-primary">Explorar mais artigos</a>
+        </section>
+
+    </main>
+
+    <footer style="width: 100%; background-color: #0f55b2; padding: 25px 0; margin-top: auto; display: block; box-shadow: 0 -2px 10px #0f55b2;">
+        <div style="max-width: 1200px; margin: 0 auto; padding: 0 50px; display: flex; justify-content: center; align-items: center; position: relative; box-sizing: border-box;">
+            
+            <span style="color: #ffffff; font-family: 'Sour Gummy', cursive; font-size: 18px; font-weight: 700; text-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                © 2026 - Todos os direitos reservados
+            </span>
+
+            <a href="#topo" style="position: absolute; right: 50px; border: 2px solid #ffffff; color: #ffffff; text-decoration: none; padding: 8px 18px; border-radius: 12px; font-family: 'Sour Gummy', cursive; font-weight: 600; font-size: 16px; transition: 0.3s; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+                Voltar ao topo
+            </a>
+            
+        </div>
+    </footer>
+
+    <style>
+
+        .artigo-content {
+            margin: 60px auto;
+            max-width: 900px;
+        }
+
+        .artigo-corpo {
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 18px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        }
+
+        .artigo-meta {
+            display: flex;
+            gap: 16px;
+            align-items: center;
+            margin-bottom: 32px;
+            flex-wrap: wrap;
+        }
+
+        .tempo-leitura {
+            font-family: 'Comic Relief', cursive;
+            color: #666;
+            font-size: 14px;
+        }
+
+        .artigo-corpo h3 {
+            font-family: 'Sour Gummy', cursive;
+            color: #0f55b2;
+            font-size: 28px;
+            margin-top: 32px;
+            margin-bottom: 16px;
+        }
+
+        .artigo-corpo h3:first-of-type {
+            margin-top: 0;
+        }
+
+        .artigo-corpo p {
+            font-family: 'Comic Relief', cursive;
+            font-size: 16px;
+            line-height: 1.8;
+            color: #333;
+            text-align: justify;
+            margin-bottom: 16px;
+        }
+
+        .livro-resenha {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-left: 4px solid #0f55b2;
+            margin: 24px 0;
+            border-radius: 8px;
+        }
+
+        .livro-resenha h4 {
+            font-family: 'Sour Gummy', cursive;
+            color: #0f55b2;
+            font-size: 18px;
+            margin: 0 0 12px 0;
+        }
+
+        .livro-resenha p {
+            margin: 0;
+            font-size: 15px;
+        }
+
+        .artigo-corpo ul {
+            margin: 24px 0;
+            padding-left: 24px;
+        }
+
+        .artigo-corpo ul li {
+            margin-bottom: 12px;
+            line-height: 1.8;
+        }
+    </style>
+
+</body>
+</html>
