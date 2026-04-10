@@ -3,49 +3,246 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bibliosfera</title>
-    <link rel="stylesheet"  href="home.css">
-  <link rel="shortcut icon" href="img/logo.png">
-    <script src="script.js"></script>
-    <!-- Fontes(Google Fonts) -->
+    <title>Como Criar o Hábito de Ler Diariamente - Bibliosfera</title>
+    <link rel="stylesheet" href="../home.css">
+    <link rel="shortcut icon" href="../img/logo.png">
+    <script src="../script.js"></script>
+    <!-- Fontes (Google Fonts) -->
     <link href="https://fonts.googleapis.com/css2?family=Sour+Gummy:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Comic+Relief:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Comic+Relief:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body id="topo">
 
-      <header>
+    <header>
         <div class="dvh">
-            <a href="#topo" class="topo" title="Ir para o início" aria-label="Ir para o início da página">
-                <img src="img/logo.png" alt="Logo da Bibliosfera" class="logo" />
+            <a href="../index.php" class="topo" title="Ir para o início" aria-label="Ir para o início da página">
+                <img src="../img/logo.png" alt="Logo da Bibliosfera" class="logo" />
                 <h1 class="tituloh">Bibliosfera</h1>
             </a>
         </div>
 
         <nav class="nav">
             <ul class="navlinks">
-                <li><a href="resenhas.html">Resenhas</a></li>
-                <li><a href="videos.html">Vídeos</a></li>
-                <li><a href="leituras.html">Leituras</a></li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="comunidade.html">Comunidade</a></li>
-                <li><a href="perfil.php">Meu Perfil</a></li>
-                <li><a href="contato.php">Contato</a></li>
+                <li><a href="../resenhas.html">Resenhas</a></li>
+                <li><a href="../videos.html">Vídeos</a></li>
+                <li><a href="../leituras.html">Leituras</a></li>
+                <li><a href="../blog.html">Blog</a></li>
+                <li><a href="../comunidade.html">Comunidade</a></li>
+                <li><a href="../perfil.php">Meu Perfil</a></li>
+                <li><a href="../contato.php">Contato</a></li>
                 <li class="nav-login">
-                    <a href="logout.php"
+                    <a href="../logout.php"
                         class="btn-entrar"
                         id="btnEntrar"
                         type="button"
-                        title="Entrar"
+                        title="Sair"
                         aria-haspopup="dialog"
                         aria-controls="loginModal"
-                        aria-label="Entrar">
-                        <img src="https://img.icons8.com/ios-filled/50/ff9800/login-rounded-right.png" alt="Entrar">
+                        aria-label="Sair">
+                        <img src="https://img.icons8.com/ios-filled/50/ff9800/login-rounded-right.png" alt="Sair">
                         <span class="btn-text">Sair</span>
                     </a>
                 </li>
             </ul>
         </nav>
-      </header>
-      <main class="home">
+    </header>
+
+    <main class="home">
+        <!-- HERO SECTION -->
+        <section class="hero">
+            <div class="hero-text">
+                <h2>Como Criar o Hábito de Ler Diariamente</h2>
+                <p>
+                    Dicas práticas e estratégias comprovadas para incorporar a leitura na sua rotina e manter a consistência ao longo do tempo. Descubra como transformar a leitura em um hábito que durará a vida toda.
+                </p>
+
+                <div class="hero-actions">
+                    <a href="#conteudo" class="btn-primary" role="button" aria-label="Ler Artigo" data-scroll>Ler Artigo</a>
+                    <a href="../blog.html" class="btn-secondary" role="button" aria-label="Voltar ao Blog" data-scroll>← Blog</a>
+                </div>
+            </div>
+
+            <div class="hero-image">
+                <img src="../img/leitura.webp" alt="Ilustração de leitura">
+            </div>
+        </section>
+
+        <!-- CONTEÚDO DO ARTIGO -->
+        <section class="artigo-content" id="conteudo">
+            <article class="artigo-corpo">
+                <div class="artigo-meta">
+                    <span class="tag leitura" style="font-family: var(--fonte-titulo);">Leitura </span>
+                    <span class="tempo-leitura">📚 6 min de leitura</span>
+                </div>
+
+                <h3>Entendendo a Importância do Hábito</h3>
+                <p>
+                    Criar um hábito de leitura diária não é apenas sobre ler mais livros. É sobre construir uma prática que transforma sua mente, expande seu conhecimento e oferece um escape diário do caos. Os hábitos são comportamentos automáticos que se tornam parte de nossa rotina sem exigir força de vontade constante. Quando a leitura se torna um hábito, você não precisa mais se obrigar a ler; simplesmente acontece, tão natural quanto escovar os dentes.
+                </p>
+
+                <h3>1. Comece Com Pequenas Metas</h3>
+                <p>
+                    O erro mais comum ao criar um hábito é tentar fazer mudanças drásticas. Você não precisa ler 500 páginas por dia. Comece modestamente: 15 a 20 minutos diários. Este período inicial treina seu cérebro a reconhecer a leitura como parte da sua rotina sem criar resistência. Após duas a três semanas, aumente gradualmente para 30 minutos. Este bom e lento é cientificamente comprovado como mais efetivo para criar hábitos duradouros. A consistência importa mais do que quantidade.
+                </p>
+
+                <h3>2. Escolha o Momento Certo</h3>
+                <p>
+                    A hora do dia importa. Identifique quando você tem mais energia mental e está menos distraído. Para alguns, é ao acordar com um café. Para outros, antes de dormir. A chave é escolher um horário que já existe naturalmente em sua rotina, para que a leitura se integre facilmente. Se você já passa 10 minutos na internet ao acordar, substitua isso pela leitura. Se dorme 30 minutos assistindo TV, troquem pela leitura. Ao ancorá-la em um comportamento existente, você reduz a fricção necessária para manter o hábito.
+                </p>
+
+                <h3>3. Crie um Ambiente Propício</h3>
+                <p>
+                    Seu ambiente físico influencia diretamente sua capacidade de manter um hábito. Reserve um espaço confortável, bem iluminado e livre de distrações. Pode ser uma poltrona no canto da sala, uma janela da sala de estar ou até um canto do quarto. Personalize este espaço: adicione uma manta aconchegante, um abajur para melhor iluminação, talvez uma xícara de chá à mão. Este espaço se torna associado a conforto e prazer, tornando mais provável que você retorne a ele. Seu cérebro aprenderá a reconhecer este espaço como "tempo de leitura".
+                </p>
+
+                <h3>4. Elimine Distrações Digitais</h3>
+                <p>
+                    Smartphones e notificações são os maiores inimigos do hábito de leitura. Desligue seu telefone ou coloque-o em outro cômodo durante seu tempo de leitura. Notificações constantes quebram a imersão e treinam seu cérebro a abandonar tarefas. Mesmo que você não responda às notificações, o conhecimento de que elas existem reduz sua concentração. Esta prática, chamada de "cost of switching", cientificamente demonstra que apenas estar ciente de um dispositivo próximo reduz foco. Crie um espaço livre de tecnologia para ler.
+                </p>
+
+                <h3>5. Escolha Livros que Realmente o Interessam</h3>
+                <p>
+                    Muitas pessoas abandonam a leitura porque estão lendo "o que deveriam" em vez de "o que querem". Autorização a si mesmo para ler o que o excita. Ficção científica, romance, mistério, autoajuda, graphic novels — não importa. Se você espera até estar com vontade de ler apenas pelo valor educacional, o hábito não se sustentará. Escolha livros que o façam virar as páginas com entusiasmo. Um livro que te entedia é um enemigo do hábito; descarte-o sem culpa.
+                </p>
+
+                <h3>6. Use a Técnica da Cadeia Contínua</h3>
+                <p>
+                    Marque cada dia em que você lê em um calendário. Vendo a cadeia de dias crescer cria satisfação psicológica e aumenta a motivação em não quebrar a sequência. Este método visual é extraordinariamente efetivo em hábitos diários. Você começa a ler não porque adora aquele dia, mas porque não quer quebrar a cadeia. Esta tática, combinada com suas outras estratégias, acelera dramaticamente a sedimentação do hábito. Não existe regra de ouro; alguns dias você lerá 10 minutos, outros uma hora. O importante é manter a cadeia viva.
+                </p>
+
+                <h3>7. Acompanhe Seu Progresso</h3>
+                <p>
+                    Mantenha um registro: número de páginas lidas, livros completados, autores descobertos. Alguns leitores mantêm aplicativos como Goodreads ou Skoob para rastrear progresso e conectar-se com outros leitores. Visualizar progresso—dois livros este mês, quatro livros dados a conhecer—reforça o comportamento. Seu cérebro adora dados e reconhecimento. Cada livro concluído é uma vitória que justifica continuar o hábito.
+                </p>
+
+                <h3>8. Prepare-se Para Lapsos e Não Desista</h3>
+                <p>
+                    Haverá dias em que não terá tempo ou energia para ler. Isto é normal, não é falha. A diferença entre aqueles que mantêm hábitos e aqueles que não é que os bem-sucedidos não veem um lapso como o fim da jornada. Se você perde um dia, simples: volta no dia seguinte. Pesquisas mostram que é necessário apenas um lapso para não prejudicar um hábito; é múltiplos lapsos consecutivos que o matam. Perdoe-se. Continue.
+                </p>
+
+                <h3>9. Experimente Formatos Diferentes</h3>
+                <p>
+                    Nem todos os dias você terá 30 minutos para sentar e ler. Alguns dias, audiolivros enquanto caminha ou cozinha contam. Ler um artigo no celular sobre um tópico que o fascina conta. Ler uma graphic novel de 30 páginas conta. Flexibilidade em formato mantém o hábito vivo quando a vida fica caótica. O importante é manter o comprometimento com a leitura como parte da sua rotina, mesmo que a forma mude.
+                </p>
+
+                <h3>10. Conecte-se Com Comunidades de Leitura</h3>
+                <p>
+                    Participar de clubes de livros, grupos online ou comunidades de leitura adiciona responsabilidade social ao hábito. Quando você se compromete com outros leitores para discutir um livro, há pressão positiva para completá-lo. Adicionalmente, discussões enriquecem a experiência de leitura. Você descobre perspectivas que não havia considerado. Esta dimensão social torna a leitura menos solitária e mais recompensadora, reforçando o desejo de continuar lendo.
+                </p>
+
+                <h3>Conclusão: A Paciência Traz Recompensas</h3>
+                <p>
+                    Criar um hábito de leitura diária é uma jornada, não uma corrida. Leva em média 66 dias para um comportamento se tornar automático. Nas primeiras semanas, exigirá intenção e esforço. Mas gradualmente, a leitura começará a sentir tão natural quanto qualquer outra parte da sua rotina. Os benefícios são imensos: melhor concentração, vasto conhecimento, melhor sono, menos estresse. Cada página virada é um investimento em si mesmo. Comece pequeno, seja consistente e paciente. O hábito virá.
+                </p>
+            </article>
+        </section>
+
+        <!-- CTA FINAL -->
+        <section class="cta">
+            <h3>Comece Sua Jornada de Leitura Hoje</h3>
+            <p>
+                Descubra mais artigos, resenhas e análises que expandem sua forma de enxergar a leitura.
+            </p>
+            <a href="../blog.html" class="btn-primary">Explorar mais artigos</a>
+        </section>
+
+    </main>
+
+    <!-- Footer padronizado -->
+    <footer style="width: 100%; background-color: #0f55b2; padding: 25px 0; margin-top: auto; display: block; box-shadow: 0 -2px 10px #0f55b2;">
+        <div style="max-width: 1200px; margin: 0 auto; padding: 0 50px; display: flex; justify-content: center; align-items: center; position: relative; box-sizing: border-box;">
+            
+            <span style="color: #ffffff; font-family: 'Sour Gummy', cursive; font-size: 18px; font-weight: 700; text-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                © 2026 - Todos os direitos reservados
+            </span>
+
+            <a href="#topo" style="position: absolute; right: 50px; border: 2px solid #ffffff; color: #ffffff; text-decoration: none; padding: 8px 18px; border-radius: 12px; font-family: 'Sour Gummy', cursive; font-weight: 600; font-size: 16px; transition: 0.3s; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+                Voltar ao topo
+            </a>
+            
+        </div>
+    </footer>
+
+    <style>
+        /* Estilos adicionais para o artigo */
+        .artigo-content {
+            margin: 60px auto;
+            max-width: 900px;
+        }
+
+        .artigo-corpo {
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 18px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        }
+
+        .artigo-meta {
+            display: flex;
+            gap: 16px;
+            align-items: center;
+            margin-bottom: 32px;
+            flex-wrap: wrap;
+        }
+
+        .tempo-leitura {
+            font-family: 'Comic Relief', cursive;
+            color: #666;
+            font-size: 14px;
+        }
+
+        .artigo-corpo h3 {
+            font-family: 'Sour Gummy', cursive;
+            color: #0f55b2;
+            font-size: 28px;
+            margin-top: 32px;
+            margin-bottom: 16px;
+        }
+
+        .artigo-corpo h3:first-of-type {
+            margin-top: 0;
+        }
+
+        .artigo-corpo p {
+            font-family: 'Comic Relief', cursive;
+            font-size: 16px;
+            line-height: 1.8;
+            color: #333;
+            text-align: justify;
+            margin-bottom: 16px;
+        }
+
+        .livro-resenha {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-left: 4px solid #0f55b2;
+            margin: 24px 0;
+            border-radius: 8px;
+        }
+
+        .livro-resenha h4 {
+            font-family: 'Sour Gummy', cursive;
+            color: #0f55b2;
+            font-size: 18px;
+            margin: 0 0 12px 0;
+        }
+
+        .livro-resenha p {
+            margin: 0;
+            font-size: 15px;
+        }
+
+        .artigo-corpo ul {
+            margin: 24px 0;
+            padding-left: 24px;
+        }
+
+        .artigo-corpo ul li {
+            margin-bottom: 12px;
+            line-height: 1.8;
+        }
+    </style>
+
+</body>
+</html>
