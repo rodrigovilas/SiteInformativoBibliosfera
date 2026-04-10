@@ -436,6 +436,7 @@ p {
 .tag {
     font-size: 12px;
     font-weight: 700;
+    font-family: var(--fonte-titulo);
     padding: 4px 10px;
     border-radius: 999px;
     width: fit-content;

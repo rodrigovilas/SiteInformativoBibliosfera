@@ -3,49 +3,241 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bibliosfera</title>
-    <link rel="stylesheet"  href="home.css">
-  <link rel="shortcut icon" href="img/logo.png">
-    <script src="script.js"></script>
-    <!-- Fontes(Google Fonts) -->
+    <title>10 Livros Essenciais para Iniciantes - Bibliosfera</title>
+    <link rel="stylesheet" href="../home.css">
+    <link rel="shortcut icon" href="../img/logo.png">
+    <script src="../script.js"></script>
+    <!-- Fontes (Google Fonts) -->
     <link href="https://fonts.googleapis.com/css2?family=Sour+Gummy:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Comic+Relief:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Comic+Relief:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body id="topo">
 
-      <header>
+    <header>
         <div class="dvh">
-            <a href="#topo" class="topo" title="Ir para o início" aria-label="Ir para o início da página">
-                <img src="img/logo.png" alt="Logo da Bibliosfera" class="logo" />
+            <a href="../index.php" class="topo" title="Ir para o início" aria-label="Ir para o início da página">
+                <img src="../img/logo.png" alt="Logo da Bibliosfera" class="logo" />
                 <h1 class="tituloh">Bibliosfera</h1>
             </a>
         </div>
 
         <nav class="nav">
             <ul class="navlinks">
-                <li><a href="resenhas.html">Resenhas</a></li>
-                <li><a href="videos.html">Vídeos</a></li>
-                <li><a href="leituras.html">Leituras</a></li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="comunidade.html">Comunidade</a></li>
-                <li><a href="perfil.php">Meu Perfil</a></li>
-                <li><a href="contato.php">Contato</a></li>
+                <li><a href="../resenhas.html">Resenhas</a></li>
+                <li><a href="../videos.html">Vídeos</a></li>
+                <li><a href="../leituras.html">Leituras</a></li>
+                <li><a href="../blog.html">Blog</a></li>
+                <li><a href="../comunidade.html">Comunidade</a></li>
+                <li><a href="../perfil.php">Meu Perfil</a></li>
+                <li><a href="../contato.php">Contato</a></li>
                 <li class="nav-login">
-                    <a href="logout.php"
+                    <a href="../logout.php"
                         class="btn-entrar"
                         id="btnEntrar"
                         type="button"
-                        title="Entrar"
+                        title="Sair"
                         aria-haspopup="dialog"
                         aria-controls="loginModal"
-                        aria-label="Entrar">
-                        <img src="https://img.icons8.com/ios-filled/50/ff9800/login-rounded-right.png" alt="Entrar">
+                        aria-label="Sair">
+                        <img src="https://img.icons8.com/ios-filled/50/ff9800/login-rounded-right.png" alt="Sair">
                         <span class="btn-text">Sair</span>
                     </a>
                 </li>
             </ul>
         </nav>
-      </header>
-      <main class="home">
+    </header>
+
+    <main class="home">
+        <!-- HERO SECTION -->
+        <section class="hero">
+            <div class="hero-text">
+                <h2>10 Livros Essenciais para Iniciantes</h2>
+                <p>
+                    Um guia prático com recomendações de livros acessíveis e envolventes para quem está começando sua jornada literária. Discover as obras que irão transformar sua relação com a leitura.
+                </p>
+
+                <div class="hero-actions">
+                    <a href="#conteudo" class="btn-primary" role="button" aria-label="Ler Artigo" data-scroll>Ler Artigo</a>
+                    <a href="../blog.html" class="btn-secondary" role="button" aria-label="Voltar ao Blog" data-scroll>← Blog</a>
+                </div>
+            </div>
+
+            <div class="hero-image">
+                <img src="../img/leitura.webp" alt="Ilustração de leitura">
+            </div>
+        </section>
+
+        <!-- CONTEÚDO DO ARTIGO -->
+        <section class="artigo-content" id="conteudo">
+            <article class="artigo-corpo">
+                <div class="artigo-meta">
+                    <span class="tag leitura" style="font-family: var(--fonte-titulo);">Leitura </span>
+                    <span class="tempo-leitura">📚 5 min de leitura</span>
+                </div>
+
+                <h3>1. O Pequeno Príncipe - Antoine de Saint-Exupéry</h3>
+                <p>
+                    Uma história que transcende gerações. "O Pequeno Príncipe" segue a jornada de um jovem príncipe que abandona seu planeta para explorar outros mundos. Através de encontros com personagens peculiares, como um rei sem súditos, um homem de negócios obsessivo e um lampião, o livro explora temas profundos como amor, amizade e o significado da vida. Com apenas 100 páginas, é perfeitamente acessível para iniciantes, mas suas lições são tão ricas que adultos continuam descobrindo novas mensagens a cada releitura.
+                </p>
+
+                <h3>2. Harry Potter e a Pedra Filosofal - J.K. Rowling</h3>
+                <p>
+                    O portal de entrada para milhões de leitores. Este primeiro livro da saga é especialmente cativante porque não apenas introduz um mundo de magia vibrante, mas também explora temas universais: amizade, coragem, lealdade e a luta entre o bem e o mal. A narrativa é ágil, os personagens são memoráveis, e J.K. Rowling constrói seu universo de forma gradual, permitindo que leitores iniciantes se sintam confortáveis e imersos. É a porta de entrada perfeita para aqueles que buscam uma série para acompanhar.
+                </p>
+
+                <h3>3. A Revolução dos Bichos - George Orwell</h3>
+                <p>
+                    Uma alegoria política disfarçada de fábula simples. Animais em uma fazenda se rebelam contra o dono humano, mas gradualmente, seus líderes começam a adotar os mesmos comportamentos oppressivos que combateram. Com menos de 150 páginas, é lição valiosa sobre poder, corrupção e revolução. O livro é rápido de ler, mas oferece profundidade suficiente para estimular reflexão. Perfeito para quem quer explorar literatura com mensagem política sem se perder em textos muito densos.
+                </p>
+
+                <h3>4. O Hobbit - J.R.R. Tolkien</h3>
+                <p>
+                    Uma aventura épica em proporções menores. Antes de se lançar em "O Senhor dos Anéis", este é o ponto de partida ideal. Bilbo, um hobbit comum, é arrastado para uma jornada heroica pela floresta, entre montanhas e contra dragões. Tolkien cria um mundo consistente com línguas, histórias e geografias próprias, mas de forma acessível e divertida. A prosa é envolvente, o ritmo mantém o leitor interessado, e a história de Bilbo é metáfora perfeita para o crescimento pessoal e sair da zona de conforto.
+                </p>
+
+                <h3>5. Dom Casmurro - Machado de Assis</h3>
+                <p>
+                    Um clássico brasileiro que permanece relevante. Dom Casmurro narra a história de amor entre Bento e Capitu na Rio de Janeiro do século XIX. Apesar de ser do século XIX, a prosa de Machado de Assis flui naturalmente para leitores modernos. O livro explora temas de ciúmes, desconfiança e dúvida existencial de forma tão profunda que cada página convida à reflexão. É leitura acessível mas intelectualmente desafiadora, oferecendo iniciantes uma introdução autêntica à literatura brasileira de qualidade.
+                </p>
+
+                <h3>6. O Cortiço - Aluísio Azevedo</h3>
+                <p>
+                    Uma fotografia vívida da vida social brasileira. "O Cortiço" retrata a vida em um cortiço no Rio de Janeiro, mostrando as perspectivas de diferentes personagens: a mulher arrojada e sensual, o português aprisionado por sua ganância, os trabalhadores pobres, as crianças. Azevedo descreve com realismo naturalista cenas do cotidiano que parecem vivas e pulsantes. O livro aborda desigualdade social, sexualidade e classe social com uma franqueza impressionante para sua época. Para iniciantes, oferece não apenas uma narrativa envolvente, mas também compreensão histórica e social do Brasil.
+                </p>
+
+                <h3>7. O Senhor das Moscas - William Golding</h3>
+                <p>
+                    Uma exploração perturbadora da natureza humana. Crianças naufragam em uma ilha deserta e, ao tentar se organizar, descortinam aspectos sombrios do comportamento humano: tribalismos, violência, conformismo. Apesar de seus temas pesados e perturbadores, é uma leitura essencial que desafia o leitor a questionar suposições sobre civilização, moralidade e política. Com aproximadamente 250 páginas, é conciso o suficiente para manter o ritmo, mas profundo o suficiente para deixar cicatrizes emocionais duradouras.
+                </p>
+
+                <h3>8. O Código da Vinci - Dan Brown</h3>
+                <p>
+                    Um thriller que não deixa você soltá-lo. Robert Langdon, professor de simbologia, é arrastado em uma caçada ao tesouro repleta de mistérios, códigos e reviravoltas. O livro é construído com pacing perfeito: cada capítulo termina com um cliffhanger que força você a continuar lendo. Apesar de sua complexidade temática sobre arte, história e religião, Brown apresenta as informações de forma acessível sem sacrificar a intriga. Para iniciantes que buscam adrenalina e entretenimento, é uma porta de entrada perfeita para o gênero de suspense.
+                </p>
+
+                <h3>9. 1984 - George Orwell</h3>
+                <p>
+                    Um pesadelo distópico que ressoa ainda hoje. Em um futuro onde um governo totalitário controla cada aspecto da vida, o trabalho é escravatura e a verdade é ficção, um homem tenta preservar sua humanidade. 1984 é mais longo e desafiador que os outros livros desta lista, mas a prosa é envolvente e as ideias são tão relevantes hoje quanto quando foi escrito. Oferece a iniciantes uma oportunidade de explorar ficção científica social e questionar sistemas de poder. É leitura que expande horizontes mentais.
+                </p>
+
+                <h3>10. Cem Anos de Solidão - Gabriel García Márquez</h3>
+                <p>
+                    Uma obra-prima do realismo mágico. A história de sete gerações da família Buendía em Macondo — uma cidade onde o fantástico é tão comum quanto o ordinário — é tecida de forma magistral. Márquez mistura o impossível com o real: uma mulher sobe aos céus enquanto dobra roupa, chuvas duram quase cinco anos, um personagem é mais um não-lugar do que uma pessoa. Para iniciantes prontos para um desafio literário maior, este livro oferece uma experiência única de leitura que transcende o que eles podem estar acostumados. Cada releitura revela novas camadas.
+                </p>
+
+                <h3>Como Começar?</h3>
+                <p>
+                    Estes 10 livros representam diferentes gêneros, valores e desafios. Não precisa começar pelo primeiro. Escolha baseado no que mais lhe atrai: buscas magia? Comece com Harry Potter. Procura por reflexão? Tente O Pequeno Príncipe. Quer adrenalina? O Código da Vinci espera por você. O importante é começar, porque cada livro terminado aumenta sua confiança e conhecimento, preparando-o para explorar ainda mais. Feliz leitura!
+                </p>
+            </article>
+        </section>
+
+        <!-- CTA FINAL -->
+        <section class="cta">
+            <h3>Continue Sua Jornada Literária</h3>
+            <p>
+                Descubra mais artigos, resenhas e análises que expandem sua forma de enxergar a leitura.
+            </p>
+            <a href="../leituras.html" class="btn-primary">Explorar mais leituras</a>
+        </section>
+
+    </main>
+
+    <!-- Footer padronizado -->
+    <footer style="width: 100%; background-color: #0f55b2; padding: 25px 0; margin-top: auto; display: block; box-shadow: 0 -2px 10px #0f55b2;">
+        <div style="max-width: 1200px; margin: 0 auto; padding: 0 50px; display: flex; justify-content: center; align-items: center; position: relative; box-sizing: border-box;">
+            
+            <span style="color: #ffffff; font-family: 'Sour Gummy', cursive; font-size: 18px; font-weight: 700; text-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                © 2026 - Todos os direitos reservados
+            </span>
+
+            <a href="#topo" style="position: absolute; right: 50px; border: 2px solid #ffffff; color: #ffffff; text-decoration: none; padding: 8px 18px; border-radius: 12px; font-family: 'Sour Gummy', cursive; font-weight: 600; font-size: 16px; transition: 0.3s; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+                Voltar ao topo
+            </a>
+            
+        </div>
+    </footer>
+
+    <style>
+        /* Estilos adicionais para o artigo */
+        .artigo-content {
+            margin: 60px auto;
+            max-width: 900px;
+        }
+
+        .artigo-corpo {
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 18px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        }
+
+        .artigo-meta {
+            display: flex;
+            gap: 16px;
+            align-items: center;
+            margin-bottom: 32px;
+            flex-wrap: wrap;
+        }
+
+        .tempo-leitura {
+            font-family: 'Comic Relief', cursive;
+            color: #666;
+            font-size: 14px;
+        }
+
+        .artigo-corpo h3 {
+            font-family: 'Sour Gummy', cursive;
+            color: #0f55b2;
+            font-size: 28px;
+            margin-top: 32px;
+            margin-bottom: 16px;
+        }
+
+        .artigo-corpo h3:first-of-type {
+            margin-top: 0;
+        }
+
+        .artigo-corpo p {
+            font-family: 'Comic Relief', cursive;
+            font-size: 16px;
+            line-height: 1.8;
+            color: #333;
+            text-align: justify;
+            margin-bottom: 16px;
+        }
+
+        .livro-resenha {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-left: 4px solid #0f55b2;
+            margin: 24px 0;
+            border-radius: 8px;
+        }
+
+        .livro-resenha h4 {
+            font-family: 'Sour Gummy', cursive;
+            color: #0f55b2;
+            font-size: 18px;
+            margin: 0 0 12px 0;
+        }
+
+        .livro-resenha p {
+            margin: 0;
+            font-size: 15px;
+        }
+
+        .artigo-corpo ul {
+            margin: 24px 0;
+            padding-left: 24px;
+        }
+
+        .artigo-corpo ul li {
+            margin-bottom: 12px;
+            line-height: 1.8;
+        }
+    </style>
+
+</body>
+</html>
