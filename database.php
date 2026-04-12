@@ -14,6 +14,9 @@ if (file_exists($envFile)) {
     die("Erro: Faltando o arquivo .env");
 }
 
+// Define o fuso horário do sistema para Brasília
+date_default_timezone_set('America/Sao_Paulo');
+
 $host = $_ENV['DB_HOST'];    
 $port = $_ENV['DB_PORT'];                
 $user = $_ENV['DB_USER'];                
@@ -24,6 +27,8 @@ try{
     $options = [
         PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
         PDO::MYSQL_ATTR_SSL_VERIFY_SERVER_CERT => false, 
+        // Define o fuso horário do banco de dados na conexão
+        PDO::MYSQL_ATTR_INIT_COMMAND => "SET time_zone = '-03:00'"
     ];
 
     // Cria uma nova conexão PDO com o banco de dados MySQL

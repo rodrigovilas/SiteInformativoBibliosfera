@@ -28,6 +28,7 @@ try {
         $stmt_h->execute(['id_u' => $id_usuario, 'id_l' => $livro['id_livro']]);
         $livro['historico'] = $stmt_h->fetchAll(PDO::FETCH_ASSOC);
     }
+    unset($livro); // Limpa a referência para evitar duplicação no próximo loop
 } catch (PDOException $e) {
     echo "Erro: " . $e->getMessage();
 }
