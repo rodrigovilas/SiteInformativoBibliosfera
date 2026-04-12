@@ -634,74 +634,214 @@ footer {
 }
 
 /* FORMULÁRIO ADICIONAR LIVRO */
-#book-form {
-    display: grid;
-    gap: 16px;
-    max-width: 400px;
-    margin: 0 auto;
+.add-book-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
 }
 
-#book-form label {
-    font-weight: 600;
+.form-card {
+    width: 100%;
+    max-width: 500px;
+    background: #ffffff;
+    padding: 32px;
+    border-radius: 18px;
+    box-shadow: 0 10px 30px rgba(15,85,178,0.1);
+    border-top: 5px solid #ff9800;
+}
+
+.form-card h3 {
+    text-align: center;
     color: #0f55b2;
+    margin-top: 0;
+    margin-bottom: 24px;
+    font-family: var(--fonte-titulo);
 }
 
-#book-form input {
-    padding: 12px;
+.form-group {
+    margin-bottom: 16px;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.form-group label {
+    font-weight: 600;
+    color: #082f5b;
+    margin-bottom: 6px;
+    font-family: var(--fonte-principal);
+}
+
+.form-group input,
+.form-group textarea {
+    padding: 12px 16px;
     border: 1px solid #ddd;
     border-radius: 8px;
     font-size: 16px;
+    font-family: var(--fonte-principal);
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #0f55b2;
+    box-shadow: 0 0 0 3px rgba(15,85,178,0.1);
+}
+
+.form-actions {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    margin-top: 24px;
+}
+.form-actions button {
+    flex: 1;
 }
 
 /* CARDS DE PROGRESSO */
 .progress-card {
     background-color: #ffffff;
-    padding: 24px;
+    padding: 28px;
     border-radius: 18px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    box-shadow: 0 10px 30px rgba(15,85,178,0.1);
     display: flex;
     flex-direction: column;
     gap: 16px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    border-bottom: 4px solid transparent;
+}
+.progress-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 18px 40px rgba(15,85,178,0.15);
+    border-bottom: 4px solid #0f55b2;
 }
 
-.progress-card h4 {
-    font-size: 20px;
+.progress-info {
+    text-align: left;
+}
+
+.progress-info h4 {
+    margin: 0 0 8px 0;
+    font-size: 22px;
     color: #0f55b2;
-    margin: 0;
+    font-family: var(--fonte-titulo);
 }
-
-.progress-card p {
+.author-text {
+    color: #666;
     margin: 0;
+    font-weight: 600;
+}
+.pages-text {
+    color: #082f5b;
+    margin: 12px 0 0 0;
+    font-family: var(--fonte-principal);
     font-size: 14px;
+    font-weight: bold;
 }
 
 .progress-bar {
     width: 100%;
-    height: 8px;
-    background-color: #e0e0e0;
-    border-radius: 4px;
+    height: 10px;
+    background-color: #e0eaff;
+    border-radius: 5px;
     overflow: hidden;
+    margin-top: auto;
 }
 
 .progress-fill {
     height: 100%;
     background: linear-gradient(90deg, #0f55b2, #ff9800);
-    transition: width 0.3s ease;
+    transition: width 0.4s ease-out;
+}
+
+.progress-actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 8px;
 }
 
 .update-btn {
-    background-color: #ff9800;
+    background: linear-gradient(135deg, #ff9800, #f57c00);
     color: white;
     border: none;
-    padding: 8px 16px;
-    border-radius: 8px;
+    padding: 10px 24px;
+    border-radius: 999px;
     cursor: pointer;
     font-weight: 600;
-    transition: background 0.3s;
+    font-family: var(--fonte-titulo);
+    font-size: 16px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 6px 16px rgba(255, 152, 0, 0.25);
+    flex: 2;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .update-btn:hover {
-    background-color: #e68900;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 24px rgba(255, 152, 0, 0.35);
+    background: linear-gradient(135deg, #f57c00, #ff9800);
+}
+
+.delete-btn {
+    background: transparent;
+    color: #e53935;
+    border: 2px solid #e53935;
+    padding: 8px 24px;
+    border-radius: 999px;
+    cursor: pointer;
+    font-weight: 600;
+    font-family: var(--fonte-titulo);
+    font-size: 16px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease, color 0.3s ease;
+    box-shadow: 0 6px 14px rgba(229, 57, 53, 0.1);
+    flex: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.delete-btn:hover {
+    background: #e53935;
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 24px rgba(229, 57, 53, 0.25);
+}
+
+.book-comments {
+    margin-top: 16px;
+    background: #f8f9fa;
+    border-left: 4px solid #ff9800;
+    padding: 12px;
+    border-radius: 8px;
+}
+
+.book-comments h5 {
+    margin: 0 0 8px 0;
+    font-family: var(--fonte-titulo);
+    font-size: 16px;
+    color: #0f55b2;
+}
+
+.book-comments ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.book-comments li {
+    font-family: var(--fonte-corpo);
+    font-size: 15px;
+    margin-bottom: 6px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 6px;
+}
+.book-comments li:last-child {
+    margin-bottom: 0;
+    border-bottom: none;
+    padding-bottom: 0;
 }
 
 /* MODAL PARA ATUALIZAÇÃO */
@@ -712,49 +852,53 @@ footer {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0,0,0,0.5);
+    background: rgba(4, 28, 56, 0.6);
     z-index: 2000;
     justify-content: center;
     align-items: center;
+    backdrop-filter: blur(4px);
+    padding: 20px;
+    box-sizing: border-box;
 }
 
 .modal-content {
     background: white;
-    padding: 24px;
-    border-radius: 12px;
-    max-width: 400px;
-    width: 90%;
+    padding: 32px;
+    border-radius: 18px;
+    max-width: 450px;
+    width: 100%;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+    animation: modalScaleIn 0.3s ease-out forwards;
+}
+
+@keyframes modalScaleIn {
+    from { transform: scale(0.95); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
 }
 
 .modal-content h3 {
     margin-top: 0;
-}
-
-.modal-content label {
-    display: block;
-    margin-top: 12px;
-    font-weight: 600;
-}
-
-.modal-content input,
-.modal-content textarea {
-    width: 100%;
-    padding: 8px;
-    margin-top: 4px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
+    color: #0f55b2;
+    text-align: center;
+    font-size: 26px;
+    margin-bottom: 24px;
+    font-family: var(--fonte-titulo);
 }
 
 .modal-actions {
     display: flex;
-    gap: 12px;
-    margin-top: 16px;
-    justify-content: flex-end;
+    gap: 16px;
+    margin-top: 24px;
+    justify-content: space-between;
 }
 
 .modal-actions button {
-    padding: 8px 16px;
+    flex: 1;
+    padding: 12px 16px;
     border: none;
-    border-radius: 4px;
+    border-radius: 8px;
     cursor: pointer;
+    font-family: var(--fonte-titulo);
+    font-size: 16px;
+    font-weight: 600;
 }

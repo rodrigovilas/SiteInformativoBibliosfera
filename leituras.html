@@ -15,7 +15,7 @@
 	<link rel="shortcut icon" href="img/logo.png">
 	<script src="script.js"></script>
 </head>
-<body id="topo">
+<body id="topo" style="font-family: 'Sour Gummy', cursive;">
 
 	<header>
 		<div class="dvh">
@@ -53,7 +53,7 @@
 
 	<main class="home">
 
-		<!-- HERO LEITURAS -->
+	
 		<section class="hero">
 			<div class="hero-text">
 				<h2>Meu Progresso de Leitura</h2>
@@ -73,32 +73,43 @@
 			</div>
 		</section>
 
-		<!-- FORMULÁRIO PARA ADICIONAR LIVRO (OCULTO POR PADRÃO) -->
-		<section id="add-book-form" class="section" style="display: none;">
-			<h3>Adicionar Novo Livro</h3>
-			<form id="book-form">
-				<label for="book-title">Título do Livro:</label>
-				<input type="text" id="book-title" required>
+	
+		<section id="add-book-form" class="section add-book-container" style="display: none;">
+			<div class="card form-card">
+				<h3>Adicionar Novo Livro</h3>
+				<form id="book-form">
+					<div class="form-group">
+						<label for="book-title">Título do Livro:</label>
+						<input type="text" id="book-title" placeholder="Ex: O Hobbit" required>
+					</div>
 
-				<label for="book-author">Autor:</label>
-				<input type="text" id="book-author" required>
+					<div class="form-group">
+						<label for="book-author">Autor:</label>
+						<input type="text" id="book-author" placeholder="Ex: J.R.R. Tolkien" required>
+					</div>
 
-				<label for="total-pages">Total de Páginas:</label>
-				<input type="number" id="total-pages" required>
+					<div class="form-group">
+						<label for="total-pages">Total de Páginas:</label>
+						<input type="number" id="total-pages" placeholder="Ex: 320" min="1" required>
+					</div>
 
-				<button type="submit" class="btn-primary">Adicionar Livro</button>
-			</form>
-		</section>
-
-		<!-- LIVROS EM PROGRESSO -->
-		<section class="section" id="progress-section">
-			<h3>Meus Livros em Andamento</h3>
-			<div id="books-container" class="cards">
-				<!-- Livros serão inseridos aqui via JS -->
+					<div class="form-actions">
+						<button type="button" id="cancel-add-btn" class="btn-secondary">Cancelar</button>
+						<button type="submit" class="btn-primary">Salvar Livro</button>
+					</div>
+				</form>
 			</div>
 		</section>
 
-		<!-- CTA FINAL -->
+		
+		<section class="section" id="progress-section">
+			<h3>Meus Livros em Andamento</h3>
+			<div id="books-container" class="cards">
+				
+			</div>
+		</section>
+
+		
 		<section class="cta">
 			<h3>Compartilhe Seu Progresso</h3>
 			<p>
@@ -110,7 +121,28 @@
 
 	</main>
 
-	<!-- Footer padronizado -->
+	
+	<div id="update-modal" class="modal" style="display: none;">
+		<div class="modal-content">
+			<h3>Atualizar Progresso</h3>
+			<form id="update-form">
+				<div class="form-group">
+					<label for="current-page">Páginas Lidas:</label>
+					<input type="number" id="current-page" min="0" required>
+				</div>
+				<div class="form-group">
+					<label for="comment">Comentário (opcional):</label>
+					<textarea id="comment" rows="3" placeholder="O que você achou desta parte?"></textarea>
+				</div>
+				<div class="modal-actions">
+					<button type="button" id="cancel-update-btn" class="btn-secondary">Cancelar</button>
+					<button type="submit" id="save-update-btn" class="btn-primary">Salvar</button>
+				</div>
+			</form>
+		</div>
+	</div>
+
+	
 	<footer style="width: 100%; background-color: #0f55b2; padding: 25px 0; margin-top: auto; display: block; box-shadow: 0 -2px 10px #0f55b2;">
 		<div style="max-width: 1200px; margin: 0 auto; padding: 0 50px; display: flex; justify-content: center; align-items: center; position: relative; box-sizing: border-box;">
 			
@@ -122,22 +154,33 @@
 				Voltar ao topo
 			</a>
 			
-		</div>
-	</footer>
-
-	<script>
+		</div>	<script>
 document.addEventListener('DOMContentLoaded', function() {
     const addBookBtn = document.getElementById('add-book-btn');
     const addBookForm = document.getElementById('add-book-form');
     const bookForm = document.getElementById('book-form');
+    const cancelAddBtn = document.getElementById('cancel-add-btn');
     const booksContainer = document.getElementById('books-container');
 
-    // Toggle form
+    const updateModal = document.getElementById('update-modal');
+    const updateForm = document.getElementById('update-form');
+    const cancelUpdateBtn = document.getElementById('cancel-update-btn');
+    let currentBookId = null;
+
+    
     addBookBtn.addEventListener('click', () => {
-        addBookForm.style.display = addBookForm.style.display === 'none' ? 'block' : 'none';
+        addBookForm.style.display = addBookForm.style.display === 'none' ? 'flex' : 'none';
+        if(addBookForm.style.display === 'flex'){
+            setTimeout(()=> addBookForm.scrollIntoView({behavior: "smooth", block: "center"}), 100);
+        }
     });
 
-    // Add book
+    cancelAddBtn.addEventListener('click', () => {
+        addBookForm.style.display = 'none';
+        bookForm.reset();
+    });
+
+    
     bookForm.addEventListener('submit', (e) => {
         e.preventDefault();
         const title = document.getElementById('book-title').value;
@@ -159,73 +202,107 @@ document.addEventListener('DOMContentLoaded', function() {
         addBookForm.style.display = 'none';
     });
 
-    // Render books
+    
     function renderBooks() {
         const books = getBooks();
         booksContainer.innerHTML = '';
+        
+        if (books.length === 0) {
+            booksContainer.innerHTML = '<p style="grid-column: 1/-1; text-align: center; color: #666; font-size: 18px; margin-top: 20px;">Você ainda não tem livros em andamento. Adicione um livro para começar!</p>';
+            return;
+        }
+
         books.forEach(book => {
-            const progressPercent = (book.currentPage / book.totalPages) * 100;
+            const progressPercent = Math.min((book.currentPage / book.totalPages) * 100, 100);
             const card = document.createElement('article');
             card.className = 'progress-card';
+
+            
+            let commentsHTML = '';
+            if (book.updates && book.updates.length > 0) {
+                const validUpdates = book.updates.filter(u => u.comment && u.comment.trim() !== '');
+                if (validUpdates.length > 0) {
+                    commentsHTML = `
+                        <div class="book-comments">
+                            <h5>Comentários:</h5>
+                            <ul>
+                                ${validUpdates.map(u => `<li><strong>Pág ${u.pages}:</strong> ${u.comment}</li>`).join('')}
+                            </ul>
+                        </div>
+                    `;
+                }
+            }
+
             card.innerHTML = `
-                <h4>${book.title}</h4>
-                <p>Por ${book.author}</p>
-                <p>Páginas: ${book.currentPage}/${book.totalPages}</p>
+                <div class="progress-info">
+                    <h4>📖 ${book.title}</h4>
+                    <p class="author-text">Por ${book.author}</p>
+                    <p class="pages-text">Páginas: ${book.currentPage} de ${book.totalPages} (${Math.round(progressPercent)}%)</p>
+                </div>
                 <div class="progress-bar">
                     <div class="progress-fill" style="width: ${progressPercent}%"></div>
                 </div>
-                <button class="update-btn" data-id="${book.id}">Atualizar Progresso</button>
+                ${commentsHTML}
+                <div class="progress-actions" style="display: flex; gap: 12px; margin-top: 16px;">
+                    <button class="delete-btn" data-id="${book.id}" style="flex: 1; background: transparent; color: #e53935; border: 2px solid #e53935; padding: 10px 24px; border-radius: 999px; cursor: pointer; font-weight: 600; font-family: 'Sour Gummy', cursive; font-size: 16px; transition: all 0.3s ease; display: inline-flex; align-items: center; justify-content: center;" onmouseover="this.style.background='#e53935'; this.style.color='white'; this.style.transform='translateY(-3px)';" onmouseout="this.style.background='transparent'; this.style.color='#e53935'; this.style.transform='translateY(0)';">Excluir</button>
+                    <button class="update-btn" data-id="${book.id}" style="flex: 2; background: linear-gradient(135deg, #ff9800, #f57c00); color: white; border: none; padding: 10px 24px; border-radius: 999px; cursor: pointer; font-weight: 600; font-family: 'Sour Gummy', cursive; font-size: 16px; transition: all 0.3s ease; box-shadow: 0 6px 16px rgba(255, 152, 0, 0.25); display: inline-flex; align-items: center; justify-content: center;" onmouseover="this.style.transform='translateY(-3px)';" onmouseout="this.style.transform='translateY(0)';">Atualizar</button>
+                </div>
             `;
             booksContainer.appendChild(card);
         });
 
-        // Add event listeners to update buttons
+        
         document.querySelectorAll('.update-btn').forEach(btn => {
             btn.addEventListener('click', (e) => {
-                const bookId = parseInt(e.target.dataset.id);
+                const bookId = parseInt(e.currentTarget.dataset.id);
                 showUpdateModal(bookId);
+            });
+        });
+
+        
+        document.querySelectorAll('.delete-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                const bookId = parseInt(e.currentTarget.dataset.id);
+                if (confirm('Tem certeza que deseja excluir este livro?')) {
+                    deleteBook(bookId);
+                }
             });
         });
     }
 
-    // Show update modal
+    
     function showUpdateModal(bookId) {
-        const modal = document.createElement('div');
-        modal.className = 'modal';
-        modal.innerHTML = `
-            <div class="modal-content">
-                <h3>Atualizar Progresso</h3>
-                <label for="current-page">Páginas Lidas:</label>
-                <input type="number" id="current-page" min="0">
-                <label for="comment">Comentário (opcional):</label>
-                <textarea id="comment" rows="3"></textarea>
-                <div class="modal-actions">
-                    <button id="cancel-btn">Cancelar</button>
-                    <button id="save-btn" class="btn-primary">Salvar</button>
-                </div>
-            </div>
-        `;
-        document.body.appendChild(modal);
-        modal.style.display = 'flex';
-
         const book = getBooks().find(b => b.id === bookId);
-        document.getElementById('current-page').value = book.currentPage;
+        if (book) {
+            currentBookId = bookId;
+            const currentInput = document.getElementById('current-page');
+            currentInput.value = book.currentPage;
+            currentInput.max = book.totalPages;
+            document.getElementById('comment').value = '';
+            
+            updateModal.style.display = 'flex';
+        }
+    }
 
-        document.getElementById('cancel-btn').addEventListener('click', () => {
-            modal.remove();
-        });
+    cancelUpdateBtn.addEventListener('click', () => {
+        updateModal.style.display = 'none';
+        currentBookId = null;
+    });
 
-        document.getElementById('save-btn').addEventListener('click', () => {
+    updateForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        if (currentBookId !== null) {
             const currentPage = parseInt(document.getElementById('current-page').value);
             const comment = document.getElementById('comment').value;
 
-            updateBookProgress(bookId, currentPage, comment);
-            modal.remove();
+            updateBookProgress(currentBookId, currentPage, comment);
+            updateModal.style.display = 'none';
+            currentBookId = null;
             renderBooks();
-        });
-    }
+        }
+    });
 
-    // LocalStorage functions
+    
     function getBooks() {
         return JSON.parse(localStorage.getItem('readingBooks') || '[]');
     }
@@ -234,6 +311,13 @@ document.addEventListener('DOMContentLoaded', function() {
         const books = getBooks();
         books.push(book);
         localStorage.setItem('readingBooks', JSON.stringify(books));
+    }
+
+    function deleteBook(bookId) {
+        let books = getBooks();
+        books = books.filter(b => b.id !== bookId);
+        localStorage.setItem('readingBooks', JSON.stringify(books));
+        renderBooks();
     }
 
     function updateBookProgress(bookId, currentPage, comment) {
@@ -248,7 +332,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     comment
                 };
                 books[bookIndex].updates.push(update);
-                // Save to global updates for community
+                
                 saveGlobalUpdate(update, books[bookIndex]);
             }
             localStorage.setItem('readingBooks', JSON.stringify(books));
@@ -265,7 +349,7 @@ document.addEventListener('DOMContentLoaded', function() {
         localStorage.setItem('globalUpdates', JSON.stringify(globalUpdates));
     }
 
-    // Initial render
+    
     renderBooks();
 });
 </script>
