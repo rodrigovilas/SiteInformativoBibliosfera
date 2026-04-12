@@ -3,49 +3,308 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bibliosfera</title>
-    <link rel="stylesheet"  href="home.css">
-  <link rel="shortcut icon" href="img/logo.png">
-    <script src="script.js"></script>
-    <!-- Fontes(Google Fonts) -->
+    <title>Literatura Brasileira: Autores Que Você Deve Conhecer - Bibliosfera</title>
+    <link rel="stylesheet" href="../home.css">
+    <link rel="shortcut icon" href="../img/logo.png">
+    <script src="../script.js"></script>
+    <!-- Fontes (Google Fonts) -->
     <link href="https://fonts.googleapis.com/css2?family=Sour+Gummy:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Comic+Relief:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Comic+Relief:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body id="topo">
 
-      <header>
+    <header>
         <div class="dvh">
-            <a href="#topo" class="topo" title="Ir para o início" aria-label="Ir para o início da página">
-                <img src="img/logo.png" alt="Logo da Bibliosfera" class="logo" />
+            <a href="../home.html" class="topo" title="Ir para o início" aria-label="Ir para o início da página">
+                <img src="../img/logo.png" alt="Logo da Bibliosfera" class="logo" />
                 <h1 class="tituloh">Bibliosfera</h1>
             </a>
         </div>
 
         <nav class="nav">
             <ul class="navlinks">
-                <li><a href="resenhas.html">Resenhas</a></li>
-                <li><a href="videos.html">Vídeos</a></li>
-                <li><a href="leituras.html">Leituras</a></li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="comunidade.html">Comunidade</a></li>
-                <li><a href="perfil.php">Meu Perfil</a></li>
-                <li><a href="contato.php">Contato</a></li>
+                <li><a href="../resenhas.html">Resenhas</a></li>
+                <li><a href="../videos.html">Vídeos</a></li>
+                <li><a href="../leituras.html">Leituras</a></li>
+                <li><a href="../blog.html">Blog</a></li>
+                <li><a href="../comunidade.html">Comunidade</a></li>
+                <li><a href="../perfil.php">Meu Perfil</a></li>
+                <li><a href="../contato.php">Contato</a></li>
                 <li class="nav-login">
-                    <a href="logout.php"
+                    <a href="../logout.php"
                         class="btn-entrar"
                         id="btnEntrar"
                         type="button"
-                        title="Entrar"
+                        title="Sair"
                         aria-haspopup="dialog"
                         aria-controls="loginModal"
-                        aria-label="Entrar">
-                        <img src="https://img.icons8.com/ios-filled/50/ff9800/login-rounded-right.png" alt="Entrar">
+                        aria-label="Sair">
+                        <img src="https://img.icons8.com/ios-filled/50/ff9800/login-rounded-right.png" alt="Sair">
                         <span class="btn-text">Sair</span>
                     </a>
                 </li>
             </ul>
         </nav>
-      </header>
-      <main class="home">
+    </header>
+
+    <main class="home">
+        <!-- HERO SECTION -->
+        <section class="hero">
+            <div class="hero-text">
+                <h2>Literatura Brasileira: Autores Que Você Deve Conhecer</h2>
+                <p>
+                    Um mergulho na riqueza da literatura brasileira, explorando os autores mais influentes e suas obras imortais. Descubra as vozes que moldaram nossa identidade cultural e continuam inspirando gerações de leitores.
+                </p>
+
+                <div class="hero-actions">
+                    <a href="#conteudo" class="btn-primary" role="button" aria-label="Ler Artigo" data-scroll>Ler Artigo</a>
+                    <a href="../blog.html" class="btn-secondary" role="button" aria-label="Voltar ao Blog" data-scroll>← Blog</a>
+                </div>
+            </div>
+
+            <div class="hero-image">
+                <img src="../img/leitura.webp" alt="Ilustração de leitura">
+            </div>
+        </section>
+
+        <!-- CONTEÚDO DO ARTIGO -->
+        <section class="artigo-content" id="conteudo">
+            <article class="artigo-corpo">
+                <div class="artigo-meta">
+                    <span class="tag leitura" style="font-family: var(--fonte-titulo);">Leitura</span>
+                    <span class="tempo-leitura">📚 10 min de leitura</span>
+                </div>
+
+                <h3>A Riqueza da Literatura Brasileira</h3>
+                <p>
+                    A literatura brasileira é um tesouro único de vozes diversas, experiências multifacetadas e perspectivas que refletem a complexidade de nossa identidade nacional. Desde o período colonial até os dias contemporâneos, escritores brasileiros criaram obras que ecoam não apenas em nosso país, mas no cenário literário mundial. Nossa literatura é marcada pela mistura de influências indígenas, africanas, portuguesas e outras culturas que se entrelaçam formando uma narrativa genuinamente brasileira. Este artigo convida você a conhecer alguns dos autores mais importantes que moldaram, e continuam moldando, a história da literatura no Brasil.
+                </p>
+
+                <h3>Machado de Assis: O Mestre da Prosa</h3>
+                <div class="autor-card">
+                    <img src="../img/machado.png" alt="Machado de Assis" class="autor-imagem">
+                    <div class="autor-info">
+                        <p>
+                            Joaquim Maria Machado de Assis (1839-1908) é amplamente considerado o maior nome da literatura brasileira. Nascido no Rio de Janeiro, Machado transcendeu as limitações sociais de sua época para criar obra que permanece absolutamente contemporânea. Seus romances—"Dom Casmurro," "Quincas Borba," "Memórias Póstumas de Brás Cubas"—exploram psicologia humana com ironia aguçada e perspicácia penetrante. Machado é mestre da narrativa não confiável; suas vozes narrativas frequentemente mentem, auto-enganam e revelam hipocrisia social através de confissões aparentemente inocentes. Sua prosa é densa, repleta de digressões, reflexões filosóficas e humor que exige leitura atenta. Machado antecipou técnicas modernistas décadas antes de elas se tornarem tendência, consolidando seu lugar como gênio literário que transcendeu seu tempo.
+                        </p>
+                    </div>
+                </div>
+
+                <h3>Carlos Drummond de Andrade: A Voz Poética Essencial</h3>
+                <div class="autor-card">
+                    <img src="../img/cda.jpeg" alt="Carlos Drummond de Andrade" class="autor-imagem">
+                    <div class="autor-info">
+                        <p>
+                            Carlos Drummond de Andrade (1902-1987) revolucionou a poesia brasileira através de linguagem coloquial, ironia e profundidade filosófica. Seu livro "Sentimento do Mundo" (1940) e "Claro Enigma" (1951) exploram contradições de existência humana com toques de humor e melancolia. Drummond recusou a eloquência declamatória de gerações anteriores, em vez disso criando verso que soa como conversa intimista mas contém profundidade metafísica. Poemas como "Sentimento do Mundo" e "A Máquina do Mundo" questionam significado, propósito e nossa relação com realidade. Drummond é poeta da ambiguidade, capaz de expressar simultânea rejeição e aceitação, desespero e esperança. Sua influência na poesia moderna brasileira é incalculável; praticamente todo poeta contemporâneo navega através do legado que Drummond estabeleceu.
+                        </p>
+                    </div>
+                </div>
+
+                <h3>Clarice Lispector: Exploradora da Consciência</h3>
+                <div class="autor-card">
+                    <img src="../img/clarice.png" alt="Clarice Lispector" class="autor-imagem">
+                    <div class="autor-info">
+                        <p>
+                            Clarice Lispector (1920-1977), nascida na Ucrânia mas criada no Brasil desde infância, trouxe linguagem experimental e investigação psicológica profunda para a prosa brasileira. Seus romances—"A Paixão Segundo G.H.," "A Hora da Estrela," "Água Viva"—desafiam estrutura narrativa convencional, mergulhando em estados de consciência com intensidade hipnótica. Lispector escreve sobre alienação existencial, busca de significado e confronto entre consciência e realidade com lirismo perturbador. "A Hora da Estrela" retrata vida de mulher pobre, ignorada e invisível com compaixão simultaneamente brutal. "A Paixão Segundo G.H." é investigação quase mística sobre estar vivo, com narrativa que se desintegra em epifania. Lispector expandiu possibilidades de ficção brasileira, insistindo que interioridade psicológica merecia sofisticação estética completa. Sua influência cresce constantemente, particularmente entre leitores contemporâneos buscando ficção introspectiva e formal ousada.
+                        </p>
+                    </div>
+                </div>
+
+                <h3>Jorge Amado: O Romancista do Povo</h3>
+                <div class="autor-card">
+                    <img src="../img/jorge-amado.jpg" alt="Jorge Amado" class="autor-imagem">
+                    <div class="autor-info">
+                        <p>
+                            Jorge Amado (1912-2001) é autor brasileiro mais amplamente lido globalmente, conhecido por narrativas que celebram povo brasileiro com calor, humor e profundo respeito. Seus romances—"Capitães da Areia," "Gabriela, Cravo e Canela," "Dona Flor e Seus Dois Maridos"—retratam vida na Bahia com cores vívidas, personagens memoráveis e enredo que prende. Amado escreve sobre trabalhadores, prostitutas, órfãos e marginalizados com dignidade e afeto; suas histórias honram experiência cotidiana das pessoas comuns. Apesar de crítica de que sua ficção é ocasionalmente superficial ou excessivamente romântica, Amado demonstrou que literatura popular e literatura séria não são categorias excludentes. Sua prosa é acessível, seus personagens são inesquecíveis, e sua celebração de cultura afro-brasileira abriu caminho para outras vozes antes marginalizadas. Amado provou que ficção brasileira podia encontrar audiência global enquanto permanecia radicalmente local, específica a seu lugar e povo.
+                        </p>
+                    </div>
+                </div>
+
+                <h3>Paulo Coelho: Filosofia e Parábola</h3>
+                <div class="autor-card">
+                    <img src="../img/paulocoelho.jpg" alt="Paulo Coelho" class="autor-imagem">
+                    <div class="autor-info">
+                        <p>
+                            Paulo Coelho (nascido 1947) é autor mais vendido da literatura brasileira internacionalmente, conhecido principalmente por "O Alquimista" (1988). Seu trabalho combina parábola, filosofia e busca espiritual em narrativas acessíveis que ressoam através culturas. "O Alquimista" retrata jornada de garoto em busca de tesouro que se revela metáfora para auto-descoberta e realização pessoal. Coelho escreve sobre destino, intuição e conexão espiritual de maneira que apela a leitores buscando significado além material. Apesar de crítica de que sua ficção é ocasionalmente simplista ou excessivamente inspiracional, ninguém pode negar impacto de Coelho em acessibilizar literatura brasileira para audiências globais massivas. Seus livros venderam centenas de milhões de cópias; "O Alquimista" provavelmente é obra brasileira mais lida no mundo. Coelho expandiu conversação sobre literatura brasileira longe de circuitos acadêmicos para atingir leitores buscando orientação espiritual e propósito existencial.
+                        </p>
+                    </div>
+                </div>
+
+                <h3>Raquel Queiroz: Voz Nordestina Pioneira</h3>
+                <div class="autor-card">
+                    <img src="../img/raquelqueiroz.jpg" alt="Raquel de Queiroz" class="autor-imagem">
+                    <div class="autor-info">
+                        <p>
+                            Raquel de Queiroz (1910-2003) foi primeira mulher a entrar para Academia Brasileira de Letras e romancista que trouxe voz autenticamente feminina para literatura brasileira. Seus romances—"O Quinze," "Dôra, Doralina," "As Três Marias"—exploram vida de mulheres nordestinas com realismo brutal e compaixão. "O Quinze" retrata seca devastadora do sertão através perspectiva de mulher enfrentando privação; "As Três Marias" narra amizade feminina profunda com sensibilidade e agudeza social. Queiroz recusou-se a conformar expectativas que circunscreviam papel de mulher na literatura; em vez disso, criou personagens femininas complexas, inteligentes e frequentemente insubordinadas. Sua linguagem combina naturalismo com lirismo; seus enredos examinam classe, gênero e poder com sofisticação. Queiroz expandiu canon literário brasileiro, insistindo que perspectiva feminina e experiência nordestina mereciam atenção e respeito literário completos.
+                        </p>
+                    </div>
+                </div>
+
+                <h3>Aluísio Azevedo: O Naturalista Revolucionário</h3>
+                <div class="autor-card">
+                    <img src="../img/aluisioazevedo.jpg" alt="Aluísio Azevedo" class="autor-imagem">
+                    <div class="autor-info">
+                        <p>
+                            Aluísio Azevedo (1857-1913) foi precursor do naturalismo brasileiro, trazendo rigor científico e observação social aguçada para ficção. Seu romance "O Cortiço" (1890) é retrato brutal de vida nas cortiços do Rio de Janeiro, onde personagens de classes populares e imigrantes navegam pobreza, crime, sexualidade e exploração. Azevedo não romantiza; em vez disso, observa com olho detalhista comportamento humano sob pressão econômica. "O Cortiço" aborda raça, classe e moralidade com franqueza que chocou contemporâneos. Sua prosa é densa, repleta de detalhes sensoriais que trazem Rio à vida em toda sordidez e vitalidade. Azevedo não é escritor fácil de ler, mas sua importância para desenvolvimento de ficção brasileira moderna é inegável. Ele provou que literatura brasileira podia examinar realidade social com rigor científico enquanto permanecia literariamente sofisticada.
+                        </p>
+                    </div>
+                </div>
+
+                <h3>Rosa, Grande Guarda: Guimarães Rosa e a Revolução Linguística</h3>
+                <div class="autor-card">
+                    <img src="../img/rosa.png" alt="Guimarães Rosa" class="autor-imagem">
+                    <div class="autor-info">
+                        <p>
+                            Guimarães Rosa (1908-1967) é considerado um dos maiores escritores da literatura brasileira, revolucionário que transformou linguagem portuguesa através invenção neologística e desfamiliarização. Seu livro "Grande Sertão: Veredas" (1956) é épico de sertanejo contando história de vida, busca, perda e transformação em linguagem que mescla português coloquial com construções inventadas e ritmo poético hipnótico. Rosa cria palavras, distorce sintaxe, e reinventa linguagem para expressar realidades psicológicas e espirituais que linguagem convencional não pode captar. "Primeiras Estórias" (1962) coleta contos que alcançam profundidade metafísica através registro de momentos cotidianos transformados por perspectiva narrativa. Rosa não apenas escreve ficção; ele reinventa ficção, insistindo que linguagem é matéria que pode ser moldada, reinventada e transformada. Sua influência na literatura brasileira contemporânea é profunda; praticamente todos escritores sérios que vieram depois navegam sua herança.
+                        </p>
+                    </div>
+                </div>
+
+                <h3>Autores Contemporâneos Continuando Tradição</h3>
+                <p>
+                    Literatura brasileira continua evoluindo através vozes contemporâneas que honram legado de precursores enquanto inovam para seus tempos. Escritores como Lygia Bojunga exploram ficção infantil e juvenil com sofisticação; Rubem Fonseca examina violência urbana e corrupção moral; Chico Buarque combina narrativa com lirismo poético. Cada geração de escritores brasileiros encontra forma de honrar tradição enquanto expandir-a, garantindo que literatura brasileira permanece viva, relevante e em constante conversação com seu passado.
+                </p>
+
+                <h3>Por Que Ler Literatura Brasileira</h3>
+                <p>
+                    Ler literatura brasileira é descobrir vozes que oferecem perspectivas únicas sobre experiência humana. Esses autores exploram questões universais—amor, morte, significado, poder—através lentes especificamente brasileiras, criando síntese universal/particular que enriquece qualquer leitor. Suas obras refletem complexidade de nossa identidade nacional: marcada por escravidão, colonialismo, migração, e síntese cultural; seus escritores navegam herança traumática enquanto celebram resiliência, criatividade e humanidade. Ler Machado, Drummond, Lispector, Amado, Rosa e outros é estar em conversação com pensadores profundos que moldaram como pensamos, sentimos e compreendemos mundo.
+                </p>
+
+                <h3>Conclusão: Seu Convite à Leitura</h3>
+                <p>
+                    Literatura brasileira oferece riqueza impossível de explorar completamente em artigo único. Este é apenas introdução—convite para descobrir vozes que estarão com você, transformando perspectiva, oferecendo consolo, provocando pensamento. Comece com qualquer desses autores; deixe suas palavras o/a transportar através brasileiro interior seco, cidades pulsantes, consciências complexas e corações humanos. Descubra por que literatura brasileira continua importando, porque suas histórias continuam relevantes, porque seus escritores continuam nos falando através décadas e séculos. Leia. Deixe-se transformar. Seja parte da tradição viva que esses autores inauguraram.
+                </p>
+            </article>
+        </section>
+
+        <!-- CTA FINAL -->
+        <section class="cta">
+            <h3>Mergulhe na Literatura Brasileira</h3>
+            <p>
+                Explore mais artigos, resenhas e análises que expandem sua forma de enxergar a leitura e a literatura.
+            </p>
+            <a href="../blog.html" class="btn-primary">Explorar mais artigos</a>
+        </section>
+
+    </main>
+
+    <!-- Footer padronizado -->
+    <footer style="width: 100%; background-color: #0f55b2; padding: 25px 0; margin-top: auto; display: block; box-shadow: 0 -2px 10px #0f55b2;">
+        <div style="max-width: 1200px; margin: 0 auto; padding: 0 50px; display: flex; justify-content: center; align-items: center; position: relative; box-sizing: border-box;">
+            
+            <span style="color: #ffffff; font-family: 'Sour Gummy', cursive; font-size: 18px; font-weight: 700; text-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                © 2026 - Todos os direitos reservados
+            </span>
+
+            <a href="#topo" style="position: absolute; right: 50px; border: 2px solid #ffffff; color: #ffffff; text-decoration: none; padding: 8px 18px; border-radius: 12px; font-family: 'Sour Gummy', cursive; font-weight: 600; font-size: 16px; transition: 0.3s; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+                Voltar ao topo
+            </a>
+            
+        </div>
+    </footer>
+
+    <style>
+        /* Estilos adicionais para o artigo */
+        .artigo-content {
+            margin: 60px auto;
+            max-width: 900px;
+        }
+
+        .artigo-corpo {
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 18px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        }
+
+        .artigo-meta {
+            display: flex;
+            gap: 16px;
+            align-items: center;
+            margin-bottom: 32px;
+            flex-wrap: wrap;
+        }
+
+        .tempo-leitura {
+            font-family: 'Comic Relief', cursive;
+            color: #666;
+            font-size: 14px;
+        }
+
+        .artigo-corpo h3 {
+            font-family: 'Sour Gummy', cursive;
+            color: #0f55b2;
+            font-size: 28px;
+            margin-top: 32px;
+            margin-bottom: 16px;
+        }
+
+        .artigo-corpo h3:first-of-type {
+            margin-top: 0;
+        }
+
+        .artigo-corpo p {
+            font-family: 'Comic Relief', cursive;
+            font-size: 16px;
+            line-height: 1.8;
+            color: #333;
+            text-align: justify;
+            margin-bottom: 16px;
+        }
+
+        .autor-card {
+            display: flex;
+            gap: 24px;
+            background-color: #f9f9f9;
+            padding: 24px;
+            border-left: 4px solid #0f55b2;
+            margin: 24px 0;
+            border-radius: 8px;
+            align-items: flex-start;
+        }
+
+        .autor-imagem {
+            width: 150px;
+            height: 150px;
+            border-radius: 12px;
+            object-fit: cover;
+            flex-shrink: 0;
+            box-shadow: 0 4px 12px rgba(15, 85, 178, 0.15);
+        }
+
+        .autor-info {
+            flex: 1;
+        }
+
+        .autor-info p {
+            margin: 0;
+            font-size: 15px;
+        }
+
+        @media (max-width: 768px) {
+            .autor-card {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .autor-imagem {
+                width: 120px;
+                height: 120px;
+            }
+        }
+
+        .artigo-corpo ul {
+            margin: 24px 0;
+            padding-left: 24px;
+        }
+
+        .artigo-corpo ul li {
+            margin-bottom: 12px;
+            line-height: 1.8;
+        }
+    </style>
+
+</body>
+</html>
