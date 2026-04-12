@@ -157,7 +157,7 @@ try {
             <p>
                 Descubra análises, vídeos e reflexões que expandem sua forma de enxergar a leitura.
             </p>
-            <a href="leituras.html" class="btn-primary">Começar agora</a>
+            <a href="leituras.php" class="btn-primary">Começar agora</a>
         </section>
 
     </main>
