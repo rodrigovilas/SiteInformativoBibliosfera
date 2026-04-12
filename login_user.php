@@ -1,38 +1,46 @@
 <?php
-// Arquivo de autenticação do usuário Processa o login e valida as credenciais
+// Arquivo de autenticação do usuário 
+// Processa o login e valida as credenciais. Tô amassando, slk
 
 session_start();
 include __DIR__ . "/database.php";
 
-// Verifica se os dados de email e senha foram enviados pelo formulário
 if (!isset($_POST['email'], $_POST['senha'])) {
     header('Location: login.php');
     exit;
 }
 
-// Recebe os dados do formulário de login
+
 $email = $_POST['email'];
 $senha = $_POST['senha'];
 
-// Busca o usuário no banco de dados pelo email
+
 $stmt = $conn->prepare(
-    "SELECT usuario, senha FROM login WHERE email = :email"
+    "SELECT id_usuario, usuario, senha FROM login WHERE email = :email"
 );
 $stmt->bindParam(':email', $email);
 $stmt->execute();
 
-// Obtém os dados do usuário encontrado
+
 $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
-// Verifica se o usuário existe e se a senha está correta
-if (!$user || $senha !== $user['senha']) {
-    $_SESSION['erro_login'] = "E-mail ou senha inválidos";
-    header('Location: login.php');
-    exit;
+if (!$user || !password_verify($senha, $user['senha'])) {
+    
+    
+    if ($user && $senha === $user['senha']) {
+        
+        $newHash = password_hash($senha, PASSWORD_DEFAULT);
+        $up = $conn->prepare("UPDATE login SET senha = ? WHERE id_usuario = ?");
+        $up->execute([$newHash, $user['id_usuario']]);
+    } else {
+        $_SESSION['erro_login'] = "E-mail ou senha inválidos";
+        header('Location: login.php');
+        exit;
+    }
 }
 
-// Se as credenciais estão corretas, armazena os dados na sessão
-$_SESSION['id_user'] = $user['id_user'];
+
+$_SESSION['id_usuario'] = $user['id_usuario'];
 $_SESSION['usuario'] = $user['usuario'];
 
 // Redireciona para a página inicial do usuário autenticado

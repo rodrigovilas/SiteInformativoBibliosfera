@@ -9,7 +9,10 @@ create table if not exists login(
 id_usuario int auto_increment primary key,
 usuario varchar (50) unique not null,
 email varchar (255) unique not null,
-senha varchar (200) not null);
+senha varchar (200) not null,
+nome varchar (100),
+avatar varchar (255),
+bio varchar (1000));
 
 create table if not exists autor(
 id_autor int auto_increment primary key,

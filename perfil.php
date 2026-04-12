@@ -1,4 +1,26 @@
-<?php session_start(); ?>
+<?php
+session_start();
+include __DIR__ . "/database.php";
+
+$nome_exibicao = "Usuário Bibliosfera";
+$bio_exibicao = "Leitor apaixonado descobrindo novas histórias todos os dias nas páginas dos livros.";
+$avatar_exibicao = "";
+$usuario_logado = false;
+
+if (isset($_SESSION['id_usuario'])) {
+    $usuario_logado = true;
+    $stmt = $conn->prepare("SELECT nome, usuario, bio, avatar FROM login WHERE id_usuario = :id");
+    $stmt->bindParam(':id', $_SESSION['id_usuario']);
+    $stmt->execute();
+    $db_user = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    if ($db_user) {
+        $nome_exibicao = !empty($db_user['nome']) ? $db_user['nome'] : $db_user['usuario'];
+        if (!empty($db_user['bio'])) $bio_exibicao = $db_user['bio'];
+        if (!empty($db_user['avatar'])) $avatar_exibicao = $db_user['avatar'];
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -239,13 +261,21 @@
 
 		<section class="profile-hero">
             <div class="profile-avatar-container" id="profile-avatar-display">
-              
+              <?php if (!empty($avatar_exibicao)): ?>
+                  <img src="<?= htmlspecialchars($avatar_exibicao) ?>" alt="Avatar">
+              <?php else: ?>
+                  📚
+              <?php endif; ?>
             </div>
             <div class="profile-info">
-                <h2 id="profile-name">Nome do Usuário</h2>
-                <p id="profile-bio">Adicione uma biografia clicando em Editar Perfil.</p>
+                <h2 id="profile-name"><?= htmlspecialchars($nome_exibicao) ?></h2>
+                <p id="profile-bio"><?= htmlspecialchars($bio_exibicao) ?></p>
                 <div class="hero-actions">
-                    <button class="btn-primary" onclick="openProfileModal()">Editar Perfil</button>
+                    <?php if ($usuario_logado): ?>
+                        <button class="btn-primary" onclick="openProfileModal()">Editar Perfil</button>
+                    <?php else: ?>
+                        <a href="login.php" class="btn-primary" style="text-decoration:none;">Fazer Login para Editar</a>
+                    <?php endif; ?>
                 </div>
             </div>
 		</section>
@@ -298,22 +328,22 @@
 	<div id="profile-modal" class="modal" style="display: none;">
 		<div class="modal-content">
 			<h3>Editar Perfil</h3>
-			<form id="profile-form">
+			<form id="profile-form" action="update_perfil.php" method="post" enctype="multipart/form-data">
 				<div class="form-group">
 					<label for="input-name">Seu Nome:</label>
-					<input type="text" id="input-name" required>
+					<input type="text" name="nome" id="input-name" required value="<?= htmlspecialchars($nome_exibicao) ?>">
 				</div>
                 <div class="form-group">
-					<label for="input-avatar">URL do Avatar (opicional):</label>
-					<input type="url" id="input-avatar" placeholder="https://exemplo.com/foto.jpg">
+					<label for="input-avatar">Nova Foto (opcional):</label>
+					<input type="file" name="avatar" id="input-avatar" accept="image/jpeg, image/png, image/webp" style="font-family: var(--fonte-principal);">
 				</div>
 				<div class="form-group">
 					<label for="input-bio">Sua Bio:</label>
-					<textarea id="input-bio" rows="3" placeholder="O que você gosta de ler?"></textarea>
+					<textarea name="bio" id="input-bio" rows="3" placeholder="O que você gosta de ler?"><?= htmlspecialchars($bio_exibicao) ?></textarea>
 				</div>
 				<div class="modal-actions" style="display: flex; gap: 12px; margin-top: 24px;">
 					<button type="button" class="btn-secondary" style="flex:1" onclick="closeProfileModal()">Cancelar</button>
-					<button type="submit" class="btn-primary" style="flex:1" style="background: linear-gradient(135deg, #0f55b2, #1b76e3); color: white; border: none; border-radius: 999px; transition: 0.3s; box-shadow: 0 8px 18px rgba(15,85,178,0.25);">Salvar</button>
+					<button type="submit" class="btn-primary" style="flex:1; background: linear-gradient(135deg, #0f55b2, #1b76e3); color: white; border: none; border-radius: 999px; transition: 0.3s; box-shadow: 0 8px 18px rgba(15,85,178,0.25);">Salvar</button>
 				</div>
 			</form>
 		</div>
@@ -332,59 +362,18 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            loadUserProfile();
             loadStatsAndBooks();
             loadActivities();
-
-            document.getElementById('profile-form').addEventListener('submit', function(e) {
-                e.preventDefault();
-                saveUserProfile();
-            });
         });
 
         const profileModal = document.getElementById('profile-modal');
 
         function openProfileModal() {
-            const profile = getProfile();
-            document.getElementById('input-name').value = profile.name;
-            document.getElementById('input-bio').value = profile.bio;
-            document.getElementById('input-avatar').value = profile.avatarUrl;
             profileModal.style.display = 'flex';
         }
 
         function closeProfileModal() {
             profileModal.style.display = 'none';
-        }
-
-        function getProfile() {
-            return JSON.parse(localStorage.getItem('userProfile')) || {
-                name: 'Usuário Bibliosfera',
-                bio: 'Leitor apaixonado descobrindo novas histórias todos os dias nas páginas dos livros.',
-                avatarUrl: ''
-            };
-        }
-
-        function saveUserProfile() {
-            const name = document.getElementById('input-name').value;
-            const bio = document.getElementById('input-bio').value;
-            const avatarUrl = document.getElementById('input-avatar').value;
-
-            localStorage.setItem('userProfile', JSON.stringify({ name, bio, avatarUrl }));
-            closeProfileModal();
-            loadUserProfile();
-        }
-
-        function loadUserProfile() {
-            const profile = getProfile();
-            document.getElementById('profile-name').textContent = profile.name;
-            document.getElementById('profile-bio').textContent = profile.bio;
-            
-            const avatarContainer = document.getElementById('profile-avatar-display');
-            if(profile.avatarUrl) {
-                avatarContainer.innerHTML = `<img src="${profile.avatarUrl}" alt="Avatar">`;
-            } else {
-                avatarContainer.innerHTML = `📚`;
-            }
         }
 
         function loadStatsAndBooks() {
