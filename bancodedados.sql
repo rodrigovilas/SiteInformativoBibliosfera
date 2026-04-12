@@ -1,9 +1,9 @@
 /*o banco não está terminado ainda!! ainda falta conectar com o php*/
 /*vsf rodrigo*/
-/*criação do banco*/
-drop database if exists bibliosfera;
-create database if not exists bibliosfera;
-use bibliosfera;
+/*criação do banco removida porque o Aiven já cria o defaultdb para nós*/
+/* drop database if exists bibliosfera; */
+/* create database if not exists bibliosfera; */
+/* use bibliosfera; */
 
 create table if not exists login(
 id_usuario int auto_increment primary key,
