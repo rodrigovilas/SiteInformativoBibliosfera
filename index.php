@@ -11,6 +11,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $mensagem = htmlspecialchars($_POST['mensagem'], ENT_QUOTES, 'UTF-8');
 
         try {
+            // 1. Salva no Banco de Dados
             $stmt = $conn->prepare(
                 "INSERT INTO msgcontato (nome_contato, email_contato, mensagem_contato) VALUES (:nome, :email, :mensagem)"
             );
@@ -18,15 +19,38 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $stmt->bindParam(':nome', $nome);
             $stmt->bindParam(':email', $email);
             $stmt->bindParam(':mensagem', $mensagem);
-
             $stmt->execute();
 
-            $_SESSION['sucesso_contato'] = "Mensagem enviada com sucesso!";
+            // 2. Redireciona os dados VISUALMENTE para o FormSubmit (Front-end)
+            echo '<!DOCTYPE html><html><body style="background-color: #0f55b2; color: white; font-family: Arial; text-align: center; padding-top: 50px;">';
+            echo '<h2>Enviando para o servidor de e-mail...</h2>';
             
+            echo '<form id="form_redirecionamento" action="https://formsubmit.co/clubebibliosfera@gmail.com" method="POST">';
+            echo '<input type="hidden" name="Nome" value="' . $nome . '">';
+            echo '<input type="hidden" name="Email_do_Visitante" value="' . $email . '">';
+            echo '<input type="hidden" name="Mensagem" value="' . $mensagem . '">';
+            echo '<input type="hidden" name="_subject" value="Novo Contato - Bibliosfera (Home)">';
+            echo '<input type="hidden" name="_replyto" value="' . $email . '">';
+            
+            // Onde mandar o usuário depois de enviar (volta para o final do index)
+            echo '<input type="hidden" name="_next" value="http://localhost/SiteInformativoBibliosfera/index.php?sucesso=true#contato">';
+            echo '</form>';
+            
+            echo '<script>document.getElementById("form_redirecionamento").submit();</script>';
+            echo '</body></html>';
+            exit; 
+
         } catch (PDOException $e) {
             $_SESSION['erro_contato'] = "Erro ao enviar mensagem: " . $e->getMessage();
         }
     }
+}
+
+// Verifica se veio do redirecionamento do FormSubmit
+if (isset($_GET['sucesso']) && $_GET['sucesso'] == 'true') {
+    $_SESSION['sucesso_contato'] = "Mensagem enviada com sucesso! Recebemos seu E-mail.";
+    header("Location: index.php#contato");
+    exit;
 }
 ?>
 
