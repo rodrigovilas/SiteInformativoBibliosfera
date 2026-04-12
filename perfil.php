@@ -239,7 +239,7 @@ if (isset($_SESSION['id_usuario'])) {
 				<li><a href="videos.html">Vídeos</a></li>
 				<li><a href="leituras.html">Leituras</a></li>
 				<li><a href="blog.html">Blog</a></li>
-				<li><a href="comunidade.html">Comunidade</a></li>
+				<li><a href="comunidade.php">Comunidade</a></li>
 				<li><a href="perfil.php">Meu Perfil</a></li>
 				<li><a href="contato.php">Contato</a></li>
 				<li class="nav-login">
