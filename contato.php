@@ -85,7 +85,7 @@ if (isset($_GET['sucesso']) && $_GET['sucesso'] == 'true') {
             <ul class="navlinks">
                 <li><a href="resenhas.html">Resenhas</a></li>
                 <li><a href="videos.html">Vídeos</a></li>
-                <li><a href="leituras.html">Leituras</a></li>
+                <li><a href="leituras.php">Leituras</a></li>
                 <li><a href="blog.html">Blog</a></li>
                 <li><a href="comunidade.php">Comunidade</a></li>
                 <li><a href="perfil.php">Meu Perfil</a></li>

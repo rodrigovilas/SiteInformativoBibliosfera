@@ -9,8 +9,11 @@ $usuario_logado = false;
 
 if (isset($_SESSION['id_usuario'])) {
     $usuario_logado = true;
+    $id_usuario = $_SESSION['id_usuario'];
+
+    // 1. Dados do Usuário
     $stmt = $conn->prepare("SELECT nome, usuario, bio, avatar FROM login WHERE id_usuario = :id");
-    $stmt->bindParam(':id', $_SESSION['id_usuario']);
+    $stmt->bindParam(':id', $id_usuario);
     $stmt->execute();
     $db_user = $stmt->fetch(PDO::FETCH_ASSOC);
 
@@ -19,6 +22,48 @@ if (isset($_SESSION['id_usuario'])) {
         if (!empty($db_user['bio'])) $bio_exibicao = $db_user['bio'];
         if (!empty($db_user['avatar'])) $avatar_exibicao = $db_user['avatar'];
     }
+
+    // 2. Estatísticas do Banco de Dados
+    // Total de livros na lista
+    $stmt_total = $conn->prepare("SELECT COUNT(*) FROM listausuario WHERE id_usuario = :id");
+    $stmt_total->execute(['id' => $id_usuario]);
+    $total_livros = $stmt_total->fetchColumn();
+
+    // Lendo
+    $stmt_lendo = $conn->prepare("SELECT COUNT(*) FROM listausuario WHERE id_usuario = :id AND progresso = 'Lendo'");
+    $stmt_lendo->execute(['id' => $id_usuario]);
+    $lendo_livros = $stmt_lendo->fetchColumn();
+
+    // Concluídos
+    $stmt_fim = $conn->prepare("SELECT COUNT(*) FROM listausuario WHERE id_usuario = :id AND progresso = 'Terminado'");
+    $stmt_fim->execute(['id' => $id_usuario]);
+    $concluidos_livros = $stmt_fim->fetchColumn();
+
+    // Comentários (Resenhas)
+    $stmt_msg = $conn->prepare("SELECT COUNT(*) FROM resenha WHERE id_usuario = :id");
+    $stmt_msg->execute(['id' => $id_usuario]);
+    $total_comentarios = $stmt_msg->fetchColumn();
+
+    // 3. Atividades (Últimas Resenhas do usuário)
+    $stmt_atividades = $conn->prepare("
+        SELECT r.resenha, r.data_resenha, l.titulo 
+        FROM resenha r 
+        JOIN livro l ON r.id_livro = l.id_livro 
+        WHERE r.id_usuario = :id 
+        ORDER BY r.data_resenha DESC LIMIT 5
+    ");
+    $stmt_atividades->execute(['id' => $id_usuario]);
+    $atividades = $stmt_atividades->fetchAll(PDO::FETCH_ASSOC);
+
+    // 4. Meus Livros (Tabela)
+    $stmt_meus_livros = $conn->prepare("
+        SELECT l.titulo, l.descricao, lu.progresso, lu.paginas_totais, lu.pagina_atual 
+        FROM listausuario lu 
+        JOIN livro l ON lu.id_livro = l.id_livro 
+        WHERE lu.id_usuario = :id
+    ");
+    $stmt_meus_livros->execute(['id' => $id_usuario]);
+    $meus_livros_db = $stmt_meus_livros->fetchAll(PDO::FETCH_ASSOC);
 }
 ?>
 <!DOCTYPE html>
@@ -237,7 +282,7 @@ if (isset($_SESSION['id_usuario'])) {
 			<ul class="navlinks">
 				<li><a href="resenhas.html">Resenhas</a></li>
 				<li><a href="videos.html">Vídeos</a></li>
-				<li><a href="leituras.html">Leituras</a></li>
+				<li><a href="leituras.php">Leituras</a></li>
 				<li><a href="blog.html">Blog</a></li>
 				<li><a href="comunidade.php">Comunidade</a></li>
 				<li><a href="perfil.php">Meu Perfil</a></li>
@@ -284,19 +329,19 @@ if (isset($_SESSION['id_usuario'])) {
 			<h3>Minhas Estatísticas</h3>
 			<div class="stats-grid">
                 <div class="stat-card">
-                    <p class="stat-number" id="stat-total">0</p>
+                    <p class="stat-number" id="stat-total"><?= $total_livros ?? 0 ?></p>
                     <p class="stat-label">Adicionados</p>
                 </div>
                 <div class="stat-card">
-                    <p class="stat-number" id="stat-reading">0</p>
+                    <p class="stat-number" id="stat-reading"><?= $lendo_livros ?? 0 ?></p>
                     <p class="stat-label">Lendo</p>
                 </div>
                 <div class="stat-card">
-                    <p class="stat-number" id="stat-completed">0</p>
+                    <p class="stat-number" id="stat-completed"><?= $concluidos_livros ?? 0 ?></p>
                     <p class="stat-label">Concluídos</p>
                 </div>
                 <div class="stat-card">
-                    <p class="stat-number" id="stat-comments">0</p>
+                    <p class="stat-number" id="stat-comments"><?= $total_comentarios ?? 0 ?></p>
                     <p class="stat-label">Comentários</p>
                 </div>
             </div>
@@ -306,11 +351,32 @@ if (isset($_SESSION['id_usuario'])) {
 		<section class="profile-section">
 			<h3>Meus Livros</h3>
 			<div id="profile-books-container" class="cards">
-				
+				<?php if (!empty($meus_livros_db)): ?>
+                    <?php foreach ($meus_livros_db as $ml): ?>
+                        <article class="progress-card">
+                            <div class="progress-info">
+                                <h4 style="font-family: var(--fonte-titulo); color: #0f55b2; margin:0 0 8px 0; font-size: 20px;">📖 <?= htmlspecialchars($ml['titulo']) ?></h4>
+                                <p style="margin:0; font-weight: 600; color: #666; font-size: 14px;"><?= htmlspecialchars($ml['descricao']) ?></p>
+                                <?php 
+                                    $pct = $ml['paginas_totais'] > 0 ? min(round(($ml['pagina_atual'] / $ml['paginas_totais']) * 100), 100) : 0;
+                                ?>
+                                <p style="margin: 8px 0 0 0; font-family: var(--fonte-principal); font-size: 14px; font-weight: bold; color: #082f5b;">
+                                    Progresso: <?= $pct ?>% (pág <?= $ml['pagina_atual'] ?>)
+                                </p>
+                                <div style="width: 100%; background: #eee; height: 8px; border-radius: 4px; margin-top: 5px; overflow: hidden;">
+                                    <div style="width: <?= $pct ?>%; height: 100%; background: #ff9800;"></div>
+                                </div>
+                                <p style="margin: 5px 0 0 0; font-size: 12px; color: #888;">Status: <?= htmlspecialchars($ml['progresso']) ?></p>
+                            </div>
+                        </article>
+                    <?php endforeach; ?>
+                <?php else: ?>
+                    <div class="empty-state">Você ainda não tem livros no banco de dados. Vá até a aba Leituras!</div>
+                <?php endif; ?>
 			</div>
             <br>
             <div style="text-align: center; margin-top: 24px;">
-                <a href="leituras.html" class="btn-secondary">Gerenciar Todas as Leituras</a>
+                <a href="leituras.php" class="btn-secondary">Gerenciar Todas as Leituras</a>
             </div>
 		</section>
 
@@ -318,7 +384,20 @@ if (isset($_SESSION['id_usuario'])) {
 		<section class="profile-section">
 			<h3>Atividades Recentes</h3>
 			<div id="profile-activities-container" class="activity-list">
-				
+				<?php if (!empty($atividades)): ?>
+                    <?php foreach ($atividades as $at): ?>
+                        <div class="activity-item">
+                            <div class="activity-header">
+                                <span style="font-weight: 600; color: #1b76e3;">Nova Resenha</span>
+                                <span>🗓️ <?= date('d/m/Y', strtotime($at['data_resenha'])) ?></span>
+                            </div>
+                            <h4 class="activity-title">📘 <?= htmlspecialchars($at['titulo']) ?></h4>
+                            <p class="activity-comment">"<?= htmlspecialchars($at['resenha']) ?>"</p>
+                        </div>
+                    <?php endforeach; ?>
+                <?php else: ?>
+                    <div class="empty-state">Nenhuma atividade recente registrada no banco de dados.</div>
+                <?php endif; ?>
 			</div>
 		</section>
 
@@ -362,98 +441,8 @@ if (isset($_SESSION['id_usuario'])) {
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            loadStatsAndBooks();
-            loadActivities();
+            // As funções de carregamento do localStorage foram removidas pois agora usamos PHP + Banco de Dados
         });
-
-        const profileModal = document.getElementById('profile-modal');
-
-        function openProfileModal() {
-            profileModal.style.display = 'flex';
-        }
-
-        function closeProfileModal() {
-            profileModal.style.display = 'none';
-        }
-
-        function loadStatsAndBooks() {
-            const books = JSON.parse(localStorage.getItem('readingBooks') || '[]');
-            const container = document.getElementById('profile-books-container');
-
-            let total = books.length;
-            let reading = 0;
-            let completed = 0;
-            let totalComments = 0;
-
-            container.innerHTML = '';
-
-            if(total === 0) {
-                container.innerHTML = '<div class="empty-state">Você ainda não listou nenhum livro. Vá até a aba Leituras e comece sua jornada!</div>';
-            }
-
-            books.forEach(book => {
-                const perc = Math.min((book.currentPage / book.totalPages) * 100, 100);
-                
-                if(perc >= 100) completed++;
-                else reading++;
-
-                if(book.updates) {
-                    book.updates.forEach(u => {
-                        if(u.comment && u.comment.trim() !== '') totalComments++;
-                    });
-                }
-
-                
-                const card = document.createElement('article');
-                card.className = 'progress-card';
-                card.innerHTML = `
-                    <div class="progress-info">
-                        <h4 style="font-family: var(--fonte-titulo); color: #0f55b2; margin:0 0 8px 0; font-size: 20px;">📖 ${book.title}</h4>
-                        <p style="margin:0; font-weight: 600; color: #666;">Por ${book.author}</p>
-                        <p style="margin: 8px 0 0 0; font-family: var(--fonte-principal); font-size: 14px; font-weight: bold; color: #082f5b;">Progresso: ${Math.round(perc)}% (${book.currentPage} de ${book.totalPages} págs)</p>
-                    </div>
-                    <div class="progress-bar" style="margin-top:16px;">
-                        <div class="progress-fill" style="width: ${perc}%"></div>
-                    </div>
-                `;
-                container.appendChild(card);
-            });
-
-            document.getElementById('stat-total').textContent = total;
-            document.getElementById('stat-reading').textContent = reading;
-            document.getElementById('stat-completed').textContent = completed;
-            document.getElementById('stat-comments').textContent = totalComments;
-        }
-
-        function loadActivities() {
-            const updates = JSON.parse(localStorage.getItem('globalUpdates') || '[]');
-            const container = document.getElementById('profile-activities-container');
-            container.innerHTML = '';
-
-            if(updates.length === 0) {
-                container.innerHTML = '<div class="empty-state">Nenhuma atividade recente registrada em seus livros.</div>';
-                return;
-            }
-
-            
-            updates.slice(0, 10).forEach(u => {
-                const date = new Date(u.date).toLocaleDateString('pt-BR', { day: '2-digit', month: 'short', year: 'numeric' });
-                const item = document.createElement('div');
-                item.className = 'activity-item';
-                
-                let commentHtml = u.comment && u.comment.trim() !== '' ? `<p class="activity-comment">"${u.comment}"</p>` : '';
-
-                item.innerHTML = `
-                    <div class="activity-header">
-                        <span style="font-weight: 600; color: #1b76e3;">Página alcançada: ${u.pages}</span>
-                        <span>🗓️ ${date}</span>
-                    </div>
-                    <h4 class="activity-title">📘 ${u.bookTitle} <small style="color:#666; font-size:15px; font-family: var(--fonte-corpo);">(${u.bookAuthor})</small></h4>
-                    ${commentHtml}
-                `;
-                container.appendChild(item);
-            });
-        }
     </script>
 </body>
 </html>
