@@ -3,49 +3,240 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bibliosfera</title>
-    <link rel="stylesheet"  href="home.css">
-  <link rel="shortcut icon" href="img/logo.png">
-    <script src="script.js"></script>
-    <!-- Fontes(Google Fonts) -->
+    <title>Livros Que Exploram Identidade e Pertencimento - Bibliosfera</title>
+    <link rel="stylesheet" href="../home.css">
+    <link rel="shortcut icon" href="../img/logo.png">
+    <script src="../script.js"></script>
+    <!-- Fontes (Google Fonts) -->
     <link href="https://fonts.googleapis.com/css2?family=Sour+Gummy:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Comic+Relief:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Comic+Relief:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body id="topo">
 
-      <header>
+    <header>
         <div class="dvh">
-            <a href="#topo" class="topo" title="Ir para o início" aria-label="Ir para o início da página">
-                <img src="img/logo.png" alt="Logo da Bibliosfera" class="logo" />
+            <a href="../home.html" class="topo" title="Ir para o início" aria-label="Ir para o início da página">
+                <img src="../img/logo.png" alt="Logo da Bibliosfera" class="logo" />
                 <h1 class="tituloh">Bibliosfera</h1>
             </a>
         </div>
 
         <nav class="nav">
             <ul class="navlinks">
-                <li><a href="resenhas.html">Resenhas</a></li>
-                <li><a href="videos.html">Vídeos</a></li>
-                <li><a href="leituras.html">Leituras</a></li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="comunidade.html">Comunidade</a></li>
-                <li><a href="perfil.php">Meu Perfil</a></li>
-                <li><a href="contato.php">Contato</a></li>
+                <li><a href="../resenhas.html">Resenhas</a></li>
+                <li><a href="../videos.html">Vídeos</a></li>
+                <li><a href="../leituras.html">Leituras</a></li>
+                <li><a href="../blog.html">Blog</a></li>
+                <li><a href="../comunidade.html">Comunidade</a></li>
+                <li><a href="../perfil.php">Meu Perfil</a></li>
+                <li><a href="../contato.php">Contato</a></li>
                 <li class="nav-login">
-                    <a href="logout.php"
+                    <a href="../logout.php"
                         class="btn-entrar"
                         id="btnEntrar"
                         type="button"
-                        title="Entrar"
+                        title="Sair"
                         aria-haspopup="dialog"
                         aria-controls="loginModal"
-                        aria-label="Entrar">
-                        <img src="https://img.icons8.com/ios-filled/50/ff9800/login-rounded-right.png" alt="Entrar">
+                        aria-label="Sair">
+                        <img src="https://img.icons8.com/ios-filled/50/ff9800/login-rounded-right.png" alt="Sair">
                         <span class="btn-text">Sair</span>
                     </a>
                 </li>
             </ul>
         </nav>
-      </header>
-      <main class="home">
+    </header>
+
+    <main class="home">
+    
+        <section class="hero">
+            <div class="hero-text">
+                <h2>Livros Que Exploram Identidade e Pertencimento</h2>
+                <p>
+                    Recomendações de obras que abordam temas de identidade, pertencimento e aceitação de forma sensível e transformadora.
+                </p>
+
+                <div class="hero-actions">
+                    <a href="#conteudo" class="btn-primary" role="button" aria-label="Ler Artigo" data-scroll>Ler Artigo</a>
+                    <a href="../blog.html" class="btn-secondary" role="button" aria-label="Voltar ao Blog" data-scroll>← Blog</a>
+                </div>
+            </div>
+
+            <div class="hero-image">
+                <img src="../img/livros.png" alt="Ilustração de pilhas de livros">
+            </div>
+        </section>
+
+        
+        <section class="artigo-content" id="conteudo">
+            <article class="artigo-corpo">
+                <div class="artigo-meta">
+                    <span class="tag leitura" style="font-family: var(--fonte-titulo);">Lista</span>
+                    <span class="tempo-leitura">📚 6 min de leitura</span>
+                </div>
+
+                <h3>Encontrando a Nós Mesmos nas Páginas</h3>
+                <p>
+                    Uma das experiências mais mágicas que a literatura pode nos proporcionar é aquele momento exato em que lemos um parágrafo e pensamos: <em>"Nossa, eu achei que só eu me sentisse assim"</em>. Em um mundo onde nem sempre é fácil saber qual é o nosso lugar, os livros tornam-se refúgios poderosos para explorarmos quem somos, de onde viemos e quem queremos ser.
+                </p>
+                <p>
+                    O tema da identidade e do pertencimento é universal, mas as formas como ele se manifesta são infinitas — podem envolver amadurecimento, orientação, cultura, raça, classe ou gênero. Abaixo, separamos cinco livros de diferentes estilos que tratam dessas questões com uma sensibilidade avassaladora e transformadora.
+                </p>
+
+                <h3>1. A Metade Perdida - Brit Bennett</h3>
+                <p>
+                    Esta obra brilhante conta a história das irmãs gêmeas Vignes. Nascidas em uma pequena e racista comunidade negra no sul dos Estados Unidos na década de 1950, as duas crescem inseparáveis, mas acabam fugindo aos 16 anos e tomando caminhos brutalmente distintos. Uma das irmãs decide voltar para a comunidade de origem, enquanto a outra decide viver se "passando por branca", escondendo sua raça até mesmo do próprio marido.
+                </p>
+                <div class="livro-resenha">
+                    <h4>Por que ler?</h4>
+                    <p>O livro é uma investigação profunda sobre o peso das nossas origens. Bennett nos faz questionar até onde as escolhas pessoais moldam a identidade e o quão doloroso (ou libertador) pode ser abandonar suas raízes para pertencer a um mundo diferente.</p>
+                </div>
+
+                <h3>2. O Ódio que Você Semeia - Angie Thomas</h3>
+                <p>
+                    Starr Carter, uma adolescente de 16 anos, vive constantemente dividida entre dois mundos muito diferentes: o bairro pobre e predominantemente negro onde mora, e a escola preparatória de elite, frequentada por pessoas brancas, onde estuda. O frágil equilíbrio dessa vida se estilhaça quando ela é a única testemunha do assassinato de seu amigo de infância pelas mãos de um policial branco.
+                </p>
+                <p>
+                    Mais do que apenas uma resposta ao movimento <em>Black Lives Matter</em>, o livro de Angie Thomas é a jornada íntima de uma garota tentando encontrar o som e o poder da própria voz quando o mundo ao redor parece não querer escutá-la. É sobre a coragem de assumir perante os outros quem você realmente é.
+                </p>
+
+                <h3>3. Quarto de Despejo - Carolina Maria de Jesus</h3>
+                <p>
+                    Se pertencimento também tem a ver com o lugar geográfico e social que ocupamos, os diários da genial Carolina Maria de Jesus são indispensáveis. Moradora da favela do Canindé (São Paulo) nos anos 1950, ela narrava em cadernos velhos encontrados no lixo o seu dia a dia sustentando os filhos como catadora de papel.
+                </p>
+                <p>
+                    Carolina queria ser reconhecida como escritora, mas a sociedade insistia em limitá-la ao papel de "favelada". A sua vivência destrói as romantizações sobre a pobreza e a exclusão num país desigual. Esse livro escancara não apenas quem a autora era, mas qual identidade o Brasil impõe estruturalmente às pessoas marginalizadas.
+                </p>
+
+                <h3>4. Orlando - Virginia Woolf</h3>
+                <p>
+                    Considerado "a maior carta de amor já escrita na literatura", este livro narra a vida de um jovem nobre chamado Orlando na Inglaterra, que vive por séculos. A certa altura da sua longa vida — mais precisamente durante uma expedição diplomática e de maneira inexplicável —, ele acorda e percebe que transformou-se fisicamente em uma mulher.
+                </p>
+                <p>
+                    Lançado em 1928, é uma obra absurdamente à frente de seu tempo. Virginia Woolf desconstrói com humor e muita poesia a noção de gênero, sugerindo que a alma é fluida. O livro mostra que as identidades que a sociedade confere a homens e mulheres não passam de convenções tão fáceis de mudar quanto uma roupa ao longo das eras.
+                </p>
+
+                <h3>5. Pessoas Normais - Sally Rooney</h3>
+                <p>
+                    Connell e Marianne fingem não se conhecer no colégio, embora ele seja o garoto popular e a mãe dele trabalhe limpando a mansão dela (uma garota solitária e brilhante). Depois, na faculdade de Dublin, os papéis se invertem: Marianne brilha socialmente e Connell se sente completamente deslocado.
+                </p>
+                <p>
+                    Sally Rooney fez enorme sucesso com esse livro ao retratar a agonia existencial da geração millennial e a dependência que temos do olhar do outro para validar quem somos. Como a nossa identidade muda e se adapta de acordo com o ambiente que habitamos, e com quem dividimos a cama e o coração? É um livro muito sincero sobre como nos moldamos às pessoas que amamos.
+                </p>
+
+                <h3>O Leitor e o Espelho</h3>
+                <p>
+                    Sempre que terminamos uma grande obra literária, um pouquinho de nós fica entre as páginas, e um pouco dos personagens passa a viver do lado de cá. Ler sobre o sentimento de inadequação alheio é curiosamente um dos melhores tratamentos para curar a nossa própria sensação de não-pertencimento. Afinal de contas, cada livro dessa lista é um imenso letreiro em neon literário dizendo: <strong>você não está sozinho!</strong>
+                </p>
+            </article>
+        </section>
+
+       
+        <section class="cta">
+            <h3>Explore Mais no Blog</h3>
+            <p>
+                Acompanhe outras dicas, listas e reflexões literárias que combinam com o seu momento atual.
+            </p>
+            <a href="../blog.html" class="btn-primary">Ver todos os artigos</a>
+        </section>
+
+    </main>
+
+
+    <footer style="width: 100%; background-color: #0f55b2; padding: 25px 0; margin-top: auto; display: block; box-shadow: 0 -2px 10px #0f55b2;">
+        <div style="max-width: 1200px; margin: 0 auto; padding: 0 50px; display: flex; justify-content: center; align-items: center; position: relative; box-sizing: border-box;">
+            
+            <span style="color: #ffffff; font-family: 'Sour Gummy', cursive; font-size: 18px; font-weight: 700; text-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                © 2026 - Todos os direitos reservados
+            </span>
+
+            <a href="#topo" style="position: absolute; right: 50px; border: 2px solid #ffffff; color: #ffffff; text-decoration: none; padding: 8px 18px; border-radius: 12px; font-family: 'Sour Gummy', cursive; font-weight: 600; font-size: 16px; transition: 0.3s; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+                Voltar ao topo
+            </a>
+            
+        </div>
+    </footer>
+
+    <style>
+        
+        .artigo-content {
+            margin: 60px auto;
+            max-width: 900px;
+        }
+
+        .artigo-corpo {
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 18px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        }
+
+        .artigo-meta {
+            display: flex;
+            gap: 16px;
+            align-items: center;
+            margin-bottom: 32px;
+            flex-wrap: wrap;
+        }
+
+        .tempo-leitura {
+            font-family: 'Comic Relief', cursive;
+            color: #666;
+            font-size: 14px;
+        }
+
+        .artigo-corpo h3 {
+            font-family: 'Sour Gummy', cursive;
+            color: #0f55b2;
+            font-size: 28px;
+            margin-top: 32px;
+            margin-bottom: 16px;
+        }
+
+        .artigo-corpo h3:first-of-type {
+            margin-top: 0;
+        }
+
+        .artigo-corpo p {
+            font-family: 'Comic Relief', cursive;
+            font-size: 16px;
+            line-height: 1.8;
+            color: #333;
+            text-align: justify;
+            margin-bottom: 16px;
+        }
+
+        .livro-resenha {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-left: 4px solid #0f55b2;
+            margin: 24px 0;
+            border-radius: 8px;
+        }
+
+        .livro-resenha h4 {
+            font-family: 'Sour Gummy', cursive;
+            color: #0f55b2;
+            font-size: 18px;
+            margin: 0 0 12px 0;
+        }
+
+        .livro-resenha p {
+            margin: 0;
+            font-size: 15px;
+        }
+
+        .artigo-corpo ul {
+            margin: 24px 0;
+            padding-left: 24px;
+        }
+
+        .artigo-corpo ul li {
+            margin-bottom: 12px;
+            line-height: 1.8;
+        }
+    </style>
+
+</body>
+</html>
