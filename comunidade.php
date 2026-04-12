@@ -2,11 +2,14 @@
 session_start();
 include __DIR__ . "/database.php";
 
+$id_usuario_logado = $_SESSION['id_usuario'] ?? null;
 $resenhas = [];
 
 try {
     // Busca todas as resenhas juntando com os dados do livro e do usuário
     $sql = "SELECT 
+                r.id_resenha,
+                r.id_usuario,
                 r.resenha, 
                 r.nota, 
                 r.data_resenha, 
@@ -107,7 +110,18 @@ try {
             <div class="cards">
                 <?php if (count($resenhas) > 0): ?>
                     <?php foreach ($resenhas as $r): ?>
-                        <article class="card">
+                        <article class="card" style="position: relative;">
+                            
+                            <!-- Menu de Opções (Três Pontinhos) -->
+                            <?php if ($id_usuario_logado && $id_usuario_logado == $r['id_usuario']): ?>
+                                <div class="dropdown" style="position: absolute; top: 15px; right: 15px;">
+                                    <button onclick="toggleDropdown(<?= $r['id_resenha'] ?>)" style="background: none; border: none; font-size: 24px; cursor: pointer; color: #777;">⋮</button>
+                                    <div id="dropdown-<?= $r['id_resenha'] ?>" class="dropdown-content" style="display: none; position: absolute; right: 0; background-color: white; min-width: 120px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); z-index: 1001; border-radius: 8px; overflow: hidden;">
+                                        <a href="javascript:void(0)" onclick='openEditModal(<?= $r["id_resenha"] ?>, <?= $r["nota"] ?>, <?= htmlspecialchars(json_encode($r["resenha"]), ENT_QUOTES, "UTF-8") ?>)' style="color: black; padding: 12px 16px; text-decoration: none; display: block; font-size: 14px; text-align: left;">✏️ Editar</a>
+                                        <a href="javascript:void(0)" onclick="confirmDelete(<?= $r['id_resenha'] ?>)" style="color: #e53935; padding: 12px 16px; text-decoration: none; display: block; font-size: 14px; text-align: left; border-top: 1px solid #eee;">🗑️ Excluir</a>
+                                    </div>
+                                </div>
+                            <?php endif; ?>
                             
                             <!-- Cabeçalho do Card: Identificação do Usuário -->
                             <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 20px;">
@@ -161,6 +175,61 @@ try {
         </section>
 
     </main>
+
+    <!-- Modal de Edição de Resenha -->
+    <div id="edit-modal" class="modal" style="display: none; align-items: center; justify-content: center; position: fixed; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.5); z-index: 2000;">
+        <div class="modal-content" style="background: white; padding: 30px; border-radius: 20px; max-width: 500px; width: 90%;">
+            <h3 style="font-family: 'Sour Gummy', cursive; color: #0f55b2;">Editar Comentário</h3>
+            <form action="processar_edicao_resenha.php" method="POST">
+                <input type="hidden" name="id_resenha" id="edit-id-resenha">
+                <div class="form-group" style="margin-bottom: 15px;">
+                    <label style="display: block; margin-bottom: 5px;">Sua Nota (0 a 10):</label>
+                    <input type="number" name="nota" id="edit-nota" min="0" max="10" step="0.5" required style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #ddd;">
+                </div>
+                <div class="form-group" style="margin-bottom: 20px;">
+                    <label style="display: block; margin-bottom: 5px;">Comentário:</label>
+                    <textarea name="resenha" id="edit-resenha" rows="5" required style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #ddd; font-family: inherit;"></textarea>
+                </div>
+                <div class="modal-actions" style="display: flex; gap: 10px;">
+                    <button type="button" onclick="document.getElementById('edit-modal').style.display='none'" class="btn-secondary" style="flex: 1;">Cancelar</button>
+                    <button type="submit" class="btn-primary" style="flex: 1;">Salvar Alterações</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Scripts para Gerenciamento de Resenhas -->
+    <script>
+        function toggleDropdown(id) {
+            const dropdown = document.getElementById('dropdown-' + id);
+            const isVisible = dropdown.style.display === 'block';
+            
+            // Fecha todos os outros dropdowns
+            document.querySelectorAll('.dropdown-content').forEach(d => d.style.display = 'none');
+            
+            dropdown.style.display = isVisible ? 'none' : 'block';
+        }
+
+        // Fecha o dropdown se clicar fora dele
+        window.onclick = function(event) {
+            if (!event.target.matches('button')) {
+                document.querySelectorAll('.dropdown-content').forEach(d => d.style.display = 'none');
+            }
+        }
+
+        function confirmDelete(id) {
+            if (confirm('Tem certeza que deseja excluir seu comentário? Essa ação não pode ser desfeita.')) {
+                window.location.href = 'excluir_resenha.php?id=' + id;
+            }
+        }
+
+        function openEditModal(id, nota, resenha) {
+            document.getElementById('edit-id-resenha').value = id;
+            document.getElementById('edit-nota').value = nota;
+            document.getElementById('edit-resenha').value = resenha;
+            document.getElementById('edit-modal').style.display = 'flex';
+        }
+    </script>
 
     <footer style="width: 100%; background-color: #0f55b2; padding: 25px 0; margin-top: auto; display: block; box-shadow: 0 -2px 10px #0f55b2;">
     <div style="max-width: 1200px; margin: 0 auto; padding: 0 50px; display: flex; justify-content: center; align-items: center; position: relative; box-sizing: border-box;">
