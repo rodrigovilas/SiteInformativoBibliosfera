@@ -33,6 +33,12 @@ if (isset($_FILES['avatar']) && $_FILES['avatar']['error'] === UPLOAD_ERR_OK) {
             $ext = pathinfo($_FILES['avatar']['name'], PATHINFO_EXTENSION);
             $filename = uniqid('avatar_') . '.' . $ext;
             $uploadDir = __DIR__ . '/uploads/avatars/';
+            
+            // Cria o diretório se não existir
+            if (!is_dir($uploadDir)) {
+                mkdir($uploadDir, 0777, true);
+            }
+
             if (move_uploaded_file($_FILES['avatar']['tmp_name'], $uploadDir . $filename)) {
                 $avatarPath = 'uploads/avatars/' . $filename;
             }
@@ -45,6 +51,13 @@ if (isset($_FILES['avatar']) && $_FILES['avatar']['error'] === UPLOAD_ERR_OK) {
 }
 
 $senhaHash = password_hash($senha, PASSWORD_DEFAULT);
+
+// Verifica se a conexão existe antes de prosseguir
+if (!isset($conn)) {
+    $_SESSION['erro_login'] = "Erro interno: Falha na conexão com o banco de dados.";
+    header('Location: cadastro.php');
+    exit;
+}
 
 $stmt = $conn->prepare(
     "INSERT INTO login (email, usuario, senha, nome, bio, avatar) VALUES (:email, :usuario, :senha, :nome, :bio, :avatar)"
@@ -61,10 +74,16 @@ try {
     // Executa a inserção do novo usuário no banco de dados
     $stmt->execute();
 } catch (PDOException $e) {
-    $_SESSION['erro_login'] = "Erro: e-mail ou usuário possivelmente já em uso.";
+    // Tenta identificar se o erro é de duplicidade ou outro problema
+    if ($e->getCode() == 23000) {
+        $_SESSION['erro_login'] = "Erro: E-mail ou usuário já estão em uso.";
+    } else {
+        $_SESSION['erro_login'] = "Erro ao criar conta: " . $e->getMessage();
+    }
     header('Location: cadastro.php');
     exit;
 }
+
 
 // Redireciona o usuário para a página de login após cadastro bem-sucedido
 header('Location: login.php');
