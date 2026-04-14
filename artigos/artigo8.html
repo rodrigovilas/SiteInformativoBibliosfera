@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Análise Literária: Como Ler Com Profundidade - Bibliosfera</title>
     <link rel="stylesheet" href="../home.css">
+    <link rel="stylesheet" href="../artigo.css">
     <link rel="shortcut icon" href="../img/logo.png">
     <script src="../script.js"></script>
     <!-- Fontes (Google Fonts) -->
@@ -13,6 +14,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body id="topo">
+
+    <!-- Barra de Progresso de Leitura -->
+    <div id="reading-progress"></div>
 
     <header>
         <div class="dvh">
@@ -50,6 +54,10 @@
 
     <main class="home">
     
+        <div class="breadcrumbs">
+            <a href="../home.html">Início</a> > <a href="../blog.html">Blog</a> > <span>Análise Literária</span>
+        </div>
+    
         <section class="hero">
             <div class="hero-text">
                 <h2>Análise Literária: Como Ler Com Profundidade</h2>
@@ -72,8 +80,16 @@
         <section class="artigo-content" id="conteudo">
             <article class="artigo-corpo">
                 <div class="artigo-meta">
-                    <span class="tag leitura" style="font-family: var(--fonte-titulo);">Guia</span>
-                    <span class="tempo-leitura">📚 10 min de leitura</span>
+                    <span class="tag leitura" style="font-family: 'Sour Gummy', cursive;">Leitura</span>
+                    <span class="tempo-leitura" style="font-family: 'Sour Gummy', cursive;">📚 10 min de leitura</span>
+                    
+                    <div class="box-autor">
+                        <div class="avatar-mini">B</div>
+                        <div>
+                            <strong style="font-family: 'Sour Gummy', cursive;">Equipe Bibliosfera</strong><br>
+                            <small style="color: #999; font-family: 'Sour Gummy', cursive;">Publicado em 14 de Abril, 2026</small>
+                        </div>
+                    </div>
                 </div>
 
                 <h3>Além das Páginas: O Que é Ler Com Profundidade?</h3>
@@ -122,23 +138,41 @@
                     Ao invés de apenas acompanhar a ação, tente mapear as reais motivações. Todo personagem tem algo que ele <em>quer</em> (vencer a batalha, casar-se, ficar rico) e algo que ele <em>precisa</em> (aprender a perdoar, ser humilde, superar um trauma). O conflito real da obra geralmente nasce do abismo entre esses dois polos. Como o personagem principal se transforma da página 1 até a última página? A mensagem central do autor quase sempre reside nessa jornada de transformação.
                 </p>
 
-                <h3>Como Colocar em Prática?</h3>
+                <div class="livro-resenha" style="background-color: #f0fff0; border-left-color: #2e7d32;">
+                    <h4>Dica de Ouro: Escrita Criativa</h4>
+                    <p>
+                        Aprender as técnicas de análise também ajuda muito quem quer escrever. Ao entender como os grandes autores constroem suas tramas, você ganha ferramentas poderosas para aplicar em seus próprios textos.
+                    </p>
+                </div>
+
+                <h3>Conclusão: Um diálogo ativo</h3>
                 <p>
-                    Ler assim não acontece da noite pro dia, e requer prática. Um bom começo é adotar o hábito de <strong>ler com um lápis na mão</strong> (ou usando o recurso de notas do seu Kindle). 
-                </p>
-                <p>
-                    Sublinhe frases que chamem sua atenção, marque passagens confusas, anote dúvidas ou emoções na margem da página. Faça perguntas ao texto enquanto avança: <em>"Por que ela agiu dessa forma?", "O que este cenário cinzento significa?"</em>. Quando você transforma a leitura em um diálogo ativo com o autor, o livro deixa de ser um mero entretenimento passageiro e torna-se um verdadeiro banquete para a mente.
+                    Quando você transforma a leitura em um diálogo ativo com o autor, o livro deixa de ser um mero entretenimento passageiro e torna-se um verdadeiro banquete para a mente. Experimente ler seu próximo livro com um lápis na mão e veja a mágica acontecer.
                 </p>
             </article>
+
+            <!-- Seção de Relacionados -->
+            <section class="relacionados">
+                <h4>Continue sua jornada</h4>
+                <div class="grid-relacionados">
+                    <a href="artigo4.html" class="card-relacionado">
+                        <h5>Leitura Rápida</h5>
+                        <p>Técnicas para ler mais e melhor.</p>
+                    </a>
+                    <a href="artigo1.html" class="card-relacionado">
+                        <h5>10 Livros Essenciais</h5>
+                        <p>Onde aplicar sua nova análise.</p>
+                    </a>
+                </div>
+            </section>
         </section>
 
-       
         <section class="cta">
-            <h3>Continue Sua Jornada Literária</h3>
+            <h3>Quer aprofundar sua análise?</h3>
             <p>
-                Descubra mais artigos, resenhas e análises que expandem sua forma de enxergar a leitura.
+                Confira nossas resenhas detalhadas onde aplicamos todas essas técnicas em obras clássicas e contemporâneas.
             </p>
-            <a href="../leituras.php" class="btn-primary">Explorar mais leituras</a>
+            <a href="../resenhas.html" class="btn-primary">Ver Resenhas</a>
         </section>
 
     </main>
@@ -158,85 +192,6 @@
         </div>
     </footer>
 
-    <style>
-        
-        .artigo-content {
-            margin: 60px auto;
-            max-width: 900px;
-        }
-
-        .artigo-corpo {
-            background-color: #ffffff;
-            padding: 40px;
-            border-radius: 18px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-        }
-
-        .artigo-meta {
-            display: flex;
-            gap: 16px;
-            align-items: center;
-            margin-bottom: 32px;
-            flex-wrap: wrap;
-        }
-
-        .tempo-leitura {
-            font-family: 'Comic Relief', cursive;
-            color: #666;
-            font-size: 14px;
-        }
-
-        .artigo-corpo h3 {
-            font-family: 'Sour Gummy', cursive;
-            color: #0f55b2;
-            font-size: 28px;
-            margin-top: 32px;
-            margin-bottom: 16px;
-        }
-
-        .artigo-corpo h3:first-of-type {
-            margin-top: 0;
-        }
-
-        .artigo-corpo p {
-            font-family: 'Comic Relief', cursive;
-            font-size: 16px;
-            line-height: 1.8;
-            color: #333;
-            text-align: justify;
-            margin-bottom: 16px;
-        }
-
-        .livro-resenha {
-            background-color: #f9f9f9;
-            padding: 20px;
-            border-left: 4px solid #0f55b2;
-            margin: 24px 0;
-            border-radius: 8px;
-        }
-
-        .livro-resenha h4 {
-            font-family: 'Sour Gummy', cursive;
-            color: #0f55b2;
-            font-size: 18px;
-            margin: 0 0 12px 0;
-        }
-
-        .livro-resenha p {
-            margin: 0;
-            font-size: 15px;
-        }
-
-        .artigo-corpo ul {
-            margin: 24px 0;
-            padding-left: 24px;
-        }
-
-        .artigo-corpo ul li {
-            margin-bottom: 12px;
-            line-height: 1.8;
-        }
-    </style>
 
 </body>
 </html>

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>10 Livros Essenciais para Iniciantes - Bibliosfera</title>
     <link rel="stylesheet" href="../home.css">
+    <link rel="stylesheet" href="../artigo.css">
     <link rel="shortcut icon" href="../img/logo.png">
     <script src="../script.js"></script>
     <!-- Fontes (Google Fonts) -->
@@ -13,6 +14,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body id="topo">
+
+    <!-- Barra de Progresso de Leitura -->
+    <div id="reading-progress"></div>
 
     <header>
         <div class="dvh">
@@ -50,6 +54,10 @@
 
     <main class="home">
     
+        <div class="breadcrumbs">
+            <a href="../home.html">Início</a> > <a href="../blog.html">Blog</a> > <span>10 Livros Essenciais para Iniciantes</span>
+        </div>
+    
         <section class="hero">
             <div class="hero-text">
                 <h2>10 Livros Essenciais para Iniciantes</h2>
@@ -72,8 +80,16 @@
         <section class="artigo-content" id="conteudo">
             <article class="artigo-corpo">
                 <div class="artigo-meta">
-                    <span class="tag leitura" style="font-family: var(--fonte-titulo);">Leitura </span>
-                    <span class="tempo-leitura">📚 5 min de leitura</span>
+                    <span class="tag leitura" style="font-family: 'Sour Gummy', cursive;">Leitura</span>
+                    <span class="tempo-leitura" style="font-family: 'Sour Gummy', cursive;">📚 5 min de leitura</span>
+                    
+                    <div class="box-autor">
+                        <div class="avatar-mini">B</div>
+                        <div>
+                            <strong style="font-family: 'Sour Gummy', cursive;">Equipe Bibliosfera</strong><br>
+                            <small style="color: #999; font-family: 'Sour Gummy', cursive;">Publicado em 14 de Abril, 2026</small>
+                        </div>
+                    </div>
                 </div>
 
                 <h3>1. O Pequeno Príncipe - Antoine de Saint-Exupéry</h3>
@@ -126,20 +142,42 @@
                     Uma obra-prima do realismo mágico. A história de sete gerações da família Buendía em Macondo — uma cidade onde o fantástico é tão comum quanto o ordinário — é tecida de forma magistral. Márquez mistura o impossível com o real: uma mulher sobe aos céus enquanto dobra roupa, chuvas duram quase cinco anos, um personagem é mais um não-lugar do que uma pessoa. Para iniciantes prontos para um desafio literário maior, este livro oferece uma experiência única de leitura que transcende o que eles podem estar acostumados. Cada releitura revela novas camadas.
                 </p>
 
+                <div class="livro-resenha">
+                    <h4>Dica Extra: Como escolher sua próxima leitura?</h4>
+                    <p>
+                        Não tenha medo de abandonar um livro que não está prendendo sua atenção. A leitura deve ser prazerosa! Se um desses clássicos parecer difícil agora, comece por um gênero que você já gosta no formato de filmes ou séries.
+                    </p>
+                </div>
+
                 <h3>Como Começar?</h3>
                 <p>
                     Estes 10 livros representam diferentes gêneros, valores e desafios. Não precisa começar pelo primeiro. Escolha baseado no que mais lhe atrai: buscas magia? Comece com Harry Potter. Procura por reflexão? Tente O Pequeno Príncipe. Quer adrenalina? O Código da Vinci espera por você. O importante é começar, porque cada livro terminado aumenta sua confiança e conhecimento, preparando-o para explorar ainda mais. Feliz leitura!
                 </p>
             </article>
+
+            <!-- Seção de Relacionados -->
+            <section class="relacionados">
+                <h4>Continue sua jornada</h4>
+                <div class="grid-relacionados">
+                    <a href="artigo2.html" class="card-relacionado">
+                        <h5>Como criar o hábito da leitura</h5>
+                        <p>Dicas práticas para ler todos os dias.</p>
+                    </a>
+                    <a href="artigo3.html" class="card-relacionado">
+                        <h5>Gêneros Literários</h5>
+                        <p>Descubra qual estilo combina com você.</p>
+                    </a>
+                </div>
+            </section>
         </section>
 
        
         <section class="cta">
-            <h3>Continue Sua Jornada Literária</h3>
+            <h3>Quer compartilhar sua opinião?</h3>
             <p>
-                Descubra mais artigos, resenhas e análises que expandem sua forma de enxergar a leitura.
+                Junte-se à nossa comunidade e escreva suas próprias resenhas dos livros que você está lendo!
             </p>
-            <a href="../leituras.php" class="btn-primary">Explorar mais leituras</a>
+            <a href="../comunidade.php" class="btn-primary">Ir para a Comunidade</a>
         </section>
 
     </main>
@@ -159,85 +197,6 @@
         </div>
     </footer>
 
-    <style>
-        
-        .artigo-content {
-            margin: 60px auto;
-            max-width: 900px;
-        }
-
-        .artigo-corpo {
-            background-color: #ffffff;
-            padding: 40px;
-            border-radius: 18px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-        }
-
-        .artigo-meta {
-            display: flex;
-            gap: 16px;
-            align-items: center;
-            margin-bottom: 32px;
-            flex-wrap: wrap;
-        }
-
-        .tempo-leitura {
-            font-family: 'Comic Relief', cursive;
-            color: #666;
-            font-size: 14px;
-        }
-
-        .artigo-corpo h3 {
-            font-family: 'Sour Gummy', cursive;
-            color: #0f55b2;
-            font-size: 28px;
-            margin-top: 32px;
-            margin-bottom: 16px;
-        }
-
-        .artigo-corpo h3:first-of-type {
-            margin-top: 0;
-        }
-
-        .artigo-corpo p {
-            font-family: 'Comic Relief', cursive;
-            font-size: 16px;
-            line-height: 1.8;
-            color: #333;
-            text-align: justify;
-            margin-bottom: 16px;
-        }
-
-        .livro-resenha {
-            background-color: #f9f9f9;
-            padding: 20px;
-            border-left: 4px solid #0f55b2;
-            margin: 24px 0;
-            border-radius: 8px;
-        }
-
-        .livro-resenha h4 {
-            font-family: 'Sour Gummy', cursive;
-            color: #0f55b2;
-            font-size: 18px;
-            margin: 0 0 12px 0;
-        }
-
-        .livro-resenha p {
-            margin: 0;
-            font-size: 15px;
-        }
-
-        .artigo-corpo ul {
-            margin: 24px 0;
-            padding-left: 24px;
-        }
-
-        .artigo-corpo ul li {
-            margin-bottom: 12px;
-            line-height: 1.8;
-        }
-    </style>
 
 </body>
 </html>

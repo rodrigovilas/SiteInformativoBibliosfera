@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Livros Que Exploram Identidade e Pertencimento - Bibliosfera</title>
     <link rel="stylesheet" href="../home.css">
+    <link rel="stylesheet" href="../artigo.css">
     <link rel="shortcut icon" href="../img/logo.png">
     <script src="../script.js"></script>
     <!-- Fontes (Google Fonts) -->
@@ -13,6 +14,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body id="topo">
+
+    <!-- Barra de Progresso de Leitura -->
+    <div id="reading-progress"></div>
 
     <header>
         <div class="dvh">
@@ -50,6 +54,10 @@
 
     <main class="home">
     
+        <div class="breadcrumbs">
+            <a href="../home.html">Início</a> > <a href="../blog.html">Blog</a> > <span>Identidade e Pertencimento</span>
+        </div>
+    
         <section class="hero">
             <div class="hero-text">
                 <h2>Livros Que Exploram Identidade e Pertencimento</h2>
@@ -72,8 +80,16 @@
         <section class="artigo-content" id="conteudo">
             <article class="artigo-corpo">
                 <div class="artigo-meta">
-                    <span class="tag leitura" style="font-family: var(--fonte-titulo);">Lista</span>
-                    <span class="tempo-leitura">📚 6 min de leitura</span>
+                    <span class="tag leitura" style="font-family: 'Sour Gummy', cursive;">Lista</span>
+                    <span class="tempo-leitura" style="font-family: 'Sour Gummy', cursive;">📚 6 min de leitura</span>
+                    
+                    <div class="box-autor">
+                        <div class="avatar-mini">B</div>
+                        <div>
+                            <strong style="font-family: 'Sour Gummy', cursive;">Equipe Bibliosfera</strong><br>
+                            <small style="color: #999; font-family: 'Sour Gummy', cursive;">Publicado em 14 de Abril, 2026</small>
+                        </div>
+                    </div>
                 </div>
 
                 <h3>Encontrando a Nós Mesmos nas Páginas</h3>
@@ -125,20 +141,41 @@
                     Sally Rooney fez enorme sucesso com esse livro ao retratar a agonia existencial da geração millennial e a dependência que temos do olhar do outro para validar quem somos. Como a nossa identidade muda e se adapta de acordo com o ambiente que habitamos, e com quem dividimos a cama e o coração? É um livro muito sincero sobre como nos moldamos às pessoas que amamos.
                 </p>
 
-                <h3>O Leitor e o Espelho</h3>
+                <div class="livro-resenha" style="background-color: #fff8f0; border-left-color: #ff9800;">
+                    <h4>O Leitor e o Espelho</h4>
+                    <p>
+                        Sempre que terminamos uma grande obra literária, um pouquinho de nós fica entre as páginas, e um pouco dos personagens passa a viver do lado de cá. Ler sobre o sentimento de inadequação alheio é curiosamente um dos melhores tratamentos para curar a nossa própria sensação de não-pertencimento. Afinal de contas, cada livro desta lista é um imenso letreiro em neon literário dizendo: <strong>você não está sozinho!</strong>
+                    </p>
+                </div>
+
+                <h3>Conclusão: Você não está sozinho</h3>
                 <p>
-                    Sempre que terminamos uma grande obra literária, um pouquinho de nós fica entre as páginas, e um pouco dos personagens passa a viver do lado de cá. Ler sobre o sentimento de inadequação alheio é curiosamente um dos melhores tratamentos para curar a nossa própria sensação de não-pertencimento. Afinal de contas, cada livro dessa lista é um imenso letreiro em neon literário dizendo: <strong>você não está sozinho!</strong>
+                    A literatura é uma das ferramentas mais poderosas para a construção da nossa identidade. Através das histórias de outros, aprendemos a entender a nossa própria jornada. Cada livro é um espelho onde podemos nos ver — e nos aceitar — um pouco melhor.
                 </p>
             </article>
+
+            <!-- Seção de Relacionados -->
+            <section class="relacionados">
+                <h4>Continue sua jornada</h4>
+                <div class="grid-relacionados">
+                    <a href="artigo5.html" class="card-relacionado">
+                        <h5>Mulheres na Literatura</h5>
+                        <p>Autoras que desafiaram padrões.</p>
+                    </a>
+                    <a href="artigo1.html" class="card-relacionado">
+                        <h5>10 Livros Essenciais</h5>
+                        <p>Mais clássicos para sua lista.</p>
+                    </a>
+                </div>
+            </section>
         </section>
 
-       
         <section class="cta">
-            <h3>Explore Mais no Blog</h3>
+            <h3>Sentiu-se representado em algum livro?</h3>
             <p>
-                Acompanhe outras dicas, listas e reflexões literárias que combinam com o seu momento atual.
+                Nossa comunidade tem fóruns de discussão sobre como a literatura impacta nossa percepção de si. Venha compartilhar sua história!
             </p>
-            <a href="../blog.html" class="btn-primary">Ver todos os artigos</a>
+            <a href="../comunidade.php" class="btn-primary">Participar das Discussões</a>
         </section>
 
     </main>
@@ -158,85 +195,6 @@
         </div>
     </footer>
 
-    <style>
-        
-        .artigo-content {
-            margin: 60px auto;
-            max-width: 900px;
-        }
-
-        .artigo-corpo {
-            background-color: #ffffff;
-            padding: 40px;
-            border-radius: 18px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-        }
-
-        .artigo-meta {
-            display: flex;
-            gap: 16px;
-            align-items: center;
-            margin-bottom: 32px;
-            flex-wrap: wrap;
-        }
-
-        .tempo-leitura {
-            font-family: 'Comic Relief', cursive;
-            color: #666;
-            font-size: 14px;
-        }
-
-        .artigo-corpo h3 {
-            font-family: 'Sour Gummy', cursive;
-            color: #0f55b2;
-            font-size: 28px;
-            margin-top: 32px;
-            margin-bottom: 16px;
-        }
-
-        .artigo-corpo h3:first-of-type {
-            margin-top: 0;
-        }
-
-        .artigo-corpo p {
-            font-family: 'Comic Relief', cursive;
-            font-size: 16px;
-            line-height: 1.8;
-            color: #333;
-            text-align: justify;
-            margin-bottom: 16px;
-        }
-
-        .livro-resenha {
-            background-color: #f9f9f9;
-            padding: 20px;
-            border-left: 4px solid #0f55b2;
-            margin: 24px 0;
-            border-radius: 8px;
-        }
-
-        .livro-resenha h4 {
-            font-family: 'Sour Gummy', cursive;
-            color: #0f55b2;
-            font-size: 18px;
-            margin: 0 0 12px 0;
-        }
-
-        .livro-resenha p {
-            margin: 0;
-            font-size: 15px;
-        }
-
-        .artigo-corpo ul {
-            margin: 24px 0;
-            padding-left: 24px;
-        }
-
-        .artigo-corpo ul li {
-            margin-bottom: 12px;
-            line-height: 1.8;
-        }
-    </style>
 
 </body>
 </html>

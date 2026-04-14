@@ -1,0 +1,210 @@
+:root {
+    --primary: #0f55b2;
+    --primary-light: #e0eaff;
+    --orange: #ff9800;
+    --text-color: #333;
+    --text-muted: #666;
+    --bg-color: rgb(248, 248, 233);
+    --card-bg: #ffffff;
+    --font-titles: 'Sour Gummy', cursive;
+    --font-body: 'Comic Relief', cursive;
+    --font-inter: 'Inter', sans-serif;
+}
+
+/* Barra de Progresso de Leitura */
+#reading-progress {
+    position: fixed;
+    top: 72px; /* Logo abaixo do header */
+    left: 0;
+    width: 0%;
+    height: 4px;
+    background: linear-gradient(to right, var(--primary), var(--orange));
+    z-index: 1001;
+    transition: width 0.1s ease;
+}
+
+/* Hero Section Modernizada */
+.hero {
+    background: linear-gradient(135deg, rgba(15, 85, 178, 0.05), rgba(255, 152, 0, 0.05));
+    border-radius: 30px;
+    padding: 60px 40px;
+    margin-bottom: 60px;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    right: -50px;
+    width: 200px;
+    height: 200px;
+    background: var(--primary);
+    opacity: 0.03;
+    border-radius: 50%;
+}
+
+/* Breadcrumbs */
+.breadcrumbs {
+    display: flex;
+    gap: 8px;
+    font-size: 14px;
+    margin-bottom: 24px;
+    font-family: var(--font-inter);
+    color: var(--text-muted);
+}
+
+.breadcrumbs a {
+    color: var(--primary);
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.breadcrumbs a:hover {
+    text-decoration: underline;
+}
+
+/* Artigo Content */
+.artigo-content {
+    margin: 40px auto;
+    max-width: 850px;
+    animation: fadeIn 0.8s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.artigo-corpo {
+    background-color: var(--card-bg);
+    padding: 50px;
+    border-radius: 24px;
+    box-shadow: 0 15px 45px rgba(0,0,0,0.05);
+    position: relative;
+}
+
+/* Meta info */
+.artigo-meta {
+    margin-bottom: 40px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.box-autor {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.avatar-mini {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--primary-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: var(--primary);
+    font-family: var(--font-titles);
+}
+
+/* Tipografia */
+.artigo-corpo h3 {
+    font-family: var(--font-titles);
+    color: var(--primary);
+    font-size: 32px;
+    margin-top: 48px;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.artigo-corpo p {
+    font-family: var(--font-body);
+    font-size: 18px;
+    line-height: 1.8;
+    color: var(--text-color);
+    text-align: justify;
+    margin-bottom: 24px;
+}
+
+/* Destaques (Links ou Boxes) */
+.livro-resenha {
+    background-color: #fcf8f0;
+    padding: 25px;
+    border-left: 5px solid var(--orange);
+    margin: 32px 0;
+    border-radius: 12px;
+    transition: transform 0.3s;
+}
+
+.livro-resenha:hover {
+    transform: translateX(10px);
+}
+
+/* Artigos Relacionados */
+.relacionados {
+    margin-top: 80px;
+}
+
+.relacionados h4 {
+    font-family: var(--font-titles);
+    font-size: 28px;
+    color: var(--primary);
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.grid-relacionados {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.card-relacionado {
+    background: var(--card-bg);
+    padding: 20px;
+    border-radius: 15px;
+    text-decoration: none;
+    color: inherit;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+    transition: 0.3s;
+    border: 1px solid #f0f0f0;
+}
+
+.card-relacionado:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(15, 85, 178, 0.1);
+    border-color: var(--primary-light);
+}
+
+.card-relacionado h5 {
+    font-family: var(--font-titles);
+    color: var(--primary);
+    font-size: 18px;
+    margin: 0 0 10px 0;
+}
+
+.card-relacionado p {
+    font-size: 14px;
+    margin: 0;
+    color: var(--text-muted);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .artigo-corpo {
+        padding: 30px 20px;
+    }
+    
+    .hero {
+        padding: 40px 20px;
+    }
+    
+    .hero-text h2 {
+        font-size: 32px;
+    }
+}

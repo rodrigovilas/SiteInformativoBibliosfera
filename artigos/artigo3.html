@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gêneros Literários: Explorando Diferentes Mundos - Bibliosfera</title>
     <link rel="stylesheet" href="../home.css">
+    <link rel="stylesheet" href="../artigo.css">
     <link rel="shortcut icon" href="../img/logo.png">
     <script src="../script.js"></script>
     <!-- Fontes (Google Fonts) -->
@@ -13,6 +14,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body id="topo">
+
+    <!-- Barra de Progresso de Leitura -->
+    <div id="reading-progress"></div>
 
     <header>
         <div class="dvh">
@@ -49,6 +53,10 @@
     </header>
 
     <main class="home">
+    
+        <div class="breadcrumbs">
+            <a href="../home.html">Início</a> > <a href="../blog.html">Blog</a> > <span>Gêneros Literários</span>
+        </div>
 
         <section class="hero">
             <div class="hero-text">
@@ -72,8 +80,16 @@
         <section class="artigo-content" id="conteudo">
             <article class="artigo-corpo">
                 <div class="artigo-meta">
-                    <span class="tag leitura" style="font-family: var(--fonte-titulo);">Leitura </span>
-                    <span class="tempo-leitura">📚 8 min de leitura</span>
+                    <span class="tag leitura" style="font-family: 'Sour Gummy', cursive;">Leitura</span>
+                    <span class="tempo-leitura" style="font-family: 'Sour Gummy', cursive;">📚 8 min de leitura</span>
+                    
+                    <div class="box-autor">
+                        <div class="avatar-mini">B</div>
+                        <div>
+                            <strong style="font-family: 'Sour Gummy', cursive;">Equipe Bibliosfera</strong><br>
+                            <small style="color: #999; font-family: 'Sour Gummy', cursive;">Publicado em 14 de Abril, 2026</small>
+                        </div>
+                    </div>
                 </div>
 
                 <h3>Entendendo os Gêneros Literários</h3>
@@ -136,20 +152,41 @@
                     Não existe um único "melhor" gênero—existe o gênero que mais ressoa com seus interesses, necessidades emociais e preferências de leitura naquele momento de sua vida. Você pode ser leitor de fantasia que ocasionalmente mergulha em mistério, ou entusiasta de poesia que frequentemente volta em romance. Exploração é a chave. Teste diferentes gêneros, leia resenhas, converse com outros leitores em comunidades de leitura. Esteja aberto ao surpreendido. Às vezes, um livro fora da "sua" categoria preferida se torna favorito inesperado. A morte alegre é continuar descobrindo, porque a literatura oferece infinitas possibilidades de aventura e conhecimento.
                 </p>
 
+                <div class="livro-resenha" style="background-color: #f0f4ff; border-left-color: #0f55b2;">
+                    <h4>Experimente algo novo!</h4>
+                    <p>
+                        Que tal sair da zona de conforto hoje? Se você só lê ficção, tente um ensaio. Se ama fantasia, tente um romance histórico. A diversidade de gêneros expande nossa visão de mundo.
+                    </p>
+                </div>
+
                 <h3>Conclusão: Seu Universo Literário Aguarda</h3>
                 <p>
-                    Gêneros literários não são restrições, mas convites. Cada um oferece experiência única, perspectiva distinta e caminho único para conexão através de narrativa. Quer você busque escapismo, aprendizado, emoção ou riso, existe um gênero esperando por você. Comece com o que llama sua atenção. Se gostou, aprofunde. Se não, pode sem medo. Sua jornada leitora é pessoal e intransferível. Explore os gêneros com curiosidade, respeito pela diversidade de formas literárias e abertura para descoberta. Cada página virada em novo gênero expande seu horizonte.
+                    Gêneros literários não são restrições, mas convites. Cada um oferece experiência única, perspectiva distinta e caminho único para conexão através de narrativa. Quer você busque escapismo, aprendizado, emoção ou riso, existe um gênero esperando por você. Comece com o que chama sua atenção. Se gostou, aprofunde. Se não, prossiga sem medo. Sua jornada leitora é pessoal e intransferível. Cada página virada em novo gênero expande seu horizonte.
                 </p>
             </article>
+
+            <!-- Seção de Relacionados -->
+            <section class="relacionados">
+                <h4>Continue sua jornada</h4>
+                <div class="grid-relacionados">
+                    <a href="artigo1.html" class="card-relacionado">
+                        <h5>10 Livros Essenciais</h5>
+                        <p>Sugestões perfeitas para começar.</p>
+                    </a>
+                    <a href="artigo2.html" class="card-relacionado">
+                        <h5>Criar Hábito de Leitura</h5>
+                        <p>Dicas para ler todos os dias.</p>
+                    </a>
+                </div>
+            </section>
         </section>
 
-        
         <section class="cta">
-            <h3>Descubra Seu Gênero Favorito</h3>
+            <h3>Quer descobrir mais sobre um gênero específico?</h3>
             <p>
-                Explore mais artigos, resenhas e análises que expandem sua forma de enxergar a leitura.
+                Nossa comunidade tem grupos dedicados a cada estilo literário. Venha trocar ideias!
             </p>
-            <a href="../blog.html" class="btn-primary">Explorar mais artigos</a>
+            <a href="../comunidade.php" class="btn-primary">Entrar na Comunidade</a>
         </section>
 
     </main>
@@ -168,85 +205,6 @@
         </div>
     </footer>
 
-    <style>
-
-        .artigo-content {
-            margin: 60px auto;
-            max-width: 900px;
-        }
-
-        .artigo-corpo {
-            background-color: #ffffff;
-            padding: 40px;
-            border-radius: 18px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-        }
-
-        .artigo-meta {
-            display: flex;
-            gap: 16px;
-            align-items: center;
-            margin-bottom: 32px;
-            flex-wrap: wrap;
-        }
-
-        .tempo-leitura {
-            font-family: 'Comic Relief', cursive;
-            color: #666;
-            font-size: 14px;
-        }
-
-        .artigo-corpo h3 {
-            font-family: 'Sour Gummy', cursive;
-            color: #0f55b2;
-            font-size: 28px;
-            margin-top: 32px;
-            margin-bottom: 16px;
-        }
-
-        .artigo-corpo h3:first-of-type {
-            margin-top: 0;
-        }
-
-        .artigo-corpo p {
-            font-family: 'Comic Relief', cursive;
-            font-size: 16px;
-            line-height: 1.8;
-            color: #333;
-            text-align: justify;
-            margin-bottom: 16px;
-        }
-
-        .livro-resenha {
-            background-color: #f9f9f9;
-            padding: 20px;
-            border-left: 4px solid #0f55b2;
-            margin: 24px 0;
-            border-radius: 8px;
-        }
-
-        .livro-resenha h4 {
-            font-family: 'Sour Gummy', cursive;
-            color: #0f55b2;
-            font-size: 18px;
-            margin: 0 0 12px 0;
-        }
-
-        .livro-resenha p {
-            margin: 0;
-            font-size: 15px;
-        }
-
-        .artigo-corpo ul {
-            margin: 24px 0;
-            padding-left: 24px;
-        }
-
-        .artigo-corpo ul li {
-            margin-bottom: 12px;
-            line-height: 1.8;
-        }
-    </style>
 
 </body>
 </html>

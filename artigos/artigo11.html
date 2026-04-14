@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>O Impacto do Realismo Mágico na Literatura - Bibliosfera</title>
     <link rel="stylesheet" href="../home.css">
+    <link rel="stylesheet" href="../artigo.css">
     <link rel="shortcut icon" href="../img/logo.png">
     <script src="../script.js"></script>
     <!-- Fontes (Google Fonts) -->
@@ -13,6 +14,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body id="topo">
+
+    <!-- Barra de Progresso de Leitura -->
+    <div id="reading-progress"></div>
 
     <header>
         <div class="dvh">
@@ -50,6 +54,10 @@
 
     <main class="home">
     
+        <div class="breadcrumbs">
+            <a href="../home.html">Início</a> > <a href="../blog.html">Blog</a> > <span>Realismo Mágico</span>
+        </div>
+    
         <section class="hero">
             <div class="hero-text">
                 <h2>O Impacto do Realismo Mágico na Literatura</h2>
@@ -72,8 +80,16 @@
         <section class="artigo-content" id="conteudo">
             <article class="artigo-corpo">
                 <div class="artigo-meta">
-                    <span class="tag leitura" style="font-family: var(--fonte-titulo);">Análise</span>
-                    <span class="tempo-leitura">📚 9 min de leitura</span>
+                    <span class="tag leitura" style="font-family: 'Sour Gummy', cursive;">Leitura</span>
+                    <span class="tempo-leitura" style="font-family: 'Sour Gummy', cursive;">📚 9 min de leitura</span>
+                    
+                    <div class="box-autor">
+                        <div class="avatar-mini">B</div>
+                        <div>
+                            <strong style="font-family: 'Sour Gummy', cursive;">Equipe Bibliosfera</strong><br>
+                            <small style="color: #999; font-family: 'Sour Gummy', cursive;">Publicado em 14 de Abril, 2026</small>
+                        </div>
+                    </div>
                 </div>
 
                 <h3>Quando o Fantástico Bate à Porta</h3>
@@ -118,23 +134,41 @@
                     O japonês <strong>Haruki Murakami</strong> (<em>"Kafka à Beira-Mar"</em>) é um mestre moderno ao inserir chuvas inexplicáveis de sardinhas, gatos que conversam com humanos, mundos paralelos em escadas escuras e buracos poéticos no tecido da realidade do Japão moderno. No caso dele, o realismo mágico serve menos para falar de política governamental e muito mais para ilustrar a solidão da vida moderna nas grandes metrópoles, onde nos sentimos constantemente alienados a ponto de beirar o onírico.
                 </p>
 
-                <h3>A Beleza de Aceitar o Impossível</h3>
+                <div class="livro-resenha" style="background-color: #fdf2f2; border-left-color: #e53935;">
+                    <h4>Dica: Macondo te espera</h4>
+                    <p>
+                        Se você nunca leu nada de realismo mágico, comece por "Cem Anos de Solidão". É uma experiência transformadora que exige paciência nas primeiras páginas, mas que recompensa com um universo inesquecível.
+                    </p>
+                </div>
+
+                <h3>Conclusão: Aceite o Impossível</h3>
                 <p>
-                    A lição mais bonita que tiramos do realismo mágico é que o nosso mundo não precisa ser árido de surpresas, e a mente humana consegue re-significar o caos através do lirismo. A dor de uma guerra ganha outra tonalidade na literatura se, após o fato finalizador, choverem flores amarelas na cidade inteira a noite toda.
-                </p>
-                <p>
-                    Afinal, abraçar o realismo mágico na literatura é admitir que não entendemos absolutamente tudo sobre a engrenagem oculta que move a vida. O impossível muitas vezes é palpável. Se você deixar a mente aberta, ele pode, quem sabe, bater na sua porta, sentar com você de pijama, beber um café fresquinho e virar apenas mais uma das grandes narrativas fantásticas do seu dia.
+                    Abraçar o realismo mágico na literatura é admitir que não entendemos tudo sobre a engrenagem oculta que move a vida. O impossível muitas vezes é palpável. Se você deixar a mente aberta, ele pode, quem sabe, bater na sua porta e virar apenas mais uma das grandes narrativas fantásticas do seu dia.
                 </p>
             </article>
+
+            <!-- Seção de Relacionados -->
+            <section class="relacionados">
+                <h4>Continue sua jornada</h4>
+                <div class="grid-relacionados">
+                    <a href="artigo3.html" class="card-relacionado">
+                        <h5>Gêneros Literários</h5>
+                        <p>Onde o realismo mágico se encaixa.</p>
+                    </a>
+                    <a href="artigo7.html" class="card-relacionado">
+                        <h5>Ficção Científica</h5>
+                        <p>Outro lado do fantástico.</p>
+                    </a>
+                </div>
+            </section>
         </section>
 
-       
         <section class="cta">
-            <h3>Explore Mais no Blog</h3>
+            <h3>Fascinado pelo fantástico?</h3>
             <p>
-                Acompanhe outras análises, listas e dicas literárias que podem despertar sua criatividade hoje.
+                Nossa comunidade tem grupos de estudo dedicados ao realismo mágico e literatura latino-americana. Venha debater conosco!
             </p>
-            <a href="../blog.html" class="btn-primary">Ver todos os artigos</a>
+            <a href="../comunidade.php" class="btn-primary">Ver Grupos de Estudo</a>
         </section>
 
     </main>
@@ -154,85 +188,6 @@
         </div>
     </footer>
 
-    <style>
-        
-        .artigo-content {
-            margin: 60px auto;
-            max-width: 900px;
-        }
-
-        .artigo-corpo {
-            background-color: #ffffff;
-            padding: 40px;
-            border-radius: 18px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-        }
-
-        .artigo-meta {
-            display: flex;
-            gap: 16px;
-            align-items: center;
-            margin-bottom: 32px;
-            flex-wrap: wrap;
-        }
-
-        .tempo-leitura {
-            font-family: 'Comic Relief', cursive;
-            color: #666;
-            font-size: 14px;
-        }
-
-        .artigo-corpo h3 {
-            font-family: 'Sour Gummy', cursive;
-            color: #0f55b2;
-            font-size: 28px;
-            margin-top: 32px;
-            margin-bottom: 16px;
-        }
-
-        .artigo-corpo h3:first-of-type {
-            margin-top: 0;
-        }
-
-        .artigo-corpo p {
-            font-family: 'Comic Relief', cursive;
-            font-size: 16px;
-            line-height: 1.8;
-            color: #333;
-            text-align: justify;
-            margin-bottom: 16px;
-        }
-
-        .livro-resenha {
-            background-color: #f9f9f9;
-            padding: 20px;
-            border-left: 4px solid #0f55b2;
-            margin: 24px 0;
-            border-radius: 8px;
-        }
-
-        .livro-resenha h4 {
-            font-family: 'Sour Gummy', cursive;
-            color: #0f55b2;
-            font-size: 18px;
-            margin: 0 0 12px 0;
-        }
-
-        .livro-resenha p {
-            margin: 0;
-            font-size: 15px;
-        }
-
-        .artigo-corpo ul {
-            margin: 24px 0;
-            padding-left: 24px;
-        }
-
-        .artigo-corpo ul li {
-            margin-bottom: 12px;
-            line-height: 1.8;
-        }
-    </style>
 
 </body>
 </html>

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mulheres Autoras que Mudaram a Literatura - Bibliosfera</title>
     <link rel="stylesheet" href="../home.css">
+    <link rel="stylesheet" href="../artigo.css">
     <link rel="shortcut icon" href="../img/logo.png">
     <script src="../script.js"></script>
     <!-- Fontes (Google Fonts) -->
@@ -13,6 +14,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body id="topo">
+
+    <!-- Barra de Progresso de Leitura -->
+    <div id="reading-progress"></div>
 
     <header>
         <div class="dvh">
@@ -49,6 +53,10 @@
     </header>
 
     <main class="home">
+    
+        <div class="breadcrumbs">
+            <a href="../home.html">Início</a> > <a href="../blog.html">Blog</a> > <span>Mulheres na Literatura</span>
+        </div>
         <!-- HERO SECTION -->
         <section class="hero">
             <div class="hero-text">
@@ -72,8 +80,16 @@
         <section class="artigo-content" id="conteudo">
             <article class="artigo-corpo">
                 <div class="artigo-meta">
-                    <span class="tag leitura" style="font-family: var(--fonte-titulo);">Leitura </span>
-                    <span class="tempo-leitura">📚 9 min de leitura</span>
+                    <span class="tag leitura" style="font-family: 'Sour Gummy', cursive;">Leitura</span>
+                    <span class="tempo-leitura" style="font-family: 'Sour Gummy', cursive;">📚 9 min de leitura</span>
+                    
+                    <div class="box-autor">
+                        <div class="avatar-mini">B</div>
+                        <div>
+                            <strong style="font-family: 'Sour Gummy', cursive;">Equipe Bibliosfera</strong><br>
+                            <small style="color: #999; font-family: 'Sour Gummy', cursive;">Publicado em 14 de Abril, 2026</small>
+                        </div>
+                    </div>
                 </div>
 
                 <h3>A Importância de Contar Histórias Femininas</h3>
@@ -126,20 +142,41 @@
                     Essas autoras, entre inúmeras outras, transformaram literatura através persistência, talento e coragem de contar histórias que importavam para elas apesar de pressão social em contrário. Elas expandiram o que prosa feminina podia ser—não apenas romance sentimental mas ficção especulativa, experimental, filosófica e política. Elas centraram experiência e perspectiva feminina não como secundária mas como plenamente digna de realização artística completa. Elas escreveram sobre sexualidade, raiva, ambição e complexidade psicológica em formas que chocaram e inspiraram. Elas recusaram-se a ser silenciadas e, ao fazer assim, criaram caminho para gerações de escritoras vindo depois delas.
                 </p>
 
+                <div class="livro-resenha" style="background-color: #fff0f5; border-left-color: #d112b6;">
+                    <h4>Dica de Leitura: Um Teto Todo Seu</h4>
+                    <p>
+                        Se você quer entender as bases da crítica literária feminista, o ensaio de Virginia Woolf é essencial. Ele continua assustadoramente atual e inspirador para qualquer pessoa que busca seu espaço criativo.
+                    </p>
+                </div>
+
                 <h3>Conclusão: Continuando o Legado</h3>
                 <p>
-                    O trabalho de mulheres autoras não é história do passado distante; é herança viva que molda como lemos, pensamos e compreendemos mundo hoje. Cada mulher que escreve, publica e é lida participa em tradição estabelecida por Austen, Brontë, Woolf e outras. Honrar essas autoras significa não apenas ler seu trabalho mas reconhecer que suas lutas por voz e reconhecimento continuam, que perspectiva feminina em literatura continua sendo frequentemente desvalorizada, e que amplificar vozes femininas permanece importante. Leia suas obras. Procure autoras contemporâneas. Custe às próximas gerações de escritoras que sua experiência merece audiência, respeitabilidade e reconhecimento pleno. O futuro da literatura é moldado por quem escolhemos ler hoje.
+                    O trabalho de mulheres autoras não é história do passado distante; é herança viva que molda como lemos, pensamos e compreendemos o mundo hoje. Honrar essas autoras significa não apenas ler seu trabalho, mas reconhecer que suas vozes continuam fundamentais. Amplificar vozes femininas é um dever de todo leitor apaixonado.
                 </p>
             </article>
+
+            <!-- Seção de Relacionados -->
+            <section class="relacionados">
+                <h4>Continue sua jornada</h4>
+                <div class="grid-relacionados">
+                    <a href="artigo6.html" class="card-relacionado">
+                        <h5>Literatura Brasileira</h5>
+                        <p>Autores influentes da nossa terra.</p>
+                    </a>
+                    <a href="artigo10.html" class="card-relacionado">
+                        <h5>Identidade e Pertencimento</h5>
+                        <p>Obras que exploram a essência humana.</p>
+                    </a>
+                </div>
+            </section>
         </section>
 
-        <!-- CTA FINAL -->
         <section class="cta">
-            <h3>Celebre Vozes Femininas na Literatura</h3>
+            <h3>Quer descobrir mais autoras incríveis?</h3>
             <p>
-                Explore mais artigos, resenhas e análises que expandem sua forma de enxergar a leitura.
+                Nossa comunidade compartilha listas de leitura focadas exclusivamente em literatura feminina. Venha conferir!
             </p>
-            <a href="../blog.html" class="btn-primary">Explorar mais artigos</a>
+            <a href="../comunidade.php" class="btn-primary">Ver Listas na Comunidade</a>
         </section>
 
     </main>
@@ -159,85 +196,6 @@
         </div>
     </footer>
 
-    <style>
-        /* Estilos adicionais para o artigo */
-        .artigo-content {
-            margin: 60px auto;
-            max-width: 900px;
-        }
-
-        .artigo-corpo {
-            background-color: #ffffff;
-            padding: 40px;
-            border-radius: 18px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-        }
-
-        .artigo-meta {
-            display: flex;
-            gap: 16px;
-            align-items: center;
-            margin-bottom: 32px;
-            flex-wrap: wrap;
-        }
-
-        .tempo-leitura {
-            font-family: 'Comic Relief', cursive;
-            color: #666;
-            font-size: 14px;
-        }
-
-        .artigo-corpo h3 {
-            font-family: 'Sour Gummy', cursive;
-            color: #0f55b2;
-            font-size: 28px;
-            margin-top: 32px;
-            margin-bottom: 16px;
-        }
-
-        .artigo-corpo h3:first-of-type {
-            margin-top: 0;
-        }
-
-        .artigo-corpo p {
-            font-family: 'Comic Relief', cursive;
-            font-size: 16px;
-            line-height: 1.8;
-            color: #333;
-            text-align: justify;
-            margin-bottom: 16px;
-        }
-
-        .livro-resenha {
-            background-color: #f9f9f9;
-            padding: 20px;
-            border-left: 4px solid #0f55b2;
-            margin: 24px 0;
-            border-radius: 8px;
-        }
-
-        .livro-resenha h4 {
-            font-family: 'Sour Gummy', cursive;
-            color: #0f55b2;
-            font-size: 18px;
-            margin: 0 0 12px 0;
-        }
-
-        .livro-resenha p {
-            margin: 0;
-            font-size: 15px;
-        }
-
-        .artigo-corpo ul {
-            margin: 24px 0;
-            padding-left: 24px;
-        }
-
-        .artigo-corpo ul li {
-            margin-bottom: 12px;
-            line-height: 1.8;
-        }
-    </style>
 
 </body>
 </html>

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Técnicas de Leitura Rápida e Compreensão - Bibliosfera</title>
     <link rel="stylesheet" href="../home.css">
+    <link rel="stylesheet" href="../artigo.css">
     <link rel="shortcut icon" href="../img/logo.png">
     <script src="../script.js"></script>
     <!-- Fontes (Google Fonts) -->
@@ -13,6 +14,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body id="topo">
+
+    <!-- Barra de Progresso de Leitura -->
+    <div id="reading-progress"></div>
 
     <header>
         <div class="dvh">
@@ -49,6 +53,10 @@
     </header>
 
     <main class="home">
+    
+        <div class="breadcrumbs">
+            <a href="../home.html">Início</a> > <a href="../blog.html">Blog</a> > <span>Leitura Rápida</span>
+        </div>
         <!-- HERO SECTION -->
         <section class="hero">
             <div class="hero-text">
@@ -72,8 +80,16 @@
         <section class="artigo-content" id="conteudo">
             <article class="artigo-corpo">
                 <div class="artigo-meta">
-                    <span class="tag leitura" style="font-family: var(--fonte-titulo);">Leitura </span>
-                    <span class="tempo-leitura">📚 7 min de leitura</span>
+                    <span class="tag leitura" style="font-family: 'Sour Gummy', cursive;">Leitura</span>
+                    <span class="tempo-leitura" style="font-family: 'Sour Gummy', cursive;">📚 7 min de leitura</span>
+                    
+                    <div class="box-autor">
+                        <div class="avatar-mini">B</div>
+                        <div>
+                            <strong style="font-family: 'Sour Gummy', cursive;">Equipe Bibliosfera</strong><br>
+                            <small style="color: #999; font-family: 'Sour Gummy', cursive;">Publicado em 14 de Abril, 2026</small>
+                        </div>
+                    </div>
                 </div>
 
                 <h3>A Importância da Velocidade com Compreensão</h3>
@@ -136,20 +152,42 @@
                     Leitura rápida eficiente exige concentração. Melhorar sua velocidade é mínimo benefício se ambiente está cheio de distrações. Reserve espaço livre de interrupções, desligue notificações e crie ritual de leitura focado. Quando cérebro entra estado de "fluxo"—concentração profunda—processamento acelera naturalmente. Você não está apenas lendo palavras diferente; você está totalmente absorto, causando velocidade maior resultar em compreensão melhor.
                 </p>
 
+                <div class="livro-resenha">
+                    <h4>Pratique agora!</h4>
+                    <p>
+                        Tente ler o próximo parágrafo usando seu dedo como guia. Não pare para reler nenhuma palavra. Você vai se surpreender com quanto consegue absorver apenas mantendo o ritmo.
+                    </p>
+                </div>
+
                 <h3>Conclusão: Velocidade e Prazer Não são Mutuamente Exclusivos</h3>
                 <p>
-                    Ler rápido não significa perder beleza e nuância na literatura. Significa utilizar sua capacidade cognitiva totalmente, eliminando hábitos que a desperdiçam. Desenvolver habilidades de leitura rápida abre mais tempo para livros que ama, permitindo-o explorar mais autores, gêneros e histórias. Comece pequeno—aplicar técnica de scanear ou eliminar regressão consciente em próximo livro. Gradualmente adicione técnicas. Dentro semanas, você vai ler vistelmente mais rápido sem sacrificar compreensão. E isto, em essência, é poder de leitura rápida bem executada.
+                    Ler rápido não significa perder beleza e nuância na literatura. Significa utilizar sua capacidade cognitiva totalmente, eliminando hábitos ineficientes. Comece pequeno, aplicando técnicas de escaneamento ou eliminação de regressão. Em poucas semanas, você lerá visivelmente mais rápido sem sacrificar a compreensão.
                 </p>
             </article>
+
+            <!-- Seção de Relacionados -->
+            <section class="relacionados">
+                <h4>Continue sua jornada</h4>
+                <div class="grid-relacionados">
+                    <a href="artigo2.html" class="card-relacionado">
+                        <h5>Criar Hábito de Leitura</h5>
+                        <p>Dicas para ler todos os dias.</p>
+                    </a>
+                    <a href="artigo8.html" class="card-relacionado">
+                        <h5>Análise Literária</h5>
+                        <p>Como ler com profundidade.</p>
+                    </a>
+                </div>
+            </section>
         </section>
 
         <!-- CTA FINAL -->
         <section class="cta">
-            <h3>Aperfeiçoe Sua Velocidade de Leitura</h3>
+            <h3>Quer testar sua velocidade de leitura?</h3>
             <p>
-                Explore mais artigos, resenhas e análises que expandem sua forma de enxergar a leitura.
+                Nossa comunidade tem desafios semanais de leitura. Venha participar e evoluir conosco!
             </p>
-            <a href="../blog.html" class="btn-primary">Explorar mais artigos</a>
+            <a href="../comunidade.php" class="btn-primary">Ver Desafios</a>
         </section>
 
     </main>
@@ -169,85 +207,6 @@
         </div>
     </footer>
 
-    <style>
-        /* Estilos adicionais para o artigo */
-        .artigo-content {
-            margin: 60px auto;
-            max-width: 900px;
-        }
-
-        .artigo-corpo {
-            background-color: #ffffff;
-            padding: 40px;
-            border-radius: 18px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-        }
-
-        .artigo-meta {
-            display: flex;
-            gap: 16px;
-            align-items: center;
-            margin-bottom: 32px;
-            flex-wrap: wrap;
-        }
-
-        .tempo-leitura {
-            font-family: 'Comic Relief', cursive;
-            color: #666;
-            font-size: 14px;
-        }
-
-        .artigo-corpo h3 {
-            font-family: 'Sour Gummy', cursive;
-            color: #0f55b2;
-            font-size: 28px;
-            margin-top: 32px;
-            margin-bottom: 16px;
-        }
-
-        .artigo-corpo h3:first-of-type {
-            margin-top: 0;
-        }
-
-        .artigo-corpo p {
-            font-family: 'Comic Relief', cursive;
-            font-size: 16px;
-            line-height: 1.8;
-            color: #333;
-            text-align: justify;
-            margin-bottom: 16px;
-        }
-
-        .livro-resenha {
-            background-color: #f9f9f9;
-            padding: 20px;
-            border-left: 4px solid #0f55b2;
-            margin: 24px 0;
-            border-radius: 8px;
-        }
-
-        .livro-resenha h4 {
-            font-family: 'Sour Gummy', cursive;
-            color: #0f55b2;
-            font-size: 18px;
-            margin: 0 0 12px 0;
-        }
-
-        .livro-resenha p {
-            margin: 0;
-            font-size: 15px;
-        }
-
-        .artigo-corpo ul {
-            margin: 24px 0;
-            padding-left: 24px;
-        }
-
-        .artigo-corpo ul li {
-            margin-bottom: 12px;
-            line-height: 1.8;
-        }
-    </style>
 
 </body>
 </html>

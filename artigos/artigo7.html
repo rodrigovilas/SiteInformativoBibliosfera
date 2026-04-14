@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>O Poder da Ficção Científica: Imaginando o Futuro - Bibliosfera</title>
     <link rel="stylesheet" href="../home.css">
+    <link rel="stylesheet" href="../artigo.css">
     <link rel="shortcut icon" href="../img/logo.png">
     <script src="../script.js"></script>
     <!-- Fontes (Google Fonts) -->
@@ -13,6 +14,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body id="topo">
+
+    <!-- Barra de Progresso de Leitura -->
+    <div id="reading-progress"></div>
 
     <header>
         <div class="dvh">
@@ -50,6 +54,10 @@
 
     <main class="home">
     
+        <div class="breadcrumbs">
+            <a href="../home.html">Início</a> > <a href="../blog.html">Blog</a> > <span>Ficção Científica</span>
+        </div>
+    
         <section class="hero">
             <div class="hero-text">
                 <h2>O Poder da Ficção Científica: Imaginando o Futuro</h2>
@@ -72,8 +80,16 @@
         <section class="artigo-content" id="conteudo">
             <article class="artigo-corpo">
                 <div class="artigo-meta">
-                    <span class="tag leitura" style="font-family: var(--fonte-titulo);">Artigo</span>
-                    <span class="tempo-leitura">📚 8 min de leitura</span>
+                    <span class="tag leitura" style="font-family: 'Sour Gummy', cursive;">Leitura</span>
+                    <span class="tempo-leitura" style="font-family: 'Sour Gummy', cursive;">📚 8 min de leitura</span>
+                    
+                    <div class="box-autor">
+                        <div class="avatar-mini">B</div>
+                        <div>
+                            <strong style="font-family: 'Sour Gummy', cursive;">Equipe Bibliosfera</strong><br>
+                            <small style="color: #999; font-family: 'Sour Gummy', cursive;">Publicado em 14 de Abril, 2026</small>
+                        </div>
+                    </div>
                 </div>
 
                 <h3>Mais que Naves Espaciais e Robôs</h3>
@@ -116,26 +132,41 @@
                     Ao usar alegorias — como o conflito entre humanos e alienígenas, ou mundos sem gênero definido — as barreiras defensivas do leitor muitas vezes caem. Fica muito mais fácil enxergar o absurdo do preconceito quando a vítima não é uma minoria da nossa sociedade, mas uma espécie extraterrestre marginalizada. Só que, quando o livro acaba e você deita a cabeça no travesseiro, a lição sobre tolerância e respeito fica gravada, e naturalmente é transportada para a nossa vida na Terra.
                 </p>
 
-                <h3>Por Que Ler Ficção Científica Hoje?</h3>
+                <div class="livro-resenha" style="background-color: #e8f4fd; border-left-color: #0d47a1;">
+                    <h4>Dica de Mestre: Sci-Fi Hard vs. Soft</h4>
+                    <p>
+                        A ficção científica "Hard" foca na precisão científica e técnica (como Arthur C. Clarke), enquanto a "Soft" foca em questões sociais e psicológicas (como Ursula K. Le Guin). Experimentar ambas expande muito sua visão do gênero!
+                    </p>
+                </div>
+
+                <h3>Conclusão: A Viagem Começa Hoje</h3>
                 <p>
-                    Seja sincero: o mundo muda a uma velocidade que às vezes assusta. Estamos vendo a Inteligência Artificial mudar o mercado de trabalho, a biotecnologia avançando para manipular códigos genéticos e as redes sociais mudando a forma como nos comunicamos. No meio desse turbilhão, a ficção científica nos oferece uma lente para interpretar todas essas mudanças.
-                </p>
-                <p>
-                    Com narrativas fantásticas e envolventes, ela nos treina para sermos mais flexíveis, curiosos e críticos em relação ao mundo que nos cerca. Mais do que escapar da realidade, ler ficção científica é uma maneira maravilhosa, lúdica e muito humana de nos preparamos para o amanhã.
-                </p>
-                <p>
-                    Então, que tal dar uma chance? Se você nunca se aventurou por essas galáxias literárias, escolha uma história que pareça interessante e aperte os cintos. O futuro o aguarda, mas a viagem começa hoje, bem aqui.
+                    Com narrativas fantásticas e envolventes, a ficção científica nos treina para sermos mais flexíveis, curiosos e críticos em relação ao mundo que nos cerca. Mais do que escapar da realidade, ler ficção científica é uma maneira maravilhosa, lúdica e muito humana de nos preparamos para o amanhã. O futuro o aguarda, mas a viagem começa hoje, bem aqui.
                 </p>
             </article>
+
+            <!-- Seção de Relacionados -->
+            <section class="relacionados">
+                <h4>Continue sua jornada</h4>
+                <div class="grid-relacionados">
+                    <a href="artigo3.html" class="card-relacionado">
+                        <h5>Gêneros Literários</h5>
+                        <p>Explore outros mundos possíveis.</p>
+                    </a>
+                    <a href="artigo12.html" class="card-relacionado">
+                        <h5>Futuro da Leitura</h5>
+                        <p>O que vem por aí no mundo dos livros.</p>
+                    </a>
+                </div>
+            </section>
         </section>
 
-       
         <section class="cta">
-            <h3>Continue Sua Jornada Literária</h3>
+            <h3>Preparado para o futuro?</h3>
             <p>
-                Descubra mais artigos, resenhas e análises que expandem sua forma de enxergar a leitura.
+                Confira nossa seção de vídeos com discussões profundas sobre as maiores obras de ficção científica de todos os tempos.
             </p>
-            <a href="../leituras.php" class="btn-primary">Explorar mais leituras</a>
+            <a href="../videos.html" class="btn-primary">Ver Vídeos de Sci-Fi</a>
         </section>
 
     </main>
@@ -155,85 +186,6 @@
         </div>
     </footer>
 
-    <style>
-        
-        .artigo-content {
-            margin: 60px auto;
-            max-width: 900px;
-        }
-
-        .artigo-corpo {
-            background-color: #ffffff;
-            padding: 40px;
-            border-radius: 18px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-        }
-
-        .artigo-meta {
-            display: flex;
-            gap: 16px;
-            align-items: center;
-            margin-bottom: 32px;
-            flex-wrap: wrap;
-        }
-
-        .tempo-leitura {
-            font-family: 'Comic Relief', cursive;
-            color: #666;
-            font-size: 14px;
-        }
-
-        .artigo-corpo h3 {
-            font-family: 'Sour Gummy', cursive;
-            color: #0f55b2;
-            font-size: 28px;
-            margin-top: 32px;
-            margin-bottom: 16px;
-        }
-
-        .artigo-corpo h3:first-of-type {
-            margin-top: 0;
-        }
-
-        .artigo-corpo p {
-            font-family: 'Comic Relief', cursive;
-            font-size: 16px;
-            line-height: 1.8;
-            color: #333;
-            text-align: justify;
-            margin-bottom: 16px;
-        }
-
-        .livro-resenha {
-            background-color: #f9f9f9;
-            padding: 20px;
-            border-left: 4px solid #0f55b2;
-            margin: 24px 0;
-            border-radius: 8px;
-        }
-
-        .livro-resenha h4 {
-            font-family: 'Sour Gummy', cursive;
-            color: #0f55b2;
-            font-size: 18px;
-            margin: 0 0 12px 0;
-        }
-
-        .livro-resenha p {
-            margin: 0;
-            font-size: 15px;
-        }
-
-        .artigo-corpo ul {
-            margin: 24px 0;
-            padding-left: 24px;
-        }
-
-        .artigo-corpo ul li {
-            margin-bottom: 12px;
-            line-height: 1.8;
-        }
-    </style>
 
 </body>
 </html>
