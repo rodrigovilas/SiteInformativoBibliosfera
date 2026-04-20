@@ -1,9 +1,9 @@
 <?php
 session_start();
-include __DIR__ . "/database.php";
+include __DIR__ . "/../includes/database.php";
 
 if (!isset($_SESSION['id_usuario'])) {
-    header('Location: login.php');
+    header('Location: ../login.php');
     exit;
 }
 
@@ -39,5 +39,5 @@ $stmt->bindParam(':bio', $bio);
 $stmt->bindParam(':id', $id_usuario);
 $stmt->execute();
 
-header('Location: perfil.php');
+header('Location: ../perfil.php');
 exit;

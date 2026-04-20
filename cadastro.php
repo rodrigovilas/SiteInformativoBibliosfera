@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <title>Cadastro | Bibliosfera</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="cadastro.css">
+  <link rel="stylesheet" href="assets/css/cadastro.css">
   <link rel="shortcut icon" href="img/logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,7 +18,7 @@
     <p>Crie sua conta e mergulhe no universo dos livros.</p>
 
   
-    <form action="cad_user.php" method="post" enctype="multipart/form-data">
+    <form action="actions/cad_user.php" method="post" enctype="multipart/form-data">
       <label for="nome">Nome Completo</label>
       <input name="nome" id="nome" type="text" required maxlength="100">
 

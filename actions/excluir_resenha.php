@@ -1,6 +1,6 @@
 <?php
 session_start();
-include __DIR__ . "/database.php";
+include __DIR__ . "/../includes/database.php";
 
 if (!isset($_SESSION['id_usuario']) || !isset($_GET['id'])) {
     header("Location: comunidade.php");

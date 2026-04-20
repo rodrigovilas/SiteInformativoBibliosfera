@@ -1,6 +1,6 @@
 <?php
 session_start();
-include __DIR__ . "/database.php";
+include __DIR__ . "/includes/database.php";
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (!isset($_POST['nome'], $_POST['email'], $_POST['mensagem'])) {
@@ -60,9 +60,9 @@ if (isset($_GET['sucesso']) && $_GET['sucesso'] == 'true') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bibliosfera</title>
-    <link rel="stylesheet"  href="style.css">
+    <link rel="stylesheet"  href="assets/css/style.css">
   <link rel="shortcut icon" href="img/logo.png">
-    <script src="script.js"></script>
+    <script src="assets/js/script.js"></script>
     <!-- Fontes(Google Fonts) -->
     <link href="https://fonts.googleapis.com/css2?family=Sour+Gummy:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Comic+Relief:wght@400;700&display=swap" rel="stylesheet">

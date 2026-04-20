@@ -1,6 +1,6 @@
 <?php
 session_start();
-include __DIR__ . "/database.php";
+include __DIR__ . "/includes/database.php";
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (!isset($_POST['nome'], $_POST['email'], $_POST['mensagem'])) {
@@ -63,7 +63,7 @@ if (isset($_GET['sucesso']) && $_GET['sucesso'] == 'true') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contato</title>
-    <link rel="stylesheet"  href="style.css"> 
+    <link rel="stylesheet"  href="assets/css/style.css"> 
     <link rel="shortcut icon" href="img/logo.png">   
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -90,7 +90,7 @@ if (isset($_GET['sucesso']) && $_GET['sucesso'] == 'true') {
                 <li><a href="comunidade.php">Comunidade</a></li>
                 <li><a href="perfil.php">Meu Perfil</a></li>
                 <li class="nav-login">
-                    <a href="logout.php"
+                    <a href="actions/logout.php"
                         class="btn-entrar"
                         id="btnEntrar"
                         type="button"

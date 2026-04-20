@@ -9,7 +9,7 @@ session_start();
   <meta charset="UTF-8">
   <title>Login | Bibliosfera</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="login.css">
+  <link rel="stylesheet" href="assets/css/login.css">
   <link rel="shortcut icon" href="img/logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -30,7 +30,7 @@ session_start();
 
     <!-- Formulário de login -->
     <!-- Os dados são enviados para login_user.php para validação -->
-    <form action="login_user.php" method="post">
+    <form action="actions/login_user.php" method="post">
       <label for="email">E-mail</label>
       <input name="email" id="email" type="email" placeholder="seu@email.com" required>
 

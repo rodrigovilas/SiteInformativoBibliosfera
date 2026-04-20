@@ -3,10 +3,10 @@
 // Processa o login e valida as credenciais. Tô amassando, slk
 
 session_start();
-include __DIR__ . "/database.php";
+include __DIR__ . "/../includes/database.php";
 
 if (!isset($_POST['email'], $_POST['senha'])) {
-    header('Location: login.php');
+    header('Location: ../login.php');
     exit;
 }
 
@@ -34,7 +34,7 @@ if (!$user || !password_verify($senha, $user['senha'])) {
         $up->execute([$newHash, $user['id_usuario']]);
     } else {
         $_SESSION['erro_login'] = "E-mail ou senha inválidos";
-        header('Location: login.php');
+        header('Location: ../login.php');
         exit;
     }
 }
@@ -44,6 +44,6 @@ $_SESSION['id_usuario'] = $user['id_usuario'];
 $_SESSION['usuario'] = $user['usuario'];
 
 // Redireciona para a página inicial do usuário autenticado
-header('Location: home.html');
+header('Location: ../home.html');
 exit;
 ?>

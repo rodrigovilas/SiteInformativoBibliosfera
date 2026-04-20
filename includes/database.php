@@ -2,7 +2,7 @@
 // Arquivo de conexão com o banco de dados no Aiven usando .env
 
 // Função para carregar o arquivo .env de forma robusta
-$envFile = __DIR__ . '/.env';
+$envFile = __DIR__ . '/../.env';
 if (file_exists($envFile)) {
     $linhas = file($envFile, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
     foreach ($linhas as $linha) {

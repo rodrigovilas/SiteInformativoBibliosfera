@@ -4,10 +4,10 @@ session_start();
 ?>
 
 <?php
-include __DIR__ . "/database.php";
+include __DIR__ . "/../includes/database.php";
 
 if (!isset($_POST['email'], $_POST['usuario'], $_POST['senha'], $_POST['confirmarsenha'])) {
-    header('Location: cadastro.php');
+    header('Location: ../cadastro.php');
     exit;
 }
 
@@ -20,7 +20,7 @@ $bio = $_POST['bio'] ?? null;
 
 if ($senha !== $confirmar) {
     $_SESSION['erro_login'] = "Senhas não coincidem.";
-    header('Location: cadastro.php');
+    header('Location: ../cadastro.php');
     exit;
 }
 
@@ -37,7 +37,7 @@ if (isset($_FILES['avatar']) && $_FILES['avatar']['error'] === UPLOAD_ERR_OK) {
             $avatarPath = 'data:' . $mime . ';base64,' . $base64Data;
         } else {
             $_SESSION['erro_login'] = "Imagem muito grande (máx 2MB)";
-            header('Location: cadastro.php');
+            header('Location: ../cadastro.php');
             exit;
         }
     }
@@ -48,7 +48,7 @@ $senhaHash = password_hash($senha, PASSWORD_DEFAULT);
 // Verifica se a conexão existe antes de prosseguir
 if (!isset($conn)) {
     $_SESSION['erro_login'] = "Erro interno: Falha na conexão com o banco de dados.";
-    header('Location: cadastro.php');
+    header('Location: ../cadastro.php');
     exit;
 }
 
@@ -73,11 +73,11 @@ try {
     } else {
         $_SESSION['erro_login'] = "Erro ao criar conta: " . $e->getMessage();
     }
-    header('Location: cadastro.php');
+    header('Location: ../cadastro.php');
     exit;
 }
 
 
 // Redireciona o usuário para a página de login após cadastro bem-sucedido
-header('Location: login.php');
+header('Location: ../login.php');
 exit;

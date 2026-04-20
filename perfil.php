@@ -1,6 +1,6 @@
 <?php
 session_start();
-include __DIR__ . "/database.php";
+include __DIR__ . "/includes/database.php";
 
 $nome_exibicao = "Usuário Bibliosfera";
 $bio_exibicao = "Leitor apaixonado descobrindo novas histórias todos os dias nas páginas dos livros.";
@@ -79,9 +79,9 @@ if (isset($_SESSION['id_usuario'])) {
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 	<!-- CSS principal -->
-	<link rel="stylesheet" href="home.css">
+	<link rel="stylesheet" href="assets/css/home.css">
 	<link rel="shortcut icon" href="img/logo.png">
-	<script src="script.js"></script>
+	<script src="assets/js/script.js"></script>
 
     <style>
         /* Perfil Específicos */
@@ -288,7 +288,7 @@ if (isset($_SESSION['id_usuario'])) {
 				<li><a href="perfil.php">Meu Perfil</a></li>
 				<li><a href="contato.php">Contato</a></li>
 				<li class="nav-login">
-					<a href="logout.php"
+					<a href="actions/logout.php"
 						class="btn-entrar"
 						id="btnEntrar"
 						type="button"
@@ -407,7 +407,7 @@ if (isset($_SESSION['id_usuario'])) {
 	<div id="profile-modal" class="modal" style="display: none;">
 		<div class="modal-content">
 			<h3>Editar Perfil</h3>
-			<form id="profile-form" action="update_perfil.php" method="post" enctype="multipart/form-data">
+			<form id="profile-form" action="actions/update_perfil.php" method="post" enctype="multipart/form-data">
 				<div class="form-group">
 					<label for="input-name">Seu Nome:</label>
 					<input type="text" name="nome" id="input-name" required value="<?= htmlspecialchars($nome_exibicao) ?>">

@@ -1,6 +1,6 @@
 <?php
 session_start();
-include __DIR__ . "/database.php";
+include __DIR__ . "/includes/database.php";
 
 $id_usuario_logado = $_SESSION['id_usuario'] ?? null;
 $resenhas = [];
@@ -37,9 +37,9 @@ try {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Resenhas - Bibliosfera</title>
-    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="assets/css/home.css">
     <link rel="shortcut icon" href="img/logo.png">
-    <script src="script.js"></script>
+    <script src="assets/js/script.js"></script>
     <!-- Fontes -->
     <link href="https://fonts.googleapis.com/css2?family=Sour+Gummy:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Comic+Relief:wght@400;700&display=swap" rel="stylesheet">
@@ -65,7 +65,7 @@ try {
                 <li><a href="perfil.php">Meu Perfil</a></li>
                 <li><a href="contato.php">Contato</a></li>
                 <li class="nav-login">
-                    <a href="logout.php"
+                    <a href="actions/logout.php"
                         class="btn-entrar"
                         id="btnEntrar"
                         type="button"
@@ -180,7 +180,7 @@ try {
     <div id="edit-modal" class="modal" style="display: none; align-items: center; justify-content: center; position: fixed; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.5); z-index: 2000;">
         <div class="modal-content" style="background: white; padding: 30px; border-radius: 20px; max-width: 500px; width: 90%;">
             <h3 style="font-family: 'Sour Gummy', cursive; color: #0f55b2;">Editar Comentário</h3>
-            <form action="processar_edicao_resenha.php" method="POST">
+            <form action="actions/processar_edicao_resenha.php" method="POST">
                 <input type="hidden" name="id_resenha" id="edit-id-resenha">
                 <div class="form-group" style="margin-bottom: 15px;">
                     <label style="display: block; margin-bottom: 5px;">Sua Nota (0 a 10):</label>
@@ -219,7 +219,7 @@ try {
 
         function confirmDelete(id) {
             if (confirm('Tem certeza que deseja excluir seu comentário? Essa ação não pode ser desfeita.')) {
-                window.location.href = 'excluir_resenha.php?id=' + id;
+                window.location.href = 'actions/excluir_resenha.php?id=' + id;
             }
         }
 
