@@ -306,7 +306,7 @@ if (isset($_SESSION['id_usuario'])) {
 
 		<section class="profile-hero">
             <div class="profile-avatar-container" id="profile-avatar-display">
-              <?php if (!empty($avatar_exibicao)): ?>
+              <?php if (!empty($avatar_exibicao) && (strpos($avatar_exibicao, 'data:image/') === 0 || file_exists(__DIR__ . '/' . $avatar_exibicao))): ?>
                   <img src="<?= htmlspecialchars($avatar_exibicao) ?>" alt="Avatar">
               <?php else: ?>
                   📚
@@ -440,6 +440,14 @@ if (isset($_SESSION['id_usuario'])) {
 	</footer>
 
     <script>
+        function openProfileModal() {
+            document.getElementById('profile-modal').style.display = 'flex';
+        }
+        
+        function closeProfileModal() {
+            document.getElementById('profile-modal').style.display = 'none';
+        }
+
         document.addEventListener('DOMContentLoaded', () => {
             // As funções de carregamento do localStorage foram removidas pois agora usamos PHP + Banco de Dados
         });

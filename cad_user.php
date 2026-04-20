@@ -30,18 +30,11 @@ if (isset($_FILES['avatar']) && $_FILES['avatar']['error'] === UPLOAD_ERR_OK) {
     $allowedTypes = ['image/jpeg', 'image/png', 'image/webp'];
     if (in_array($_FILES['avatar']['type'], $allowedTypes)) {
         if ($_FILES['avatar']['size'] < 2 * 1024 * 1024) { // max 2MB
-            $ext = pathinfo($_FILES['avatar']['name'], PATHINFO_EXTENSION);
-            $filename = uniqid('avatar_') . '.' . $ext;
-            $uploadDir = __DIR__ . '/uploads/avatars/';
-            
-            // Cria o diretório se não existir
-            if (!is_dir($uploadDir)) {
-                mkdir($uploadDir, 0777, true);
-            }
-
-            if (move_uploaded_file($_FILES['avatar']['tmp_name'], $uploadDir . $filename)) {
-                $avatarPath = 'uploads/avatars/' . $filename;
-            }
+            $mime = $_FILES['avatar']['type'];
+            $fileData = file_get_contents($_FILES['avatar']['tmp_name']);
+            $base64Data = base64_encode($fileData);
+            // Salva diretamente a string base64 longa que o HTML aceita como imagem nativa
+            $avatarPath = 'data:' . $mime . ';base64,' . $base64Data;
         } else {
             $_SESSION['erro_login'] = "Imagem muito grande (máx 2MB)";
             header('Location: cadastro.php');

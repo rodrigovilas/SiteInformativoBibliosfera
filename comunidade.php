@@ -125,7 +125,7 @@ try {
                             
                             <!-- Cabeçalho do Card: Identificação do Usuário -->
                             <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 20px;">
-                                <?php if (!empty($r['usuario_avatar'])): ?>
+                                <?php if (!empty($r['usuario_avatar']) && (strpos($r['usuario_avatar'], 'data:image/') === 0 || file_exists(__DIR__ . '/' . $r['usuario_avatar']))): ?>
                                     <img src="<?php echo htmlspecialchars($r['usuario_avatar']); ?>" alt="Avatar" style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover; border: 2px solid #0f55b2;">
                                 <?php else: ?>
                                     <!-- Fallback caso não tenha avatar -->
