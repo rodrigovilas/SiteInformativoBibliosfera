@@ -154,6 +154,7 @@ insert into livro (titulo, descricao, capa) values
 ('Toda poesia','TBA53','SiteInformativoBibliosfera/capas/53.jpg');
 
 /*Livros de Romance*/
+insert into livro (titulo, descricao, capa) values
 ('A culpa é das estrelas','TBA54','SiteInformativoBibliosfera/capas/54.jpg'),
 ('A hipótese do amor','TBA55','SiteInformativoBibliosfera/capas/55.jpg'),
 ('Anna Karênina','TBA56','SiteInformativoBibliosfera/capas/56.jpg'),
