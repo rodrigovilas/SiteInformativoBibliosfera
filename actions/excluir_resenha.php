@@ -28,6 +28,6 @@ try {
     $_SESSION['erro_comunidade'] = "Erro ao excluir: " . $e->getMessage();
 }
 
-header("Location: comunidade.php");
+header("Location: ../comunidade.php");
 exit;
 ?>

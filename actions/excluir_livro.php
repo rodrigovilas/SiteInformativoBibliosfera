@@ -32,6 +32,6 @@ try {
     $_SESSION['erro_leitura'] = "Erro ao excluir livro: " . $e->getMessage();
 }
 
-header("Location: leituras.php");
+header("Location: ../leituras.php");
 exit;
 ?>

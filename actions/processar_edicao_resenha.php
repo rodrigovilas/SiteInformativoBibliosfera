@@ -3,7 +3,7 @@ session_start();
 include __DIR__ . "/../includes/database.php";
 
 if (!isset($_SESSION['id_usuario']) || $_SERVER['REQUEST_METHOD'] !== 'POST') {
-    header("Location: comunidade.php");
+    header("Location: ../comunidade.php");
     exit;
 }
 
@@ -35,6 +35,6 @@ try {
     $_SESSION['erro_comunidade'] = "Erro ao atualizar: " . $e->getMessage();
 }
 
-header("Location: comunidade.php");
+header("Location: ../comunidade.php");
 exit;
 ?>

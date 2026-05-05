@@ -3,7 +3,7 @@ session_start();
 include __DIR__ . "/../includes/database.php";
 
 if (!isset($_SESSION['id_usuario'])) {
-    header("Location: login.php");
+    header("Location: ../login.php");
     exit;
 }
 
@@ -31,12 +31,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $stmt2->execute();
 
         $_SESSION['sucesso_leitura'] = "Livro adicionado com sucesso!";
-        header("Location: leituras.php");
+        header("Location: ../leituras.php");
         exit;
 
     } catch (PDOException $e) {
         $_SESSION['erro_leitura'] = "Erro ao adicionar livro: " . $e->getMessage();
-        header("Location: leituras.php");
+        header("Location: ../leituras.php");
         exit;
     }
 }

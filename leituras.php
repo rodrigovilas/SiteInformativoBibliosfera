@@ -178,7 +178,7 @@ try {
 							<div class="progress-actions" style="margin-top: 15px; display: flex; flex-direction: column; gap: 8px;">
 								<button onclick="openUpdateModal(<?= $livro['id_livro'] ?>, '<?= addslashes($livro['titulo']) ?>', <?= $livro['pagina_atual'] ?>, <?= $livro['paginas_totais'] ?>, '<?= $livro['progresso'] ?>')" class="btn-primary" style="width: 100%;">Atualizar Progresso</button>
                                 
-                                <a href="excluir_livro.php?id=<?= $livro['id_livro'] ?>" 
+                                <a href="actions/excluir_livro.php?id=<?= $livro['id_livro'] ?>" 
                                    onclick="return confirm('Tem certeza que deseja remover este livro da sua lista? Isso também apagará seu histórico privado de notas.')" 
                                    style="text-align: center; color: #e53935; text-decoration: none; font-size: 14px; font-weight: bold; border: 2px solid #e53935; padding: 8px; border-radius: 99px; transition: 0.3s;"
                                    onmouseover="this.style.background='#e53935'; this.style.color='white';"
