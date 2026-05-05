@@ -34,7 +34,7 @@ body{
     padding: 0;
 }
 
-/* Elementos do Header */
+
 .dvh {
     display: flex;
     align-items: center;
@@ -159,7 +159,7 @@ footer {
     --font-heading: "Sour Gummy", "tec2", sans-serif;
 }
 
-/* Container central do home */
+
 .home-container{
     width: 100%;
     display: flex;
@@ -267,7 +267,7 @@ footer {
     opacity: 0.98;
 }
 
-/* parágrafos mais legíveis */
+
 p{
     margin: 0;
     color: rgba(0, 0, 0, 0.87);
@@ -278,7 +278,7 @@ p{
      text-align: justify;
 }
 
-/* Botões com tipografia mais limpa */
+
 .btn{
     display: inline-flex;
     align-items: center;
@@ -312,7 +312,7 @@ p{
     border-radius: 10px;
 }
 
-/* Responsividade*/
+
 @media (max-width: 720px){
     .content h3{ font-size: 28px; }
     .content h3::after{
@@ -333,7 +333,7 @@ p{
     }
 }
 
-/* Responsividade */
+
 @media (max-width: 480px) {
     .retangulo {
         margin-top: 12px;
@@ -344,7 +344,7 @@ p{
     }
 }
 
-/* Estilos para Missão, Visão e Valores (MVV) */
+
 .mvv{
     width: 100%;
     display: grid;
@@ -410,7 +410,7 @@ p{
     .mvv-card{ min-height: auto; }
 }
 
-/* Botão Entrar no menu */
+
 .nav .btn-entrar {
     align-self: center;       
     height: 44px;              
@@ -433,7 +433,7 @@ p{
     font-weight: 700;
     cursor: pointer;
     transition: transform .12s ease, box-shadow .12s ease, opacity .12s ease;
-    font-family: inherit; /* herda a fonte definida em .nav (Sour Gummy) */
+    font-family: inherit; 
     font-size: 16px;
     line-height: 1;
 }
@@ -472,7 +472,7 @@ p{
     outline-offset: 3px;
 }
 
-/* Ajuste para menu em telas pequenas */
+
 @media (max-width: 480px) {
     .navlinks { gap: 12px; }
     .btn-entrar { padding: 7px 10px; font-size: 14px; height: 40px; }
@@ -527,7 +527,7 @@ html {
     scroll-behavior: smooth;
 }
 
-/* QUEM SOMOS */
+
 .quem-somos{
     padding: 56px 0;
     background: transparent;
@@ -660,7 +660,7 @@ html {
     .quem-somos::before, .quem-somos::after{ display: none; }
 }
 
-/* Responsividade */
+
 @media (max-width: 720px){
     .quem-card{ padding: 28px; }
     .quem-card h3{ text-align: center; }
@@ -682,7 +682,7 @@ footer {
     font-family: "Sour Gummy", "tec2", sans-serif;
 }
 
-/* Seção MVV (Missão, Visão e Valores) */
+
 
 .mvv-section {
     padding: 60px 0 90px;
@@ -719,7 +719,7 @@ footer {
     align-items: flex-start; 
     text-align: left;
     
-    /* A BORDA LATERAL LARANJA */
+
     border-left: 6px solid #ff9800; 
     
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -731,7 +731,7 @@ footer {
     box-shadow: 0 20px 50px rgba(4, 28, 56, 0.15);
 }
 
-/* Títulos dos Cards (Missão, Visão, Valores) */
+
 .mvv-card h4 {
     margin: 0;
     font-size: 28px;
@@ -742,7 +742,6 @@ footer {
     padding-bottom: 8px;
 }
 
-/* O DEGRADÊ EMBAIXO DO TÍTULO */
 .mvv-card h4::after {
     content: "";
     display: block;
@@ -765,19 +764,19 @@ footer {
     font-weight: 400;
 }
 
-/* Lista de Valores */
+
 .valores-list {
-    list-style: disc; /* Bolinhas da lista */
+    list-style: disc;
     padding-left: 20px;
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
 
-/* Responsividade (Celular e Tablet) */
+
 @media (max-width: 900px) {
     .mvv-grid {
-        grid-template-columns: 1fr; /* Vira 1 coluna */
+        grid-template-columns: 1fr; 
         max-width: 500px;
     }
     
@@ -786,7 +785,7 @@ footer {
     }
 }
 
-/* Seção Objetivos */
+
 .objetivos-section{
     padding: 56px 0 80px;
     background: transparent;
@@ -845,7 +844,7 @@ footer {
     outline: none;
 }
 
-/* Responsividade */
+
 @media (max-width: 900px){
     .objetivos-grid{
         flex-direction: column-reverse;
@@ -913,7 +912,7 @@ footer {
     outline: none;
 }
 
-/* responsividade*/
+
 @media (max-width: 900px){
     .objetivos-grid{ 
         flex-direction: column-reverse;
@@ -925,7 +924,6 @@ footer {
     .funcionamento-card{ padding: 28px; font-size: 16px; text-align: center; }
 }
 
-/* Seção Contato */
 .contato-section{
     padding: 56px 0 80px;
     background: transparent;
@@ -1094,7 +1092,7 @@ footer {
     border-radius: 12px;
 }
 
-/* responsividade*/
+
 @media (max-width: 480px){
     .footer-inner{
         flex-direction: column;
@@ -1110,7 +1108,6 @@ footer {
     }
 }
 
-/* MURAL DE DEPOIMENTOS */
 .mural-section {
     padding: 56px 0 80px;
     background: transparent;
@@ -1199,7 +1196,7 @@ footer {
     font-size: 13px;
 }
 
-/* Responsividade mural */
+
 @media (max-width: 900px) {
     .mural-grid { grid-template-columns: repeat(2, 1fr); }
 }
@@ -1209,7 +1206,6 @@ footer {
     .testimonial-body { max-height: 140px; }
 }
 
-/* ESPAÇO DE CITAÇÕES */
 .citacoes-section {
     padding: 28px 0 36px;
     background: transparent;
@@ -1221,9 +1217,9 @@ footer {
 
 .citacoes-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); /* <-- ajustado: lado a lado quando couber */
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); 
     gap: 18px;
-    max-width: 1100px; /* mais largura para acomodar várias colunas */
+    max-width: 1100px; 
     margin: 0 auto;
     padding: 0 20px;
     box-sizing: border-box;

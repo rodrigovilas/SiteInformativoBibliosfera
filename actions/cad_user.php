@@ -1,5 +1,4 @@
 <?php
-// Inicia a sessão
 session_start();
 ?>
 
@@ -29,11 +28,10 @@ $avatarPath = null;
 if (isset($_FILES['avatar']) && $_FILES['avatar']['error'] === UPLOAD_ERR_OK) {
     $allowedTypes = ['image/jpeg', 'image/png', 'image/webp'];
     if (in_array($_FILES['avatar']['type'], $allowedTypes)) {
-        if ($_FILES['avatar']['size'] < 2 * 1024 * 1024) { // max 2MB
+        if ($_FILES['avatar']['size'] < 2 * 1024 * 1024) { 
             $mime = $_FILES['avatar']['type'];
             $fileData = file_get_contents($_FILES['avatar']['tmp_name']);
             $base64Data = base64_encode($fileData);
-            // Salva diretamente a string base64 longa que o HTML aceita como imagem nativa
             $avatarPath = 'data:' . $mime . ';base64,' . $base64Data;
         } else {
             $_SESSION['erro_login'] = "Imagem muito grande (máx 2MB)";
@@ -45,7 +43,6 @@ if (isset($_FILES['avatar']) && $_FILES['avatar']['error'] === UPLOAD_ERR_OK) {
 
 $senhaHash = password_hash($senha, PASSWORD_DEFAULT);
 
-// Verifica se a conexão existe antes de prosseguir
 if (!isset($conn)) {
     $_SESSION['erro_login'] = "Erro interno: Falha na conexão com o banco de dados.";
     header('Location: ../cadastro.php');
@@ -64,10 +61,8 @@ $stmt->bindParam(':bio', $bio);
 $stmt->bindParam(':avatar', $avatarPath);
 
 try {
-    // Executa a inserção do novo usuário no banco de dados
     $stmt->execute();
 } catch (PDOException $e) {
-    // Tenta identificar se o erro é de duplicidade ou outro problema
     if ($e->getCode() == 23000) {
         $_SESSION['erro_login'] = "Erro: E-mail ou usuário já estão em uso.";
     } else {
@@ -77,7 +72,5 @@ try {
     exit;
 }
 
-
-// Redireciona o usuário para a página de login após cadastro bem-sucedido
 header('Location: ../login.php');
 exit;

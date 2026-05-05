@@ -73,12 +73,12 @@ if (isset($_SESSION['id_usuario'])) {
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Meu Perfil - Bibliosfera</title>
 
-	<!-- Fontes (devem carregar antes do CSS) -->
+
 	<link href="https://fonts.googleapis.com/css2?family=Sour+Gummy:wght@300;400;600;700&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Comic+Relief:wght@400;700&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-	<!-- CSS principal -->
+	
 	<link rel="stylesheet" href="assets/css/home.css">
 	<link rel="shortcut icon" href="img/logo.png">
 	<script src="assets/js/script.js"></script>
@@ -141,7 +141,7 @@ if (isset($_SESSION['id_usuario'])) {
             max-width: 600px;
         }
 
-        /* Stats Grid */
+     
         .stats-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -182,7 +182,7 @@ if (isset($_SESSION['id_usuario'])) {
             letter-spacing: 0.5px;
         }
 
-        /* Atividades Recentes e Livros Grid */
+
         .profile-section h3 {
             font-family: var(--fonte-titulo);
             color: #0f55b2;
@@ -254,7 +254,7 @@ if (isset($_SESSION['id_usuario'])) {
             grid-column: 1 / -1;
         }
 
-        /* Responsive Settings */
+
         @media (max-width: 720px) {
             .profile-hero {
                 flex-direction: column;
@@ -309,7 +309,7 @@ if (isset($_SESSION['id_usuario'])) {
               <?php if (!empty($avatar_exibicao) && (strpos($avatar_exibicao, 'data:image/') === 0 || file_exists(__DIR__ . '/' . $avatar_exibicao))): ?>
                   <img src="<?= htmlspecialchars($avatar_exibicao) ?>" alt="Avatar">
               <?php else: ?>
-                  📚
+                  
               <?php endif; ?>
             </div>
             <div class="profile-info">
@@ -355,7 +355,7 @@ if (isset($_SESSION['id_usuario'])) {
                     <?php foreach ($meus_livros_db as $ml): ?>
                         <article class="progress-card">
                             <div class="progress-info">
-                                <h4 style="font-family: var(--fonte-titulo); color: #0f55b2; margin:0 0 8px 0; font-size: 20px;">📖 <?= htmlspecialchars($ml['titulo']) ?></h4>
+                                <h4 style="font-family: var(--fonte-titulo); color: #0f55b2; margin:0 0 8px 0; font-size: 20px;"> <?= htmlspecialchars($ml['titulo']) ?></h4>
                                 <p style="margin:0; font-weight: 600; color: #666; font-size: 14px;"><?= htmlspecialchars($ml['descricao']) ?></p>
                                 <?php 
                                     $pct = $ml['paginas_totais'] > 0 ? min(round(($ml['pagina_atual'] / $ml['paginas_totais']) * 100), 100) : 0;
@@ -389,7 +389,7 @@ if (isset($_SESSION['id_usuario'])) {
                         <div class="activity-item">
                             <div class="activity-header">
                                 <span style="font-weight: 600; color: #1b76e3;">Nova Resenha</span>
-                                <span>🗓️ <?= date('d/m/Y', strtotime($at['data_resenha'])) ?></span>
+                                <span> <?= date('d/m/Y', strtotime($at['data_resenha'])) ?></span>
                             </div>
                             <h4 class="activity-title">📘 <?= htmlspecialchars($at['titulo']) ?></h4>
                             <p class="activity-comment">"<?= htmlspecialchars($at['resenha']) ?>"</p>

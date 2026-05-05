@@ -133,7 +133,7 @@ if (isset($_GET['sucesso']) && $_GET['sucesso'] == 'true') {
     </div>
 </div>
 
-<!-- MISSÃO, VISÃO E VALORES -->
+
 <section id="mvv" class="mvv-section" role="region" aria-label="Missão, Visão e Valores">
     <div class="container">
         <h3 class="section-title">Missão, Visão e Valores</h3>
@@ -161,7 +161,7 @@ if (isset($_GET['sucesso']) && $_GET['sucesso'] == 'true') {
     </div>
 </section>
 
-<!-- Objetivos -->
+
 <section id="objetivos" class="objetivos-section" role="region" aria-label="Objetivos">
   <div class="container">
     <div class="objetivos-grid">
@@ -178,7 +178,7 @@ if (isset($_GET['sucesso']) && $_GET['sucesso'] == 'true') {
   </div>
 </section>
 
-<!-- Funcionamento -->
+
 <section id="funcionamento" class="funcionamento-section" role="region" aria-label="Funcionamento">
   <div class="container">
     <div class="objetivos-grid">
@@ -200,7 +200,7 @@ if (isset($_GET['sucesso']) && $_GET['sucesso'] == 'true') {
   </div>
 </section>
 
-<!-- MURAL DE DEPOIMENTOS -->
+
 <section id="mural" class="mural-section" role="region" aria-label="Mural de depoimentos">
   <div class="container">
     <h3 class="section-title">Mural de Leitores</h3>
@@ -217,7 +217,7 @@ if (isset($_GET['sucesso']) && $_GET['sucesso'] == 'true') {
           </div>
           <div class="meta-text">
             <strong id="t1-name">Daniel Sena</strong>
-            <div class="meta-sub">Pedala e Corre</div>
+            <div class="meta-sub">Leitor e Atleta iniciante</div>
           </div>
         </div>
       </article>
@@ -233,7 +233,7 @@ if (isset($_GET['sucesso']) && $_GET['sucesso'] == 'true') {
           </div>
           <div class="meta-text">
             <strong id="t2-name">Cayo Ananias</strong>
-            <div class="meta-sub">O cara da lancha</div>
+            <div class="meta-sub">Leitor iniciante</div>
           </div>
         </div>
       </article>
@@ -249,7 +249,7 @@ if (isset($_GET['sucesso']) && $_GET['sucesso'] == 'true') {
           </div>
           <div class="meta-text">
             <strong id="t3-name">Anna Luíza</strong>
-            <div class="meta-sub">Hater de Cayo Ananias</div>
+            <div class="meta-sub">Leitora e Desenvolvedora</div>
           </div>
         </div>
       </article>
@@ -258,7 +258,7 @@ if (isset($_GET['sucesso']) && $_GET['sucesso'] == 'true') {
 </section>
 
 <br><br>
-<!-- Importância -->
+
 <section id="importancia" class="importancia-section" role="region" aria-label="Importância">
   <div class="container">
     <div class="objetivos-grid">
@@ -274,7 +274,7 @@ if (isset($_GET['sucesso']) && $_GET['sucesso'] == 'true') {
   </div>
 </section> <br>
 
-<!-- ESPAÇO DE CITAÇÕES (movido para cá, abaixo de Importância) -->
+
 <section id="citacoes" class="citacoes-section" role="region" aria-label="Citações inspiradoras de autores">
   <div class="container">
     <h3 class="section-title">Citações Inspiradoras</h3>
@@ -298,7 +298,7 @@ if (isset($_GET['sucesso']) && $_GET['sucesso'] == 'true') {
   </div>
 </section>
 
-<!-- Contato -->
+
 <section id="contato" class="contato-section" role="region" aria-label="Contato">
   <div class="container">
     <div class="objetivos-grid">
@@ -310,7 +310,6 @@ if (isset($_GET['sucesso']) && $_GET['sucesso'] == 'true') {
           <p><strong>Email:</strong> <a href="mailto:clubebibliosfera@gmail.com">clubebibliosfera@gmail.com</a></p>
         </div>
 
-        <!-- Exibe mensagens de sucesso ao enviar o formulário -->
         <?php
           if (isset($_SESSION['sucesso_contato'])) {
             echo '<p style="color: green; font-weight: bold; margin-bottom: 15px;">' . $_SESSION['sucesso_contato'] . '</p>';
@@ -337,7 +336,6 @@ if (isset($_GET['sucesso']) && $_GET['sucesso'] == 'true') {
 
           <div class="contato-actions">
             <button type="submit" class="btn" aria-label="Enviar mensagem">
-              <!-- ícone pequeno para decorar o botão -->
               <svg class="btn-icon" aria-hidden="true" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path d="M2 21l21-9L2 3v7l15 2-15 2v7z"/>
               </svg>

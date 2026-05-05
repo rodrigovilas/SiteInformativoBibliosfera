@@ -49,7 +49,7 @@ header {
 }
 
 
-/* Elementos do Header */
+
 .dvh {
     display: flex;
     align-items: center;
@@ -167,7 +167,7 @@ header {
     font-weight: 700;
     cursor: pointer;
     transition: transform .12s ease, box-shadow .12s ease, opacity .12s ease;
-    font-family: inherit; /* herda a fonte definida em .nav (Sour Gummy) */
+    font-family: inherit; 
     font-size: 16px;
     line-height: 1;
 }
@@ -270,7 +270,7 @@ header {
 a {
     font-family: "Sour Gummy", "tec2", sans-serif;
 }
-/* HOME */
+
 .home {
     width: 100%;
     max-width: 1200px;
@@ -278,7 +278,7 @@ a {
     padding: 40px 50px;
 }
 
-/* HERO */
+
 .hero {
     display: grid;
     grid-template-columns: 1.2fr 1fr;
@@ -310,7 +310,7 @@ a {
     max-width: 420px;
 }
 
-/* BOTÕES */
+
 .btn-primary {
     background-color: #0f55b2;
     color: white;
@@ -377,7 +377,7 @@ a {
 
 
 
-/* SEÇÕES */
+
 
 h4{
     font-family: var(--fonte-titulo);
@@ -398,7 +398,7 @@ p {
     margin-bottom: 24px;
 }
 
-/* CARDS */
+
 .cards {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -459,7 +459,7 @@ p {
 }
 
 
-/* TAGS */
+
 .tag {
     font-size: 12px;
     font-weight: 700;
@@ -481,7 +481,7 @@ p {
     color: #2e7d32;
 }
 
-/* CTA */
+
 .cta {
     background-color: #0f55b2;
     color: white;
@@ -501,7 +501,7 @@ p {
     margin: 0 auto 24px;
 }
 
-/* VÍDEO APRESENTAÇÃO */
+
 .video-apresentacao {
     background-color: #f1e5d1; 
     border-radius: 24px; 
@@ -588,19 +588,19 @@ footer {
     scroll-margin-top: 92px;
 }
 
-/* --- AJUSTE ESTRUTURAL DO CORPO --- */
+
 body {
     margin: 0;
     padding: 0;
     background-color: var(--page-bg);
-    padding-top: 72px; /* Altura exata do seu header */
+    padding-top: 72px; 
     display: flex;
     flex-direction: column;
-    min-height: 100vh; /* Garante que o corpo ocupe a tela toda */
+    min-height: 100vh; 
     box-sizing: border-box;
 }
 
-/* O conteúdo principal deve crescer para empurrar o footer */
+
 main.home {
     flex: 1; 
     width: 100%;
@@ -610,14 +610,14 @@ main.home {
     box-sizing: border-box;
 }
 
-/* --- FOOTER (ESTILO DA IMAGEM 2) --- */
+
 footer {
     width: 100%;
-    background-color: #0f55b2 !important; /* Força o azul */
+    background-color: #0f55b2 !important; 
     color: #ffffff !important;
     padding: 25px 0;
     box-shadow: 0 -4px 15px rgba(7, 67, 144, 0.3);
-    margin-top: auto; /* Cola no fundo se a página for curta */
+    margin-top: auto; 
 }
 
 .footer-inner {
@@ -626,8 +626,8 @@ footer {
     padding: 0 50px;
     display: flex;
     align-items: center;
-    justify-content: center; /* Centraliza o texto © 2026 */
-    position: relative; /* Base para o botão na direita */
+    justify-content: center; 
+    position: relative; 
     box-sizing: border-box;
 }
 
@@ -638,10 +638,10 @@ footer {
     color: #ffffff;
 }
 
-/* O botão "Voltar ao topo" */
+
 .voltar-topo {
     position: absolute;
-    right: 50px; /* Alinhado à direita conforme imagem 2 */
+    right: 50px; 
     background: transparent;
     color: #ffffff;
     font-family: var(--fonte-titulo);
@@ -660,7 +660,7 @@ footer {
     transform: translateY(-2px);
 }
 
-/* FORMULÁRIO ADICIONAR LIVRO */
+
 .add-book-container {
     display: flex;
     justify-content: center;
@@ -726,7 +726,7 @@ footer {
     flex: 1;
 }
 
-/* CARDS DE PROGRESSO */
+
 .progress-card {
     background-color: #ffffff;
     padding: 28px;
@@ -871,7 +871,7 @@ footer {
     padding-bottom: 0;
 }
 
-/* MODAL PARA ATUALIZAÇÃO */
+
 .modal {
     display: none;
     position: fixed;

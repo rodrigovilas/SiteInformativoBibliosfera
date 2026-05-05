@@ -83,7 +83,7 @@ try {
 
     <main class="home">
 
-        <!-- HERO RESENHAS -->
+     
         <section class="hero">
             <div class="hero-text">
                 <h2>Comentários da Comunidade</h2>
@@ -92,7 +92,6 @@ try {
                 </p>
 
                 <div class="hero-actions">
-                    <!-- Opcional futuramente: linkar para adicionar comentário -->
                     <a href="#resenhas-grid" class="btn-primary" role="button" aria-label="Ver Resenhas" data-scroll>Ler Comentários</a>
                     <a href="home.html" class="btn-secondary" role="button" aria-label="Voltar ao Início" data-scroll>Voltar ao Início</a>
                 </div>
@@ -103,7 +102,7 @@ try {
             </div>
         </section>
 
-        <!-- FEED DE RESENHAS DINÂMICO -->
+
         <section class="section" id="resenhas-grid">
             <h3>Feed da Comunidade</h3>
 
@@ -112,7 +111,7 @@ try {
                     <?php foreach ($resenhas as $r): ?>
                         <article class="card" style="position: relative;">
                             
-                            <!-- Menu de Opções (Três Pontinhos) -->
+                  
                             <?php if ($id_usuario_logado && $id_usuario_logado == $r['id_usuario']): ?>
                                 <div class="dropdown" style="position: absolute; top: 15px; right: 15px;">
                                     <button onclick="toggleDropdown(<?= $r['id_resenha'] ?>)" style="background: none; border: none; font-size: 24px; cursor: pointer; color: #777;">⋮</button>
@@ -123,12 +122,12 @@ try {
                                 </div>
                             <?php endif; ?>
                             
-                            <!-- Cabeçalho do Card: Identificação do Usuário -->
+                            
                             <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 20px;">
                                 <?php if (!empty($r['usuario_avatar']) && (strpos($r['usuario_avatar'], 'data:image/') === 0 || file_exists(__DIR__ . '/' . $r['usuario_avatar']))): ?>
                                     <img src="<?php echo htmlspecialchars($r['usuario_avatar']); ?>" alt="Avatar" style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover; border: 2px solid #0f55b2;">
                                 <?php else: ?>
-                                    <!-- Fallback caso não tenha avatar -->
+                               
                                     <div style="width: 50px; height: 50px; border-radius: 50%; background-color: #eee; display: flex; align-items: center; justify-content: center; font-weight: bold; color: #0f55b2; border: 2px solid #0f55b2;">
                                         <?php echo strtoupper(substr($r['usuario_nome'] ?? $r['usuario_arroba'], 0, 1)); ?>
                                     </div>
@@ -146,7 +145,7 @@ try {
                             </div>
 
                             <span class="tag">Nota: <?php echo htmlspecialchars(number_format($r['nota'], 1, ',', '')); ?> / 10</span>
-                            <h4 style="margin-top: 10px;">📚 <?php echo htmlspecialchars($r['livro_titulo']); ?></h4>
+                            <h4 style="margin-top: 10px;"> <?php echo htmlspecialchars($r['livro_titulo']); ?></h4>
                             
                             <p class="resenhatxt" style="font-style: italic; color: #333; margin-top: 15px; margin-bottom: 15px;">
                                 "<?php echo nl2br(htmlspecialchars($r['resenha'])); ?>"
@@ -155,7 +154,7 @@ try {
                         </article>
                     <?php endforeach; ?>
                 <?php else: ?>
-                    <!-- Mensagem para quando o banco não tem resenhas ainda -->
+               
                     <div style="text-align: center; width: 100%; padding: 40px; background-color: #f9f9f9; border-radius: 12px;">
                         <img src="img/livrohome.png" alt="Livro vazio" style="width: 100px; margin-bottom: 20px; opacity: 0.5;">
                         <h4 style="color: #666; font-family: 'Inter', sans-serif;">Nenhum comentário por aqui ainda...</h4>
@@ -165,7 +164,7 @@ try {
             </div>
         </section>
 
-        <!-- CTA FINAL -->
+  
         <section class="cta">
             <h3>Explore mais livros</h3>
             <p>
@@ -176,7 +175,7 @@ try {
 
     </main>
 
-    <!-- Modal de Edição de Resenha -->
+
     <div id="edit-modal" class="modal" style="display: none; align-items: center; justify-content: center; position: fixed; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.5); z-index: 2000;">
         <div class="modal-content" style="background: white; padding: 30px; border-radius: 20px; max-width: 500px; width: 90%;">
             <h3 style="font-family: 'Sour Gummy', cursive; color: #0f55b2;">Editar Comentário</h3>
@@ -198,12 +197,11 @@ try {
         </div>
     </div>
 
-    <!-- Scripts para Gerenciamento de Resenhas -->
+
     <script>
         function toggleDropdown(id) {
             const dropdown = document.getElementById('dropdown-' + id);
             const isVisible = dropdown.style.display === 'block';
-            
             // Fecha todos os outros dropdowns
             document.querySelectorAll('.dropdown-content').forEach(d => d.style.display = 'none');
             

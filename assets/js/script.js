@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 if (targetElement) {
                     window.scrollTo({
-                        top: targetElement.offsetTop - 80, // Offset do header fixo
+                        top: targetElement.offsetTop - 80, 
                         behavior: 'smooth'
                     });
                 }
@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Animações simples ao rolar
+    // Animações 
     const observerOptions = {
         threshold: 0.1
     };
@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(el);
     });
 
-    // Adiciona classe para disparar animação CSS
+   
     window.addEventListener('scroll', () => {
         document.querySelectorAll('.card, .artigo-corpo h3, .livro-resenha').forEach(el => {
             const rect = el.getBoundingClientRect();

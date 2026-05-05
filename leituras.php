@@ -124,7 +124,7 @@ try {
 			</div>
 		</section>
 
-        <!-- Mensagens de Feedback -->
+
         <?php if(isset($_SESSION['sucesso_leitura'])): ?>
             <p style="color: green; text-align: center; font-weight: bold;"><?= $_SESSION['sucesso_leitura']; unset($_SESSION['sucesso_leitura']); ?></p>
         <?php endif; ?>
@@ -165,7 +165,7 @@ try {
                     ?>
 						<article class="card">
 							<div class="progress-info">
-								<h4>📖 <?= htmlspecialchars($livro['titulo']) ?></h4>
+								<h4><?= htmlspecialchars($livro['titulo']) ?></h4>
 								<p class="author-text"><?= htmlspecialchars($livro['descricao']) ?></p>
                                 <p style="font-size: 0.9em; color: #666; margin-top: 5px;">
                                     Progresso: <strong><?= $livro['pagina_atual'] ?></strong> de <strong><?= $livro['paginas_totais'] ?></strong> págs (<?= $pct ?>%)
@@ -183,7 +183,7 @@ try {
                                    style="text-align: center; color: #e53935; text-decoration: none; font-size: 14px; font-weight: bold; border: 2px solid #e53935; padding: 8px; border-radius: 99px; transition: 0.3s;"
                                    onmouseover="this.style.background='#e53935'; this.style.color='white';"
                                    onmouseout="this.style.background='transparent'; this.style.color='#e53935';">
-                                   🗑️ Excluir Livro
+                                    Excluir Livro
                                 </a>
 
                                 <?php if (!empty($livro['historico'])): ?>
@@ -209,7 +209,7 @@ try {
 
 	</main>
 
-	<!-- Modal de Atualização -->
+
 	<div id="update-modal" class="modal" style="display: none; align-items: center; justify-content: center; position: fixed; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.5); z-index: 1000;">
 		<div class="modal-content" style="background: white; padding: 25px; border-radius: 20px; max-width: 450px; width: 90%;">
 			<h3 id="modal-title">Atualizar Leitura</h3>
@@ -221,7 +221,7 @@ try {
 					<select name="status" id="status-select" onchange="toggleReviewFields()" required style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #ddd;">
                         <option value="Lendo">Lendo</option>
                         <option value="Pausado">Pausado</option>
-                        <option value="Terminado">Terminado (Postar Resenha 🔥)</option>
+                        <option value="Terminado">Terminado (Postar Resenha)</option>
                         <option value="Largado">Largado</option>
                     </select>
 				</div>
@@ -236,7 +236,7 @@ try {
 					<textarea name="comentario_progresso" rows="2" placeholder="O que achou deste trecho? (Fica só para você)" style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #ddd;"></textarea>
 				</div>
 
-                <!-- Seção Publica da Comunidade -->
+    
                 <div id="review-fields" style="display: none; border-top: 2px dashed #ff9800; padding-top: 15px; margin-top: 15px; animation: fadeIn 0.3s;">
                     <p style="color: #ff9800; font-weight: bold; font-size: 0.9em; margin-bottom: 10px;">🌟 Publicar na Comunidade:</p>
                     <div class="form-group" style="margin-bottom: 10px;">

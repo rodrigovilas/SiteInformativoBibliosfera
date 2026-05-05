@@ -13,14 +13,14 @@
 | |                                             | | 
 ```
 
-# 📚 Bibliosfera
+# Bibliosfera
 
 A **Bibliosfera** é uma plataforma digital criada para dar voz aos livros, promovendo **resenhas**, **leituras comentadas** e **conteúdos audiovisuais** que estimulam o pensamento crítico e o hábito da leitura.
 
 A ideia central do projeto é tornar o contato com a literatura mais acessível, interessante e conectado com o público jovem.
 
 
-## 🎯 Objetivo do Projeto
+## Objetivo do Projeto
 
 - Incentivar a leitura de forma leve e acessível  
 - Compartilhar resenhas literárias claras e bem fundamentadas  
@@ -29,7 +29,7 @@ A ideia central do projeto é tornar o contato com a literatura mais acessível,
 
 ---
 
-## 🧩 Funcionalidades
+## Funcionalidades
 
 - Página inicial com destaques da semana  
 - Área dedicada a resenhas de livros  
@@ -40,7 +40,7 @@ A ideia central do projeto é tornar o contato com a literatura mais acessível,
 
 ---
 
-## 🖥️ Tecnologias Utilizadas
+## Tecnologias Utilizadas
 
 - HTML5  
 - CSS3  
@@ -50,7 +50,7 @@ A ideia central do projeto é tornar o contato com a literatura mais acessível,
 
 ---
 
-## 🎨 Identidade Visual
+## Identidade Visual
 
 - Paleta de cores em tons de azul  
 - Layout limpo e moderno  
@@ -59,14 +59,14 @@ A ideia central do projeto é tornar o contato com a literatura mais acessível,
 
 ---
 
-## 🚀 Status do Projeto
+## Status do Projeto
 
-🛠️ Em desenvolvimento
+ Em desenvolvimento
 
 ---
 
 
-## 👥 Autores
+## Autores
 
 - Anna Luiza Rosa Marques de Almeida  
 - Cayo Alves Freitas Ananias  

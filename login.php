@@ -5,7 +5,6 @@ session_start();
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <!-- Configurações meta da página de login -->
   <meta charset="UTF-8">
   <title>Login | Bibliosfera</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -28,8 +27,7 @@ session_start();
       }
     ?>
 
-    <!-- Formulário de login -->
-    <!-- Os dados são enviados para login_user.php para validação -->
+
     <form action="actions/login_user.php" method="post">
       <label for="email">E-mail</label>
       <input name="email" id="email" type="email" placeholder="seu@email.com" required>
@@ -42,7 +40,7 @@ session_start();
 
     <div class="login-links">
       <p>Não tem conta? <a href="cadastro.php">Criar conta</a></p>
-      <!-- Link para voltar à página inicial do site -->
+
       <a href="index.html" class="voltar">← Voltar ao site</a>
     </div>
   </main>
