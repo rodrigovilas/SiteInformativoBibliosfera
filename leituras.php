@@ -187,7 +187,7 @@ try {
                                 </a>
 
                                 <?php if (!empty($livro['historico'])): ?>
-                                    <button onclick="toggleHistory(<?= $livro['id_livro'] ?>)" class="btn-secondary" style="width: 100%; border-radius: 99px; font-size: 14px;">📜 Ver Histórico Privado</button>
+                                    <button onclick="toggleHistory(<?= $livro['id_livro'] ?>)" class="btn-secondary" style="width: 100%; border-radius: 99px; font-size: 14px;"> Ver Histórico Privado</button>
                                     <div id="hist-<?= $livro['id_livro'] ?>" class="history-list">
                                         <strong>Notas anteriores:</strong>
                                         <?php foreach ($livro['historico'] as $h): ?>
@@ -238,7 +238,7 @@ try {
 
     
                 <div id="review-fields" style="display: none; border-top: 2px dashed #ff9800; padding-top: 15px; margin-top: 15px; animation: fadeIn 0.3s;">
-                    <p style="color: #ff9800; font-weight: bold; font-size: 0.9em; margin-bottom: 10px;">🌟 Publicar na Comunidade:</p>
+                    <p style="color: #ff9800; font-weight: bold; font-size: 0.9em; margin-bottom: 10px;"> Publicar na Comunidade:</p>
                     <div class="form-group" style="margin-bottom: 10px;">
                         <label>Nota Final (0 a 10):</label>
                         <input type="number" name="nota" min="0" max="10" step="0.5" value="10" style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #ddd;">
