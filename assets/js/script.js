@@ -14,15 +14,18 @@ document.addEventListener('DOMContentLoaded', () => {
     // Suavizar scroll para links internos
     document.querySelectorAll('a[data-scroll]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
-            e.preventDefault();
             const targetId = this.getAttribute('href');
-            const targetElement = document.querySelector(targetId);
-            
-            if (targetElement) {
-                window.scrollTo({
-                    top: targetElement.offsetTop - 80, // Offset do header fixo
-                    behavior: 'smooth'
-                });
+
+            if (targetId && targetId.startsWith('#')) {
+                e.preventDefault();
+                const targetElement = document.querySelector(targetId);
+
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80, // Offset do header fixo
+                        behavior: 'smooth'
+                    });
+                }
             }
         });
     });
