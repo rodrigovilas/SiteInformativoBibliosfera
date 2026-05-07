@@ -22,14 +22,14 @@ if (!isset($_SESSION['id_usuario'])) {
  */
 $livros = [
     [
-        "capa"    => "dom-casmurro.jpg",
+        "capa"    => "1.jpg",
         "titulo"  => "Dom Casmurro",
         "autor"   => "Machado de Assis",
         "ano"     => 1899,
         "sinopse" => "Narra a história de Bentinho, que mais tarde ficará conhecido como Dom Casmurro, e seu amor pela vizinha Capitu. A obra levanta questões sobre ciúme, traição e memória, sendo um dos maiores clássicos do Realismo brasileiro."
     ],
     [
-        "capa"    => "memorias-postumas.jpg",
+        "capa"    => "2.jpg",
         "titulo"  => "Memórias Póstumas de Brás Cubas",
         "autor"   => "Machado de Assis",
         "ano"     => 1881,
