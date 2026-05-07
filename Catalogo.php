@@ -75,7 +75,7 @@ $livros = [
         "titulo"  => "O Guarani",
         "autor"   => "José de Alencar",
         "ano"     => 1857,
-        "sinopse" => "Romance histórico que narra o amor entre o índio Peri e a jovem branca Ceci no Brasil colonial. Marco do Romantismo indianista, explora temas de identidade nacional, natureza e heroísmo."
+        "sinopse" => "Romance histórico que narra o amor entre o indígena Peri e a jovem branca Ceci no Brasil colonial. Marco do Romantismo indianista, explora temas de identidade nacional, natureza e heroísmo."
     ],
 ];
 ?>
