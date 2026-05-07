@@ -77,6 +77,35 @@ try {
             from { opacity: 0; transform: translateY(-10px); }
             to { opacity: 1; transform: translateY(0); }
         }
+
+        /* ── Botão Catálogo ─────────────────────────────────── */
+        .btn-catalogo {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(135deg, #0f55b2, #1a3a6e);
+            color: #ffffff;
+            border: none;
+            padding: 12px 26px;
+            border-radius: 99px;
+            font-family: 'Sour Gummy', cursive;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            box-shadow: 0 4px 18px rgba(15,85,178,0.25);
+            transition: transform 0.2s cubic-bezier(.34,1.56,.64,1),
+                        box-shadow 0.2s ease,
+                        filter 0.2s ease;
+        }
+        .btn-catalogo:hover {
+            transform: translateY(-3px) scale(1.03);
+            box-shadow: 0 8px 28px rgba(15,85,178,0.35);
+            filter: brightness(1.1);
+        }
+        .btn-catalogo:active {
+            transform: translateY(0) scale(0.98);
+        }
     </style>
 </head>
 <body id="topo" style="font-family: 'Sour Gummy', cursive;">
@@ -117,6 +146,8 @@ try {
 				<div class="hero-actions">
 					<button onclick="document.getElementById('add-book-form').style.display='flex'" class="btn-primary">Adicionar Livro</button>
 					<a href="comunidade.php" class="btn-secondary">Ver Comunidade</a>
+                    <!-- ✦ BOTÃO NOVO: abre o catálogo de capas -->
+                    <a href="catalogo.php" class="btn-catalogo">📚 Ver Catálogo</a>
 				</div>
 			</div>
 			<div class="hero-image">
