@@ -147,7 +147,7 @@ try {
 					<button onclick="document.getElementById('add-book-form').style.display='flex'" class="btn-primary">Adicionar Livro</button>
 					<a href="comunidade.php" class="btn-secondary">Ver Comunidade</a>
                     <!-- ✦ BOTÃO NOVO: abre o catálogo de capas -->
-                    <a href="catalogo.php" class="btn-catalogo">📚 Ver Catálogo</a>
+                    <a href="Recomendacoes.php" class="btn-catalogo">📚 Ver Recomendações</a>
 				</div>
 			</div>
 			<div class="hero-image">
