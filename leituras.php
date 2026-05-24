@@ -78,33 +78,65 @@ try {
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* ── Botão Catálogo ─────────────────────────────────── */
-        .btn-catalogo {
+        /* ── Hero Actions Buttons (Smaller & Cohesive) ──────── */
+        .hero-actions {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-top: 15px;
+        }
+        .hero-actions .btn-primary,
+        .hero-actions .btn-secondary,
+        .hero-actions .btn-catalogo {
+            font-size: 0.95rem; /* Compact size */
+            padding: 8px 18px;
+            height: 38px; /* Compact height */
+            box-sizing: border-box;
             display: inline-flex;
             align-items: center;
-            gap: 8px;
-            background: linear-gradient(135deg, #0f55b2, #1a3a6e);
+            justify-content: center;
+            gap: 6px;
+            border-radius: 99px;
+            font-weight: 600;
+            font-family: 'Sour Gummy', cursive;
+            transition: all 0.2s cubic-bezier(.34,1.56,.64,1);
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(15,85,178,0.1);
+            text-decoration: none;
+            line-height: 1;
+            margin: 0;
+        }
+        .hero-actions .btn-primary:hover,
+        .hero-actions .btn-secondary:hover,
+        .hero-actions .btn-catalogo:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(15,85,178,0.2);
+        }
+        .hero-actions .btn-primary:active,
+        .hero-actions .btn-secondary:active,
+        .hero-actions .btn-catalogo:active {
+            transform: translateY(0);
+        }
+        .hero-actions .btn-primary {
+            background: linear-gradient(135deg, #0f55b2, #1b76e3);
             color: #ffffff;
             border: none;
-            padding: 12px 26px;
-            border-radius: 99px;
-            font-family: 'Sour Gummy', cursive;
-            font-size: 1rem;
-            font-weight: 600;
-            text-decoration: none;
-            cursor: pointer;
-            box-shadow: 0 4px 18px rgba(15,85,178,0.25);
-            transition: transform 0.2s cubic-bezier(.34,1.56,.64,1),
-                        box-shadow 0.2s ease,
-                        filter 0.2s ease;
         }
-        .btn-catalogo:hover {
-            transform: translateY(-3px) scale(1.03);
-            box-shadow: 0 8px 28px rgba(15,85,178,0.35);
-            filter: brightness(1.1);
+        .hero-actions .btn-secondary {
+            background: transparent;
+            color: #0f55b2;
+            border: 2px solid #0f55b2;
+            padding: 6px 16px; /* Adjust padding for border to maintain same height */
         }
-        .btn-catalogo:active {
-            transform: translateY(0) scale(0.98);
+        .hero-actions .btn-catalogo {
+            background: linear-gradient(135deg, #ff9800, #f57c00);
+            color: #ffffff;
+            border: none;
+            box-shadow: 0 4px 12px rgba(255, 152, 0, 0.2);
+        }
+        .hero-actions .btn-catalogo:hover {
+            background: linear-gradient(135deg, #f57c00, #e65100);
+            box-shadow: 0 6px 16px rgba(255, 152, 0, 0.3);
         }
     </style>
 </head>
@@ -144,10 +176,18 @@ try {
 				<h2>Meu Progresso de Leitura</h2>
 				<p>Acompanhe suas leituras, registre notas privadas e compartilhe a resenha final quando terminar!</p>
 				<div class="hero-actions">
-					<button onclick="document.getElementById('add-book-form').style.display='flex'" class="btn-primary">Adicionar Livro</button>
-					<a href="comunidade.php" class="btn-secondary">Ver Comunidade</a>
-                    <!-- ✦ BOTÃO NOVO: abre o catálogo de capas -->
-                    <a href="Recomendacoes.php" class="btn-catalogo"> Ver Recomendações</a>
+					<button onclick="document.getElementById('add-book-form').style.display='flex'" class="btn-primary">
+						<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+						Adicionar Livro
+					</button>
+					<a href="comunidade.php" class="btn-secondary">
+						<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+						Ver Comunidade
+					</a>
+					<a href="Recomendacoes.php" class="btn-catalogo">
+						<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+						Ver Recomendações
+					</a>
 				</div>
 			</div>
 			<div class="hero-image">
