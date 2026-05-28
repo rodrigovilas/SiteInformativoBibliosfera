@@ -41,7 +41,7 @@ session_start();
     <div class="login-links">
       <p>Não tem conta? <a href="cadastro.php">Criar conta</a></p>
 
-      <a href="index.html" class="voltar">← Voltar ao site</a>
+      <a href="index.php" class="voltar">← Voltar ao site</a>
     </div>
   </main>
 </body>
