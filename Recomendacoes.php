@@ -30,11 +30,13 @@ try {
     <style>
         .livro-capa {
             width: 100%;
-            height: 300px;
+            max-width: 220px;
+            aspect-ratio: 2 / 3;
             object-fit: cover;
             border-radius: 8px;
             margin-bottom: 15px;
             box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            align-self: center;
         }
         .desc-livro {
             font-size: 0.9em;
@@ -172,7 +174,6 @@ try {
                         <button class="btn-expandir" id="btn-exp-<?= $livro['id_recomendacao'] ?>" onclick="toggleDescricao(<?= $livro['id_recomendacao'] ?>)">
                             Ler mais <span>▾</span>
                         </button>
-                        <a href="leituras.php" class="btn-secondary" style="display: block; text-align: center;">Adicionar às Leituras</a>
                     </article>
                 <?php endforeach; ?>
             </div>
